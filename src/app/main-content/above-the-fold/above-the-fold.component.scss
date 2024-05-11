@@ -1,0 +1,35 @@
+@import './../../../styles.scss';
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    width: 1440px;
+
+    border: 1px solid black;
+
+    &>div:nth-child(1) {
+        position: relative;
+
+        &>img {
+            width: 646px;
+            height: 705px;
+
+            object-fit: contain;
+
+            border: 1px solid black;
+        }
+
+        &>img:nth-child(2) {
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    &>div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+    }
+}
