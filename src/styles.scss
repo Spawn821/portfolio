@@ -3,6 +3,8 @@
 /* ---------------- */
 
 $backgroundColorBlack: rgb(20, 29, 47);
+$textColorPurple: rgb(151,71,255);
+$textColorWhite: white;
 
 
 
@@ -13,6 +15,10 @@ body {
     align-items: center;
 
     margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 
