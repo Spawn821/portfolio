@@ -10,9 +10,7 @@ section {
     padding: 128px 0;
 
     color: $colorWhite;
-    background-color: $backgroundColorBlack;
-
-    overflow: hidden;
+    background-color: $colorBlack;
 }
 
 .properties {
@@ -74,7 +72,6 @@ section {
 }
 
 .my-skills {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,19 +84,15 @@ section {
         align-items: flex-start;
         gap: 40px;
 
-        .text {
+        .headline {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
 
             width: 471px;
 
-            &>h1 {
+            &>span {
                 font-size: 90px;
-
-                line-height: 24px;
-
-                margin-top: 0;
             }
 
             &>p {
@@ -110,16 +103,14 @@ section {
         }
 
         .seperator {
-            &>div {
-                width: 58px;
+            width: 58px;
 
-                border: 4px solid $colorPurple;
+            border: 4px solid $colorPurple;
 
-                margin-top: 12px;
+            margin-top: 67.5px;
 
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-            }
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
         }
 
     }

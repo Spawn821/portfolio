@@ -9,7 +9,7 @@ section {
 
     padding: 128px 0;
 
-    background-color: $backgroundColorBlack;
+    background-color: $colorBlack;
 }
 
 p {
@@ -128,31 +128,30 @@ p {
 
 .about-me-shadow {
     position: absolute;
-    right: 0;
+    right: -500px;
     top: -475px;
 
     width: 872px;
     height: 908px;
 
-    object-fit: cover;
-    object-position: -1250%;
+    object-fit: contain;
 
     animation: scale-image 5s infinite linear;
 
     @keyframes scale-image {
         0% {
+            right: -500px;
             top: -475px;
-            object-position: -1250%;
         }
 
         50% {
+            right: -475px;
             top: -450px;
-            object-position: -1150%;
         }
 
         100% {
+            right: -500px;
             top: -475px;
-            object-position: -1250%;
         }
 
     }

@@ -1,8 +1,7 @@
 @import './../../../../styles.scss';
 
 header {
-    position: sticky;
-    top: 0;
+    position: fixed;
 
     display: flex;
     justify-content: space-between;
@@ -13,7 +12,7 @@ header {
     padding: 37px 100px;
 
     color: white;
-    background-color: $backgroundColorBlack;
+    background-color: $colorBlack;
 
     z-index: 99;
 }

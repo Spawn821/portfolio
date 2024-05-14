@@ -1,0 +1,19 @@
+<section [class.margin-left-50px]="index / 2 ? 1 : null" [class.flex-dir-row-reverse]="index / 2 ? 1 : null" class="project">
+
+    <img src="{{project.img}}" alt="">
+
+    <div [class.align-items-flex-end]="index / 2 ? 1 : null" class="description">
+
+        <div [class.align-items-flex-end]="index / 2 ? 1 : null">
+            <span>{{project.headline}}</span>
+            <p>{{project.technologies}}</p>
+            <p [class.text-align-right]="index / 2 ? 1 : null">{{project.description}}</p>
+        </div>
+
+        <div class="buttons">
+            <button class="button-purple">Live Test</button>
+            <button class="button-black">Github</button>
+        </div>
+    </div>
+
+</section>

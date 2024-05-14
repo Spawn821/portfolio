@@ -1,0 +1,18 @@
+<section class="portfolio font-family-poppins">
+
+    <div class="headline">
+        <div>
+            <span>Portfolio</span>
+            <div class="seperator"></div>
+        </div>
+
+        <p>Explore a seclection of my work here - interact with projects to see my skills in action.</p>
+    </div>
+
+    <div class="my-work">
+        @for (singleProject of projectlistdata.projectlist; track singleProject.img; let index = $index) {
+            <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
+        }
+    </div>
+
+</section>

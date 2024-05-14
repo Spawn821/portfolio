@@ -1,6 +1,6 @@
 @import './../../../styles.scss';
 
-section {
+.above-the-fold {
     position: relative;
 
     display: flex;
@@ -8,8 +8,9 @@ section {
     align-items: center;
 
     width: 1440px;
+    margin-top: 111.71px;
 
-    background-color: $backgroundColorBlack;
+    background-color: $colorBlack;
 }
 
 .profil {

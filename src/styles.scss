@@ -2,7 +2,7 @@
 /* Color parameters */
 /* ---------------- */
 
-$backgroundColorBlack: rgb(20, 29, 47);
+$colorBlack: rgb(20, 29, 47);
 $colorPurple: rgb(151, 71, 255);
 $colorWhite: white;
 $colorGreen: rgb(112, 230, 27);
@@ -54,6 +54,27 @@ button {
 
   &:hover {
     background-color: $colorPurple;
+  }
+}
+
+.button-purple {
+  color: $colorWhite;
+  background-color: $colorPurple;
+
+  &:hover {
+    background-color: $colorGreen;
+    padding: 15px 30px;
+  }
+}
+
+.button-black {
+  color: $colorWhite;
+  background-color: $colorBlack;
+  border: 1px solid $colorGreen;
+
+  &:hover {
+    background-color: $colorGreen;
+    padding: 15px 30px;
   }
 }
 
