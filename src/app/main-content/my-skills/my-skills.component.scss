@@ -7,7 +7,7 @@ section {
     justify-content: space-between;
     align-items: center;
 
-    padding: 128px 0;
+    padding-top: 128px 0;
 
     color: $colorWhite;
     background-color: $colorBlack;
@@ -105,10 +105,9 @@ section {
         .seperator {
             width: 58px;
 
-            border: 4px solid $colorPurple;
-
             margin-top: 67.5px;
 
+            border: 4px solid $colorPurple;
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
         }
@@ -135,9 +134,9 @@ section {
 
     transform: rotate(30deg);
 
-    animation: move 5s infinite linear;
+    animation: move-image 5s infinite linear;
 
-    @keyframes move {
+    @keyframes move-image {
         0% {
             left: -525px;
             top: 175px;

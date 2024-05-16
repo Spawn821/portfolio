@@ -27,4 +27,8 @@ export class SingleprojectComponent {
 
   @Input() index = 0;
 
+  isSecondElement() {
+    let secondElement: boolean = this.index / 2 ? true : false;
+    return secondElement;
+  }
 }

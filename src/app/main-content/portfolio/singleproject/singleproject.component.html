@@ -1,19 +1,26 @@
-<section [class.margin-left-50px]="index / 2 ? 1 : null" [class.flex-dir-row-reverse]="index / 2 ? 1 : null" class="project">
+<section [class.margin-left-50px]="isSecondElement()" [class.flex-dir-row-reverse]="isSecondElement()" class="project">
 
     <img src="{{project.img}}" alt="">
 
-    <div [class.align-items-flex-end]="index / 2 ? 1 : null" class="description">
+    <div [class.align-items-flex-end]="isSecondElement()" class="description">
 
-        <div [class.align-items-flex-end]="index / 2 ? 1 : null">
+        <div [class.align-items-flex-end]="isSecondElement()">
             <span>{{project.headline}}</span>
             <p>{{project.technologies}}</p>
-            <p [class.text-align-right]="index / 2 ? 1 : null">{{project.description}}</p>
+            <p [class.text-align-right]="isSecondElement()">{{project.description}}</p>
         </div>
 
         <div class="buttons">
-            <button class="button-purple">Live Test</button>
+            <a [ngStyle]="{'color': 'white'}" target="_blank" href="https://stephan-schmidt.developerakademie.net/join_own_version/index.html">Live Test</a>
             <button class="button-black">Github</button>
         </div>
     </div>
+
+    @if (isSecondElement()) {
+        <img class="portfolio-shadow portfolio-shadow-green" src="./../../../../assets/graphics/shadows/portfolio-shadow-green.png" alt="">
+    }
+    @else {
+        <img class="portfolio-shadow portfolio-shadow-purple" src="./../../../../assets/graphics/shadows/portfolio-shadow-purple.png" alt="">
+    }
 
 </section>

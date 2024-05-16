@@ -140,18 +140,15 @@ p {
 
     @keyframes scale-image {
         0% {
-            right: -500px;
-            top: -475px;
+            transform: scale(1);
         }
 
         50% {
-            right: -475px;
-            top: -450px;
+            transform: scale(1.1);
         }
 
         100% {
-            right: -500px;
-            top: -475px;
+            transform: scale(1);
         }
 
     }
