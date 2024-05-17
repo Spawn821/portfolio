@@ -1,9 +1,31 @@
 @import './../../../styles.scss';
 
+@mixin displayFlex($d: flex, $fD: row, $jC: center, $aI: center, $g: 0) {
+    display: $d;
+    flex-direction: $fD;
+    justify-content: $jC;
+    align-items: $aI;
+    gap: $g;
+}
+
+@mixin borderStyle($leftRa: false, $rightRa: false) {
+    border: 1px solid $colorPurple;
+
+    @if $leftRa {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-right: none;
+    }
+
+    @if $rightRa {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-left: none;
+    }
+}
+
 section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include displayFlex($jC: space-between);
 
     background-color: $colorBlack;
 
@@ -11,26 +33,18 @@ section {
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlex($jC: space-between, $aI: flex-start);
 
     width: 100%;
 }
 
 .contact {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 48px;
+    @include displayFlex($jC: flex-start, $aI: flex-start, $g: 48px);
 
     color: $colorWhite;
 
     .headline {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 56px;
+        @include displayFlex($fD: column, $aI: flex-start, $g: 56px);
 
         &>span {
             font-size: 90px;
@@ -60,51 +74,180 @@ section {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    @include displayFlex($fD: column, $g: 32px);
 
     width: 617px;
 
     margin-right: 100px;
-    margin-top: 190px;
+    margin-top: 200px;
 
-    &>input,
-    textarea {
-        width: calc(100% - 50px);
+    z-index: 1;
 
-        padding: 15px 25px;
+}
 
-        font-size: 16px;
+input,
+textarea {
+    width: 100%;
 
-        border: 1px solid $colorPurple;
-        border-radius: 10px;
+    padding: 15px 25px;
 
-        color: $colorWhite;
-        background-color: $colorBlack;
+    font-size: 16px;
 
-        &:hover {
+    @include borderStyle($leftRa: true);
+
+    color: $colorWhite;
+    background-color: $colorBlack;
+
+    outline: none;
+
+    &:hover {
+        border-color: $colorGreen;
+
+        &+.input-icons {
+            border-color: $colorGreen;
+        }
+
+        &+.textarea-icons {
             border-color: $colorGreen;
         }
     }
 
-    .checkbox {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    &::placeholder {
+        color: $colorWhite;
+    }
+}
 
-        width: 100%;
+textarea {
+    resize: none;
+}
+
+input:focus {
+    border-color: red;
+
+    &+.input-icons {
+        border-color: red;
+    }
+}
+
+input:valid {
+    border-color: $colorGreen;
+
+    &+.input-icons {
+        border-color: $colorGreen;
+    }
+}
+
+textarea:focus {
+    border-color: red;
+
+    &+.textarea-icons {
+        border-color: red;
+    }
+}
+
+textarea:valid {
+    border-color: $colorGreen;
+
+    &+.textarea-icons {
+        border-color: $colorGreen;
+    }
+}
+
+.error-message {
+    font-size: 14px;
+
+    color: red;
+
+    display: none;
+}
+
+.input-wrapper,
+.textarea-wrapper {
+    width: 100%;
+
+    &:focus-within {
+        .error-message {
+            display: block;
+        }
+
+        .error-icon {
+            display: block;
+        }
+    }
+}
+
+.input-wrapper,
+.textarea-wrapper {
+
+    .input-area,
+    .text-area {
+        @include displayFlex($jC: none, $aI: none);
+    }
+
+    .input-area {
+        height: 50px;
+    }
+
+    .text-area {
+        height: 202px;
+    }
+
+    &:has(input:valid, textarea:valid) {
+        .error-message {
+            display: none;
+        }
+
+        .done-icon {
+            display: block;
+        }
+
+        .error-icon {
+            display: none;
+        }
+    }
+}
+
+.input-icons,
+.textarea-icons {
+    width: 50px;
+    max-height: calc(100% - 2px);
+
+    @include borderStyle($rightRa: true);
+
+    .done-icon,
+    .error-icon {
+        display: none;
+    }
+}
+
+.input-icons {
+    @include displayFlex($jC: flex-start);
+}
+
+.textarea-icons {
+    @include displayFlex($jC: flex-start, $aI: flex-start);
+
+    &>img {
+        margin-top: 15px;
+    }
+}
+
+.checkbox {
+    @include displayFlex($jC: flex-start, $g: 8px);
+
+    width: 100%;
+
+    &>label {
 
         &>input[type="checkbox"] {
             display: none;
 
             &+div {
-                content: url('./../../../assets/graphics/checkbox/checkbox-empty.png');
+                content: url('./../../../assets/graphics/contact/checkbox-empty.png');
                 object-fit: contain;
 
                 &:hover {
-                    content: url('./../../../assets/graphics/checkbox/checkbox-empty-hover.png');
+                    content: url('./../../../assets/graphics/contact/checkbox-empty-hover.png');
                 }
             }
         }
@@ -112,37 +255,43 @@ form {
         &>input[type="checkbox"]:checked {
 
             &+div {
-                content: url('./../../../assets/graphics/checkbox/checkbox-checked.png');
+                content: url('./../../../assets/graphics/contact/checkbox-checked.png');
 
                 &:hover {
-                    content: url('./../../../assets/graphics/checkbox/checkbox-checked-hover.png');
+                    content: url('./../../../assets/graphics/contact/checkbox-checked-hover.png');
                 }
             }
         }
 
-        &>span {
-            color: $colorWhite;
+    }
 
-            font-size: 14px;
+    &>span {
+        color: $colorWhite;
 
-            &>a {
-                color: $colorPurple;
+        font-size: 14px;
+
+        &>a {
+            color: $colorPurple;
+
+            &:hover {
+                cursor: pointer;
+
+                text-decoration: underline;
             }
         }
     }
+}
 
-    .button-wrapper {
-        display: flex;
-        align-items: flex-start;
+.button-wrapper {
+    @include displayFlex($aI: flex-start);
 
-        height: 100px;
+    height: 100px;
 
-        &>button:disabled {
-            background-color: rgb(182, 182, 182);
+    &>button:disabled {
+        background-color: rgb(182, 182, 182);
 
-            &:hover {
-                padding: 15px 30px;
-            }
+        &:hover {
+            padding: 15px 30px;
         }
     }
 }
