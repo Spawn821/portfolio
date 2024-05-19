@@ -1,13 +1,9 @@
 @import './../../../styles.scss';
 
 section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include displayFlex($jC: space-between);
 
-    width: 100%;
-
-    padding: 128px 0;
+    padding-bottom: 128px;
 
     background-color: $colorBlack;
 }
@@ -19,10 +15,7 @@ p {
 .about-me {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
+    @include displayFlex($fD: column, $aI: flex-start, $g: 40px);
 
     width: 471px;
 
@@ -37,17 +30,10 @@ p {
     }
 
     &>div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 35px;
+        @include displayFlex($fD: column, $aI: flex-start, $g: 35px);
 
         .light-bulb {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 35px;
+            @include displayFlex($aI: flex-start, $g: 35px);
 
             &>div {
                 min-width: 60px;
@@ -70,10 +56,7 @@ p {
         }
 
         .puzzle-piece {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 35px;
+            @include displayFlex($aI: flex-start, $g: 35px);
 
             &>div {
                 min-width: 60px;
@@ -100,10 +83,7 @@ p {
 .profil {
     position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    @include displayFlex();
 
     &>img:nth-child(1) {
         width: 453px;
@@ -136,20 +116,5 @@ p {
 
     object-fit: contain;
 
-    animation: scale-image 5s infinite linear;
-
-    @keyframes scale-image {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.1);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-
-    }
+    @include scale-animation();
 }

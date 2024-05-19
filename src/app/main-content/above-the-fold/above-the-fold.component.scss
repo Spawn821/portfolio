@@ -1,26 +1,24 @@
 @import './../../../styles.scss';
 
-.above-the-fold {
+section {
     position: relative;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include displayFlex($jC: space-between);
 
     width: 1440px;
+
     margin-top: 111.71px;
+
+    padding-bottom: 128px;
 
     background-color: $colorBlack;
 }
 
 .profil {
-    display: flex;
-    flex-direction: column;
+    @include displayFlex($fD: column, $aI: flex-start);
 
     .picture {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        @include displayFlex($jC: flex-start, $aI: flex-start);
 
         width: 807px;
         height: 771px;
@@ -54,8 +52,7 @@
     }
 
     .find-me-on {
-        display: flex;
-        gap: 32px;
+        @include displayFlex($g: 32px);
 
         z-index: 1;
 
@@ -76,6 +73,17 @@
         &>nav {
             display: flex;
             gap: 42px;
+
+            @include displayFlex($g: 42px);
+
+            &>a {
+                @include displayFlex();
+
+                &>img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
         }
 
         &>a {
@@ -91,27 +99,19 @@
     right: 56px;
     top: 160px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
+    @include displayFlex($fD: column, $g: 24px);
 
     z-index: 1;
 
     .headline {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        justify-content: flex-start;
+        @include displayFlex();
 
         color: $colorWhite;
 
         &>span {
-            display: inline-flex;
             font-size: 64px;
 
-            transform: translateX(20px) rotate(-90deg);
+            transform: rotate(-90deg);
         }
 
         &>div {
@@ -128,23 +128,8 @@
             &>span:nth-child(3) {
                 font-size: 58px;
 
-                background: linear-gradient(to left, $colorPurple 20%, $colorGreen 30%, $colorPurple 70%, $colorGreen 80%);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                animation: color-gradient 10s ease-in-out infinite alternate;
-                background-size: 500% auto;
-
-                @keyframes color-gradient {
-                    0% {
-                        background-position: 0% 50%;
-                    }
-                    100% {
-                        background-position: 100% 50%;
-                    }
-                }
+                color: $colorPurple;
             }
-
         }
     }
 }
@@ -162,13 +147,9 @@
 .scroll-down {
     position: absolute;
     right: 100px;
-    bottom: 0;
+    bottom: 128px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 56px;
+    @include displayFlex($fD: column, $g: 56px);
 
     z-index: 1;
 

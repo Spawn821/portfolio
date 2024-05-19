@@ -97,19 +97,7 @@
 
     transform: rotate(70deg);
 
-    animation: scale-image-green 5s infinite linear;
-
-    @keyframes scale-image-green {
-        0% {
-            transform: rotate(70deg) scale(1);
-        }
-        50% {
-            transform: rotate(70deg) scale(1.1);
-        }
-        100% {
-            transform: rotate(70deg) scale(1);
-        }
-    }
+    @include scale-rotate-animation(70deg);
 }
 
 .portfolio-shadow-purple {
@@ -119,17 +107,5 @@
     width: 836px;
     height: 949px;
 
-    animation: scale-image-purple 5s infinite linear;
-
-    @keyframes scale-image-purple {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
+    @include scale-animation();
 }

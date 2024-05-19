@@ -9,6 +9,56 @@ $colorGreen: rgb(112, 230, 27);
 
 
 
+/* ------ */
+/* Mixins */
+/* ------ */
+
+@mixin displayFlex($d: flex, $fD: row, $jC: center, $aI: center, $g: 0) {
+  display: $d;
+  flex-direction: $fD;
+  justify-content: $jC;
+  align-items: $aI;
+  gap: $g;
+}
+
+@mixin scale-animation() {
+  animation: scale-image 5s infinite linear;
+
+  @keyframes scale-image {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin scale-rotate-animation($numberDeg: 0deg) {
+  animation: scale-rotate-image 5s infinite linear;
+
+  @keyframes scale-rotate-image {
+    0% {
+      transform: rotate($numberDeg) scale(1);
+    }
+
+    50% {
+      transform: rotate($numberDeg) scale(1.1);
+    }
+
+    100% {
+      transform: rotate($numberDeg) scale(1);
+    }
+  }
+}
+
+
+
 /* ---- */
 /* Tags */
 /* ---- */
@@ -23,6 +73,8 @@ body {
 
 a {
   text-decoration: none;
+
+  color: $colorWhite;
 }
 
 button {

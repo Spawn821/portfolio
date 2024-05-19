@@ -3,9 +3,7 @@
 header {
     position: fixed;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include displayFlex($jC: space-between);
 
     width: calc(1440px - 200px);
 
@@ -24,10 +22,7 @@ img {
 }
 
 nav {
-
-    display: flex;
-    align-items: center;
-    gap: 29px
+    @include displayFlex($g: 29px);
 }
 
 a {

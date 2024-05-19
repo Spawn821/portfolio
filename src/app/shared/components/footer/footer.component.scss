@@ -1,0 +1,41 @@
+@import './../../../../styles.scss';
+
+section {
+    @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
+
+    color: $colorWhite;
+    background-color: $colorBlack;
+
+    padding: 80px 100px;
+
+    border-top: 4px solid $colorGreen;
+
+    &>div {
+        @include displayFlex($jC: space-between);
+
+        width: 100%;
+
+        &>img {
+            width: 216px;
+        }
+
+        &>span {
+            font-size: 23px;
+        }
+
+        &>nav {
+            @include displayFlex($g: 42px);
+
+            a> {
+                &>img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+    &>a {
+        font-size: 16px;
+    }
+}

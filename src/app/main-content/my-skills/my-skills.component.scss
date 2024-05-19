@@ -3,11 +3,9 @@
 section {
     position: relative;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include displayFlex($jC: space-between);
 
-    padding-top: 128px 0;
+    padding-bottom: 128px;
 
     color: $colorWhite;
     background-color: $colorBlack;
@@ -26,10 +24,7 @@ section {
     z-index: 1;
 
     &>div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        @include displayFlex($fD: column, $g: 10px);
 
         cursor: default;
 
@@ -72,22 +67,13 @@ section {
 }
 
 .my-skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
+    @include displayFlex($fD: column, $g: 32px);
 
     &>div {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        gap: 40px;
+        @include displayFlex($jC: flex-end, $aI: flex-start, $g: 40px);
 
         .headline {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            @include displayFlex($fD: column, $aI: flex-end);
 
             width: 471px;
 
@@ -115,8 +101,7 @@ section {
     }
 
     .button-wrapper {
-        display: flex;
-        align-items: flex-start;
+        @include displayFlex($aI: flex-start);
 
         height: 100px;
     }
@@ -134,22 +119,5 @@ section {
 
     transform: rotate(30deg);
 
-    animation: move-image 5s infinite linear;
-
-    @keyframes move-image {
-        0% {
-            left: -525px;
-            top: 175px;
-        }
-
-        50% {
-            left: -500px;
-            top: 150px;
-        }
-
-        100% {
-            left: -525px;
-            top: 175px;
-        }
-    }
+    @include scale-rotate-animation($numberDeg: 30deg);
 }
