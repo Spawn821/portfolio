@@ -1,14 +1,14 @@
 @import './../../../../styles.scss';
 
-.project {
+section {
     position: relative;
 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 136px;
+    @include displayFlex($jC: flex-end, $g: 136px);
 
     padding-top: 48px;
+    padding-right: 128px;
+
+    width: 100%;
 
     &>img:nth-child(1) {
         width: 450px;
@@ -19,21 +19,14 @@
     }
 
     .description {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 24px;
-
-        margin-right: 64px;
+        @include displayFlex($fD: column, $aI: flex-start, $g: 24px);
 
         max-width: 513px;
 
         z-index: 1;
 
         &>div:nth-child(1) {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            @include displayFlex($fD: column, $aI: flex-start);
 
             text-align: left;
 
@@ -58,9 +51,7 @@
         }
 
         .buttons {
-            display: flex;
-            align-items: center;
-            gap: 86px;
+            @include displayFlex($g: 86px);
         }
     }
 }
@@ -77,11 +68,6 @@
     text-align: right;
 }
 
-.margin-left-50px {
-    margin-right: 0;
-    margin-left: 64px;
-}
-
 .portfolio-shadow {
     position: absolute;
 
@@ -96,16 +82,12 @@
     height: 1351px;
 
     transform: rotate(70deg);
-
-    @include scale-rotate-animation(70deg);
 }
 
 .portfolio-shadow-purple {
-    left: -40px;
-    top: -96px;
+    left: -125px;
+    top: -48px;
 
-    width: 836px;
-    height: 949px;
-
-    @include scale-animation();
+    width: 736px;
+    height: 849px;
 }

@@ -109,15 +109,11 @@ section {
 
 .my-skills-shadow {
     position: absolute;
-    left: -525px;
-    top: 175px;
+    left: -500px;
+    top: -125px;
 
-    width: 1022px;
-    height: 878px;
+    width: 829px;
+    height: 1351px;
 
-    object-fit: contain;
-
-    transform: rotate(30deg);
-
-    @include scale-rotate-animation($numberDeg: 30deg);
+    transform: scaleY(-1);
 }

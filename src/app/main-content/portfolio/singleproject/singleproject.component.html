@@ -1,9 +1,10 @@
-<section [class.margin-left-50px]="isSecondElement()" [class.flex-dir-row-reverse]="isSecondElement()" class="project">
+<section [class.flex-dir-row-reverse]="isSecondElement()">
 
+    <!-- Project img -->
     <img src="{{project.img}}" alt="">
 
+    <!-- Description -->
     <div [class.align-items-flex-end]="isSecondElement()" class="description">
-
         <div [class.align-items-flex-end]="isSecondElement()">
             <span>{{project.headline}}</span>
             <p>{{project.technologies}}</p>
@@ -16,10 +17,12 @@
         </div>
     </div>
 
+    <!-- Shadow -->
     @if (isSecondElement()) {
-        <img class="portfolio-shadow portfolio-shadow-green" src="./../../../../assets/graphics/shadows/portfolio-shadow-green.png" alt="">
+        <img class="portfolio-shadow portfolio-shadow-green" src="./../../../../assets/graphics/shadows/my-skills-shadow-green.svg" alt="">
     }
     @else {
-        <img class="portfolio-shadow portfolio-shadow-purple" src="./../../../../assets/graphics/shadows/portfolio-shadow-purple.png" alt="">
+        <img class="portfolio-shadow portfolio-shadow-purple" src="./../../../../assets/graphics/shadows/portfolio-shadow-purple.svg" alt="">
     }
+
 </section>

@@ -1,6 +1,8 @@
 <section class="font-family-poppins">
 
+    <!-- Wrapper -->
     <div class="wrapper">
+        <!-- Headline -->
         <div class="contact">
             <div class="seperator"></div>
 
@@ -22,14 +24,15 @@
                 </div>
             </div>
 
-            <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.png" alt="">
+            <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">
         </div>
 
-        <form action="">
+        <!-- Form -->
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div>
                 <div class="input-wrapper">
                     <div class="input-area">
-                        <input required type="text" placeholder="Your name">
+                        <input [(ngModel)]="contactData.name" id="name" name="name" required type="text" placeholder="Your name">
                         <div class="input-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -40,7 +43,7 @@
 
                 <div class="input-wrapper">
                     <div class="input-area">
-                        <input required type="email" placeholder="Your email">
+                        <input [(ngModel)]="contactData.email" id="email" name="email" required type="email" placeholder="Your email">
                         <div class="input-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -51,7 +54,7 @@
 
                 <div class="textarea-wrapper">
                     <div class="text-area">
-                        <textarea required name="" id="" placeholder="Your message" rows="9" maxlength="500"></textarea>
+                        <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required placeholder="Your message" rows="9" maxlength="500"></textarea>
                         <div class="textarea-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -70,11 +73,12 @@
                 </div>
 
                 <div class="button-wrapper">
-                    <button class="button-green" disabled>Send message :)</button>
+                    <button class="button-green">Send message :)</button>
                 </div>
             </div>
 
             <div class="go-up-button"></div>
         </form>
     </div>
+
 </section>

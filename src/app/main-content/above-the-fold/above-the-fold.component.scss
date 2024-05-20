@@ -23,26 +23,10 @@ section {
         width: 807px;
         height: 771px;
 
-        background-image: url('./../../../assets/graphics/shadows/photo-shadows.png');
+        background-image: url('./../../../assets/graphics/shadows/above-the-fold-shadow-purple-green.svg');
         background-repeat: no-repeat;
         background-position: -56px 72px;
         background-size: 807px;
-
-        animation: scale 5s infinite linear;
-
-        @keyframes scale {
-            0% {
-                background-size: 807px;
-            }
-
-            50% {
-                background-size: 837px;
-            }
-
-            100% {
-                background-size: 807px;
-            }
-        }
 
         &>img {
             object-fit: contain;

@@ -1,5 +1,6 @@
-<section class="portfolio font-family-poppins">
+<section class="font-family-poppins">
 
+    <!-- Headline -->
     <div class="headline">
         <div>
             <span>Portfolio</span>
@@ -9,7 +10,8 @@
         <p>Explore a seclection of my work here - interact with projects to see my skills in action.</p>
     </div>
 
-    <div class="my-work">
+    <!-- Project sections -->
+    <div class="my-projects">
         @for (singleProject of projectlistdata.projectlist; track singleProject.img; let index = $index) {
             <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
         }

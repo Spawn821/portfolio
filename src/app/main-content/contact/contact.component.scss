@@ -68,15 +68,13 @@ section {
 
     .contact-shadow {
         position: absolute;
-        bottom: -1125px;
-        left: -500px;
+        bottom: -1250px;
+        left: -250px;
 
-        width: 1067px;
-        height: 1308px;
+        width: 881px;
+        height: 1327px;
 
-        transform: rotate(45deg);
-
-        @include scale-rotate-animation($numberDeg: 45deg);
+        transform: scaleX(-1);
     }
 }
 
