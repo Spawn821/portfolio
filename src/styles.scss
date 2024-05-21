@@ -63,18 +63,27 @@ $colorGreen: rgb(112, 230, 27);
 /* Tags */
 /* ---- */
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 
   margin: 0;
+
+  background-color: $colorBlack;
 }
 
 a {
   text-decoration: none;
 
   color: $colorWhite;
+
+  transition: 75ms all ease-in-out;
 }
 
 button {
@@ -104,12 +113,24 @@ img {
 /* Generic */
 /* ------- */
 
+.button-green,
+.button-purple,
+.button-black {
+  padding: 15px 30px;
+
+  font-size: 23px;
+
+  border-radius: 10px;
+}
+
 .button-green {
   color: $colorWhite;
   background-color: $colorGreen;
 
   &:hover {
     background-color: $colorPurple;
+
+    padding: 20px 40px;
   }
 }
 
@@ -119,20 +140,39 @@ img {
 
   &:hover {
     background-color: $colorGreen;
-    padding: 15px 30px;
   }
 }
 
 .button-black {
   color: $colorWhite;
-  background-color: $colorBlack;
+
   border: 1px solid $colorGreen;
 
   &:hover {
     background-color: $colorGreen;
-    padding: 15px 30px;
   }
 }
+
+
+
+/* --------- */
+/* Scrollbar */
+/* --------- */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: $colorBlack;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient($colorGreen, $colorPurple);
+
+  border-radius: 20px;
+}
+
 
 
 /* ----- */

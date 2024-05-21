@@ -32,7 +32,8 @@
             <div>
                 <div class="input-wrapper">
                     <div class="input-area">
-                        <input [(ngModel)]="contactData.name" id="name" name="name" required type="text" placeholder="Your name">
+                        <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" required type="text"
+                            placeholder="Your name">
                         <div class="input-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -43,7 +44,8 @@
 
                 <div class="input-wrapper">
                     <div class="input-area">
-                        <input [(ngModel)]="contactData.email" id="email" name="email" required type="email" placeholder="Your email">
+                        <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
+                            type="email" placeholder="Your email">
                         <div class="input-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -54,7 +56,8 @@
 
                 <div class="textarea-wrapper">
                     <div class="text-area">
-                        <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required placeholder="Your message" rows="9" maxlength="500"></textarea>
+                        <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message"
+                            required placeholder="Your message" rows="9" maxlength="500"></textarea>
                         <div class="textarea-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -65,19 +68,28 @@
 
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" (change)="isChecked($event)">
                         <div></div>
                     </label>
                     <span>I've read the&nbsp;<a>privacy policy</a>&nbsp;and agreee to the processing of my data as
                         outlined.</span>
                 </div>
 
+                @if (name.valid && email.valid && message.valid && getCheckboxState()) {
                 <div class="button-wrapper">
-                    <button class="button-green">Send message :)</button>
+                    <button class="button-green" [disabled]="false">Send message :)</button>
                 </div>
+                }
+                @else {
+                <div class="button-wrapper">
+                    <button class="button-green" [disabled]="true">Send message :)</button>
+                </div>
+                }
             </div>
 
-            <div class="go-up-button"></div>
+            <a href="#above-the-fold">
+                <div class="go-up-button"></div>
+            </a>
         </form>
     </div>
 

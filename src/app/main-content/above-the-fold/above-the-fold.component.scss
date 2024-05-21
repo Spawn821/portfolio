@@ -9,8 +9,6 @@ section {
 
     margin-top: 111.71px;
 
-    padding-bottom: 128px;
-
     background-color: $colorBlack;
 }
 
@@ -29,8 +27,6 @@ section {
         background-size: 807px;
 
         &>img {
-            object-fit: contain;
-
             margin-left: 64px;
         }
     }

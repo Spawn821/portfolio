@@ -12,14 +12,13 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ContactComponent {
 
   http = inject(HttpClient);
+  checkboxState = false;
 
   contactData = {
     name: '',
     email: '',
     message: ''
   }
-
-  mailTest = false;
 
   post = {
     endPoint: 'https://stephan-schmidt-web-developer.de/sendMail.php',
@@ -33,11 +32,8 @@ export class ContactComponent {
   }
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.sendPost(ngForm);
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log(this.contactData);
-      ngForm.resetForm();
     }
   }
 
@@ -53,5 +49,17 @@ export class ContactComponent {
         },
         complete: () => console.info('Send post complete')
       });
+  }
+
+  isChecked(event: any) {
+    if (event.target.checked) {
+      this.checkboxState = true;
+    } else {
+      this.checkboxState = false;
+    }
+  }
+
+  getCheckboxState() {
+    return this.checkboxState;
   }
 }

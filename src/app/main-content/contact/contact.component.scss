@@ -19,6 +19,7 @@
 section {
     @include displayFlex($jC: space-between);
 
+    padding-top: 128px;
     padding-bottom: 128px;
 
     background-color: $colorBlack;
