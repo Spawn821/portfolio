@@ -21,42 +21,6 @@ $colorGreen: rgb(112, 230, 27);
   gap: $g;
 }
 
-@mixin scale-animation() {
-  animation: scale-image 5s infinite linear;
-
-  @keyframes scale-image {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.1);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-}
-
-@mixin scale-rotate-animation($numberDeg: 0deg) {
-  animation: scale-rotate-image 5s infinite linear;
-
-  @keyframes scale-rotate-image {
-    0% {
-      transform: rotate($numberDeg) scale(1);
-    }
-
-    50% {
-      transform: rotate($numberDeg) scale(1.1);
-    }
-
-    100% {
-      transform: rotate($numberDeg) scale(1);
-    }
-  }
-}
-
 
 
 /* ---- */
@@ -86,23 +50,6 @@ a {
   transition: 75ms all ease-in-out;
 }
 
-button {
-  padding: 15px 30px;
-
-  font-size: 23px;
-
-  border: none;
-  border-radius: 10px;
-
-  transition: 75ms all ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-
-    padding: 20px 40px;
-  }
-}
-
 img {
   object-fit: contain;
 }
@@ -112,6 +59,10 @@ img {
 /* ------- */
 /* Generic */
 /* ------- */
+
+.v-hidden {
+  visibility: hidden;
+}
 
 .button-green,
 .button-purple,

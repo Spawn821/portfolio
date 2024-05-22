@@ -23,12 +23,33 @@ img {
 
 nav {
     @include displayFlex($g: 29px);
+
+    &>div {
+        @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
+    }
 }
 
 a {
     color: white;
 
     font-size: 23px;
+
+    &:hover {
+        color: $colorGreen;
+    }
+}
+
+.highlightingText {
+    color: $colorGreen;
+
+}
+
+.underline {
+    width: 55px;
+
+    border: 3px solid $colorPurple;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 @media (max-width: 1440px) {
