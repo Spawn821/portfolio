@@ -15,8 +15,10 @@ section {
 
         width: 100%;
 
-        &>img {
-            width: 216px;
+        &>a {
+            &>img {
+                width: 216px;
+            }
         }
 
         &>span {
@@ -24,12 +26,17 @@ section {
         }
 
         &>nav {
-            @include displayFlex($g: 42px);
+            @include displayFlex($jC: flex-start);
 
-            &>a {
-                &>img {
-                    width: 30px;
-                    height: 30px;
+            width: 179px;
+
+            &>div {
+                @include displayFlex($jC: flex-start, $g: 42px);
+
+                height: 41px;
+
+                &>a {
+                    @include displayFlex();
                 }
             }
         }

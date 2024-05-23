@@ -60,6 +60,10 @@ img {
 /* Generic */
 /* ------- */
 
+.width-1440px {
+  width: 1440px;
+}
+
 .v-hidden {
   visibility: hidden;
 }
@@ -106,12 +110,58 @@ img {
 
 
 
+/* ----- */
+/* Icons */
+/* ----- */
+
+.icon {
+  width: 30px;
+  height: 30px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  transition: 75ms all ease-in-out;
+
+  &:hover {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.github-icon {
+  background-image: url('./assets/graphics/icons/github-small.png');
+
+  &:hover {
+    background-image: url('./assets/graphics/icons/github-large.png');
+  }
+}
+
+.email-icon {
+  background-image: url('./assets/graphics/icons/email-small.png');
+
+  &:hover {
+    background-image: url('./assets/graphics/icons/emai-large.png');
+  }
+}
+
+.linkedin-icon {
+  background-image: url('./assets/graphics/icons/linkedin-small.png');
+
+  &:hover {
+    background-image: url('./assets/graphics/icons/linkedin-large.png');
+  }
+}
+
+
+
 /* --------- */
 /* Scrollbar */
 /* --------- */
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -121,7 +171,7 @@ img {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient($colorGreen, $colorPurple);
 
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 

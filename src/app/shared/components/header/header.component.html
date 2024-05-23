@@ -1,8 +1,11 @@
 <header>
 
     <!-- Name Logo -->
-    <img src="./../../../../assets/graphics/logo.png" alt="">
+    <a href="#above-the-fold">
+        <img src="./../../../../assets/graphics/logo.png" alt="">
+    </a>
 
+    @if (!notMainContent) {
     <!-- Nav bar -->
     <nav class="font-family-poppins">
         <div (click)="isClicked($event)">
@@ -20,5 +23,6 @@
             <div id="underline" class="underline v-hidden"></div>
         </div>
     </nav>
+    }
 
 </header>

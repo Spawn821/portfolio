@@ -1,0 +1,71 @@
+@import './../../styles.scss';
+
+section {
+    position: relative;
+
+    @include displayFlex();
+
+    background-color: $colorBlack;
+
+    overflow: clip;
+
+    &>div {
+        margin-top: 111.71px;
+
+        padding: 64px 100px;
+
+        color: $colorWhite;
+
+        text-align: left;
+
+        z-index: 1;
+    }
+}
+
+h1,
+h2 {
+    color: $colorPurple;
+}
+
+h3 {
+    color: $colorGreen;
+}
+
+.privacy-policy-image {
+    position: absolute;
+
+    object-fit: contain;
+}
+
+.vector-banner {
+    top: 242px;
+
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-shadow-green {
+    right: -420px;
+    top: 0px;
+
+    width: 829px;
+    height: 1351px;
+
+    transform: rotate(70deg);
+}
+
+.portfolio-shadow-purple {
+    left: 0px;
+    top: 1000px;
+
+    width: 736px;
+    height: 849px;
+}
+
+.privacy-policy-shadow-green {
+    right: 0px;
+    bottom: 200px;
+
+    width: 822px;
+    height: 678px;
+}
