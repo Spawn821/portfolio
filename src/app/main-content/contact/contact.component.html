@@ -71,7 +71,7 @@
                         <input type="checkbox" (change)="isChecked($event)">
                         <div></div>
                     </label>
-                    <span>I've read the&nbsp;<a href="privacy-policy">privacy policy</a>&nbsp;and agreee to the processing of my data as
+                    <span>I've read the&nbsp;<a [routerLink]="['privacy-policy']">privacy policy</a>&nbsp;and agreee to the processing of my data as
                         outlined.</span>
                 </div>
 

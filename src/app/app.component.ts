@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
@@ -18,4 +18,11 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  public isImprint: boolean = false;
+
+  setImprint(event: any) {
+    this.isImprint = event;
+    console.log('App component ', event);
+  }
 }

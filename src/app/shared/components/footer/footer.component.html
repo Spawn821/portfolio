@@ -2,7 +2,7 @@
 
     <div>
         <!-- Logo -->
-        <a href="#above-the-fold">
+        <a routerLink="portfolio">
             <img src="./../../../../assets/graphics/logo.png" alt="">
         </a>
 
@@ -24,6 +24,7 @@
         </nav>
     </div>
 
-    <a href="imprint">Impressum</a>
+    <a routerLink="imprint" (click)="callImprint()">Impressum</a>
+    <button (click)="test()">Impressum</button>
 
 </section>

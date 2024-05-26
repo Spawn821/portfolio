@@ -1,11 +1,11 @@
 <header>
 
     <!-- Name Logo -->
-    <a href="#above-the-fold">
+    <a routerLink="portfolio">
         <img src="./../../../../assets/graphics/logo.png" alt="">
     </a>
 
-    @if (!notMainContent) {
+    @if (!imprint == true) {
     <!-- Nav bar -->
     <nav class="font-family-poppins">
         <div (click)="isClicked($event)">

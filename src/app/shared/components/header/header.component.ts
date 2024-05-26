@@ -1,28 +1,29 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
-  notMainContent: boolean = false;
+  @Input() imprint!: boolean;
 
   lastHighlightedElement: any = {
     firstElement: undefined,
     lastElement: undefined
   };
 
-  constructor() {
-    let getPath = window.location.href.split('/')[3];
+  constructor(private router: ActivatedRoute) {
 
-    if (getPath == 'privacy-policy' || getPath == 'imprint') {
-      this.notMainContent = true;
-    }
+
+    '/'
+
   }
 
   isClicked(event: any) {
