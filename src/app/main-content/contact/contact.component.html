@@ -25,10 +25,20 @@
             </div>
 
             <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">
+
+            <div [class.d-none]="!sendComplete" class="send-complete">
+                <span>
+                    Thanks for your interest {{contactName}}.
+                    <br>
+                    I look forward to talking to you and
+                    <br>
+                    will be in touch soon. :D
+                </span>
+            </div>
         </div>
 
         <!-- Form -->
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" (change)="emailValdiation(contactForm)">
             <div>
                 <div class="input-wrapper">
                     <div class="input-area">
@@ -42,10 +52,12 @@
                     <p class="error-message">Your name is required</p>
                 </div>
 
+                <!-- pattern=".+@beststartupever\.com" -->
                 <div class="input-wrapper">
                     <div class="input-area">
                         <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
-                            type="email" placeholder="Your email">
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" type="email"
+                            placeholder="Your email">
                         <div class="input-icons">
                             <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                             <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -68,10 +80,11 @@
 
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" (change)="isChecked($event)">
+                        <input type="checkbox" [checked]="checkboxState" (change)="isChecked($event)">
                         <div></div>
                     </label>
-                    <span>I've read the&nbsp;<a [routerLink]="['privacy-policy']">privacy policy</a>&nbsp;and agreee to the processing of my data as
+                    <span>I've read the&nbsp;<a [routerLink]="['privacy-policy']">privacy policy</a>&nbsp;and agreee to
+                        the processing of my data as
                         outlined.</span>
                 </div>
 

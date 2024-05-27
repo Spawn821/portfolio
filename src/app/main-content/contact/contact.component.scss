@@ -77,6 +77,58 @@ section {
 
         transform: scaleX(-1);
     }
+
+    .send-complete {
+        position: absolute;
+        left: 100px;
+        bottom: -225px;
+
+        @include displayFlex();
+
+        background-color: transparent;
+
+        padding: 24px;
+
+        z-index: 1;
+
+        border: 1px solid $colorGreen;
+        border-radius: 10px;
+
+        font-size: 23px;
+
+        animation: slide-opacity 10s;
+
+        @keyframes slide-opacity {
+            0% {
+                left: -500px;
+                opacity: 0;
+            }
+
+            10% {
+                left: 100px;
+                opacity: 1;
+            }
+
+            50% {
+                left: 100px;
+                opacity: 1;
+            }
+
+            75% {
+                left: 100px;
+                opacity: 1;
+            }
+
+            85% {
+                opacity: 0;
+            }
+
+            100% {
+                display: none;
+                opacity: 0;
+            }
+        }
+    }
 }
 
 form {

@@ -50,6 +50,14 @@ a {
   transition: 75ms all ease-in-out;
 }
 
+button {
+  transition: 75ms all ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 img {
   object-fit: contain;
 }
@@ -66,6 +74,10 @@ img {
 
 .v-hidden {
   visibility: hidden;
+}
+
+.d-none {
+  display: none !important;
 }
 
 .button-green,

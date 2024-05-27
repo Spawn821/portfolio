@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormControl, FormsModule, NgForm, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -14,6 +14,8 @@ export class ContactComponent {
 
   http = inject(HttpClient);
   checkboxState = false;
+  sendComplete = false;
+  contactName: string = '';
 
   contactData = {
     name: '',
@@ -34,7 +36,12 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {
+      this.contactName = this.contactData.name;
+
       this.sendPost(ngForm);
+      this.sendComplete = true;
+
+      setTimeout(() => this.sendComplete = false, 9500);
     }
   }
 
@@ -44,6 +51,7 @@ export class ContactComponent {
         next: (response) => {
           console.log(this.contactData);
           ngForm.resetForm();
+          this.checkboxState = false;
         },
         error: (error) => {
           console.error(error);
@@ -62,5 +70,9 @@ export class ContactComponent {
 
   getCheckboxState() {
     return this.checkboxState;
+  }
+
+  emailValdiation(ngForm: NgForm) {
+
   }
 }
