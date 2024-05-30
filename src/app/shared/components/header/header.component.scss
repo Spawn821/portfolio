@@ -1,59 +1,117 @@
 @import './../../../../styles.scss';
 
 header {
-    position: fixed;
+  position: fixed;
 
-    @include displayFlex($jC: space-between);
+  @include displayFlex($jC: space-between);
 
-    width: calc(1440px - 200px);
+  width: calc(1440px - 200px);
 
-    padding: 37px 100px;
+  padding: 37px 100px;
 
-    color: white;
-    background-color: $colorBlack;
+  color: white;
+  background-color: $colorBlack;
 
-    z-index: 99;
+  z-index: 99;
+
+  @media (max-width: 1440px) {
+    width: calc(100vw - 200px);
+  }
+
+  @media (max-width: 950px) {
+    width: calc(100vw - 50px);
+
+    padding: 37px 25px;
+  }
 }
 
 img {
-    width: 150px;
+  width: 150px;
 
-    object-fit: contain;
+  object-fit: contain;
 }
 
 nav {
-    @include displayFlex($g: 29px);
+  @include displayFlex($g: 29px);
 
-    &>div {
-        @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
+  & > div {
+    @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
+  }
+
+  @media (min-width: 950px) {
+    & > div:nth-child(4) {
+      display: none;
     }
+  }
 }
 
 a {
-    color: white;
+  color: white;
 
-    font-size: 23px;
+  font-size: 23px;
 
-    &:hover {
-        color: $colorGreen;
-    }
+  &:hover {
+    color: $colorGreen;
+  }
 }
 
 .highlightingText {
-    color: $colorGreen;
+  color: $colorGreen;
 
 }
 
 .underline {
-    width: 55px;
+  width: 55px;
 
-    border: 3px solid $colorPurple;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+  border: 3px solid $colorPurple;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
-@media (max-width: 1440px) {
-    header {
-        width: calc(100vw - 200px);
+@media (max-width: 950px) {
+  .burger-menu {
+    width: 30px;
+    height: 32px;
+
+    background-image: url("../../../../assets/graphics/burger-menu/burger-menu-1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .burger-menu-content {
+    position: absolute;
+    left: 0;
+    top: 129px;
+
+    @include displayFlex($fD: column, $aI: center, $jC: center, $g: 29px);
+
+    width: 100vw;
+    height: calc(100vh - 129px);
+
+    background-color: rgba(65 72 86 / 60%);
+
+    & > div {
+      transform: translateY(-129px);
     }
+  }
+
+  .burger-menu-animation {
+
+    animation: change-image 500ms;
+
+    @keyframes change-image {
+      33% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-2.png");
+      }
+
+      66% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-3.png");
+      }
+
+      100% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-4.png");
+      }
+    }
+  }
 }

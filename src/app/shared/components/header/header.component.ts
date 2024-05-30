@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -18,13 +17,6 @@ export class HeaderComponent {
     firstElement: undefined,
     lastElement: undefined
   };
-
-  constructor(private router: ActivatedRoute) {
-
-
-    '/'
-
-  }
 
   isClicked(event: any) {
     document.addEventListener('wheel', () => {

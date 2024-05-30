@@ -1,28 +1,51 @@
 <header>
 
-    <!-- Name Logo -->
-    <a routerLink="portfolio">
-        <img src="./../../../../assets/graphics/logo.png" alt="">
-    </a>
+  <!-- Name Logo -->
+  <a routerLink="/portfolio">
+    <img src="./../../../../assets/graphics/logo.png" alt="">
+  </a>
 
-    @if (!imprint == true) {
+  @if (!imprint) {
     <!-- Nav bar -->
-    <nav class="font-family-poppins">
-        <div (click)="isClicked($event)">
-            <a id="about-me-nav" href="#about-me">About me</a>
-            <div id="underline" class="underline v-hidden"></div>
-        </div>
+    <nav class="font-family-poppins d-none">
+      <div (click)="isClicked($event)">
+        <a id="about-me-nav" href="#about-me">About me</a>
+        <div id="underline" class="underline v-hidden"></div>
+      </div>
 
-        <div (click)="isClicked($event)">
-            <a id="skills-nav" href="#my-skills">Skills</a>
-            <div id="underline" class="underline v-hidden"></div>
-        </div>
+      <div (click)="isClicked($event)">
+        <a id="skills-nav" href="#my-skills">Skills</a>
+        <div id="underline" class="underline v-hidden"></div>
+      </div>
 
-        <div (click)="isClicked($event)">
-            <a id="portfolio-nav" href="#portfolio">Portfolio</a>
-            <div id="underline" class="underline v-hidden"></div>
-        </div>
+      <div (click)="isClicked($event)">
+        <a id="portfolio-nav" href="#portfolio">Portfolio</a>
+        <div id="underline" class="underline v-hidden"></div>
+      </div>
     </nav>
-    }
 
+    <div class="burger-menu burger-menu-animation">
+      <nav class="font-family-poppins burger-menu-content">
+        <div (click)="isClicked($event)">
+          <a id="about-me-nav" href="#about-me">About me</a>
+          <div id="underline" class="underline v-hidden"></div>
+        </div>
+
+        <div (click)="isClicked($event)">
+          <a id="skills-nav" href="#my-skills">Skills</a>
+          <div id="underline" class="underline v-hidden"></div>
+        </div>
+
+        <div (click)="isClicked($event)">
+          <a id="portfolio-nav" href="#portfolio">Portfolio</a>
+          <div id="underline" class="underline v-hidden"></div>
+        </div>
+
+        <div (click)="isClicked($event)">
+          <a id="portfolio-nav" href="#contact">Contact</a>
+          <div id="underline" class="underline v-hidden"></div>
+        </div>
+      </nav>
+    </div>
+  }
 </header>

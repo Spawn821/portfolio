@@ -8,7 +8,6 @@ $colorWhite: white;
 $colorGreen: rgb(112, 230, 27);
 
 
-
 /* ------ */
 /* Mixins */
 /* ------ */
@@ -22,7 +21,6 @@ $colorGreen: rgb(112, 230, 27);
 }
 
 
-
 /* ---- */
 /* Tags */
 /* ---- */
@@ -32,14 +30,13 @@ $colorGreen: rgb(112, 230, 27);
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  @include displayFlex($fD: column, $aI: center);
 
   margin: 0;
 
   background-color: $colorBlack;
+
+  overflow-x: hidden;
 }
 
 a {
@@ -63,13 +60,18 @@ img {
 }
 
 
-
 /* ------- */
 /* Generic */
 /* ------- */
 
 .width-1440px {
   width: 1440px;
+}
+
+@media (max-width: 1440px) {
+  .width-1440px {
+    width: 100vw;
+  }
 }
 
 .v-hidden {
@@ -88,6 +90,10 @@ img {
   font-size: 23px;
 
   border-radius: 10px;
+
+  @media (max-width: 1200px) {
+    font-size: 16px;
+  }
 }
 
 .button-green {
@@ -119,7 +125,6 @@ img {
     background-color: $colorGreen;
   }
 }
-
 
 
 /* ----- */
@@ -167,7 +172,6 @@ img {
 }
 
 
-
 /* --------- */
 /* Scrollbar */
 /* --------- */
@@ -185,7 +189,6 @@ img {
 
   border-radius: 8px;
 }
-
 
 
 /* ----- */

@@ -1,146 +1,236 @@
 @import './../../../styles.scss';
 
 section {
-    position: relative;
+  position: relative;
 
-    @include displayFlex($jC: space-between);
+  @include displayFlex($fD: column);
 
-    margin-top: 130px;
+  margin-top: 130px;
 
-    background-color: $colorBlack;
+  background-color: $colorBlack;
+
+  @media (max-width: 950px) {
+    @include displayFlex($fD: column, $g: 56px);
+  }
 }
 
 .profil {
-    @include displayFlex($fD: column, $aI: flex-start);
+  @include displayFlex($jC: flex-start);
 
-    .picture {
-        @include displayFlex($jC: flex-start, $aI: flex-start);
+  width: 100%;
 
-        width: 807px;
-        height: 771px;
+  @media (max-width: 950px) {
+    @include displayFlex($fD: column, $aI: flex-start, $g: 32px);
+  }
 
-        background-image: url('./../../../assets/graphics/shadows/above-the-fold-shadow-purple-green.svg');
-        background-repeat: no-repeat;
-        background-position: -56px 72px;
-        background-size: 807px;
+  .picture {
+    @include displayFlex($jC: flex-start, $aI: flex-start);
 
-        &>img {
-            margin-left: 64px;
-        }
+    width: 807px;
+    height: 771px;
+
+    background-image: url('./../../../assets/graphics/shadows/above-the-fold-shadow-purple-green.svg');
+    background-repeat: no-repeat;
+    background-position: -16px 72px;
+    background-size: contain;
+
+    & > img {
+      width: 519px;
+      height: 680px;
+
+      margin-left: 64px;
     }
 
-    .find-me-on {
-        @include displayFlex($g: 32px);
+    @media (max-width: 1300px) {
+      width: 707px;
+      height: 671px;
 
-        z-index: 1;
-
-        &>div {
-            display: flex;
-            align-items: center;
-
-            &>div {
-                width: 100px;
-
-                border: 4px solid $colorPurple;
-
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
-            }
-        }
-
-        &>nav {
-            @include displayFlex($jC: flex-start);
-
-            width: 179px;
-
-            &>div {
-                @include displayFlex($jC: flex-start, $g: 42px);
-
-                height: 41px;
-
-                &>a {
-                    @include displayFlex();
-                }
-            }
-        }
-
-        &>a {
-            font-size: 23px;
-
-            color: $colorWhite;
-        }
+      & > img {
+        width: 419px;
+        height: 580px;
+      }
     }
-}
 
-.headline-wrapper {
+    @media (max-width: 950px) {
+      width: 607px;
+      height: 571px;
+
+      & > img {
+        width: 419px;
+        height: 580px;
+      }
+    }
+  }
+
+  .headline-wrapper {
     position: absolute;
     right: 56px;
     top: 160px;
 
     @include displayFlex($fD: column, $g: 24px);
 
+    width: max-content;
+
     z-index: 1;
 
-    .headline {
-        @include displayFlex();
-
-        color: $colorWhite;
-
-        &>span {
-            font-size: 64px;
-
-            transform: rotate(-90deg);
-        }
-
-        &>div {
-            text-align: center;
-
-            &>span {
-                line-height: 80px;
-            }
-
-            &>span:nth-child(1) {
-                font-size: 84px;
-            }
-
-            &>span:nth-child(3) {
-                font-size: 58px;
-
-                color: $colorPurple;
-            }
-        }
+    @media (max-width: 950px) {
+      position: unset;
     }
+
+    .headline {
+      @include displayFlex();
+
+      color: $colorWhite;
+
+      & > span {
+        font-size: 64px;
+
+        transform: rotate(-90deg);
+
+        @media (max-width: 1440px) {
+          font-size: 48px;
+        }
+
+        @media (max-width: 1200px) {
+          font-size: 32px;
+        }
+      }
+
+      & > div {
+        text-align: center;
+
+        & > span {
+          line-height: 80px;
+
+          @media (max-width: 1440px) {
+            line-height: 64px;
+          }
+
+          @media (max-width: 1200px) {
+            line-height: 50px;
+          }
+        }
+
+        & > span:nth-child(1) {
+          font-size: 84px;
+
+          @media (max-width: 1440px) {
+            font-size: 68px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 45px;
+          }
+        }
+
+        & > span:nth-child(3) {
+          font-size: 58px;
+
+          color: $colorPurple;
+
+          @media (max-width: 1440px) {
+            font-size: 42px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 29px;
+          }
+        }
+      }
+    }
+  }
 }
 
-.vector-banner {
-    position: absolute;
-    top: 242px;
+.find-scroll-wrapper {
+  @include displayFlex($jC: space-between);
 
-    width: 100%;
-    height: auto;
+  width: 100%;
 
-    object-fit: contain;
-}
+  .find-me-on {
+    @include displayFlex($g: 32px);
 
-.scroll-down {
+    z-index: 2;
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      & > div {
+        width: 100px;
+
+        border: 4px solid $colorPurple;
+
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+
+    & > nav {
+      @include displayFlex($jC: flex-start);
+
+      width: 179px;
+
+      & > div {
+        @include displayFlex($jC: flex-start, $g: 42px);
+
+        height: 41px;
+
+        & > a {
+          @include displayFlex();
+        }
+      }
+    }
+
+    & > a {
+      font-size: 23px;
+
+      color: $colorWhite;
+
+      @media (max-width: 950px) {
+        display: none;
+      }
+    }
+  }
+
+  .scroll-down {
     position: absolute;
     right: 100px;
-    bottom: 128px;
+    bottom: 0;
 
     @include displayFlex($fD: column, $g: 56px);
 
     z-index: 1;
 
-    &>span {
-        transform: rotate(90deg);
+    & > span {
+      transform: rotate(90deg);
 
-        font-size: 23px;
+      font-size: 23px;
 
-        color: $colorWhite;
+      color: $colorWhite;
     }
 
-    &>img {
-        width: 24px;
-        height: 24px;
+    & > img {
+      width: 24px;
+      height: 24px;
     }
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+}
+
+.vector-banner {
+  position: absolute;
+  left: 0;
+  top: 242px;
+
+  width: 1440px;
+  height: auto;
+
+  object-fit: contain;
+
+  @media (max-width: 1300px) {
+    top: 128px;
+  }
 }

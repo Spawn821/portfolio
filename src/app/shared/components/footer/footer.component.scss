@@ -1,6 +1,6 @@
 @import './../../../../styles.scss';
 
-section {
+footer {
     @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
 
     color: $colorWhite;

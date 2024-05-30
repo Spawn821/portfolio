@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormsModule, NgForm, Validators } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -72,7 +72,7 @@ export class ContactComponent {
     return this.checkboxState;
   }
 
-  emailValdiation(ngForm: NgForm) {
-
+  goUp() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 }
