@@ -79,9 +79,56 @@ a {
     background-position: center;
   }
 
+  .burger-menu-animation-open{
+    background-image: url("../../../../assets/graphics/burger-menu/burger-menu-4.png");
+
+    animation: change-image-open 250ms;
+
+    @keyframes change-image-open {
+      0% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-1.png");
+      }
+
+      33% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-2.png");
+      }
+
+      66% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-3.png");
+      }
+
+      100% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-4.png");
+      }
+    }
+  }
+
+  .burger-menu-animation-close{
+    background-image: url("../../../../assets/graphics/burger-menu/burger-menu-1.png");
+
+    animation: change-image-close 250ms;
+
+    @keyframes change-image-close {
+      0% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-4.png");
+      }
+
+      33% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-3.png");
+      }
+
+      66% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-2.png");
+      }
+
+      100% {
+        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-1.png");
+      }
+    }
+  }
+
   .burger-menu-content {
     position: absolute;
-    left: 0;
     top: 129px;
 
     @include displayFlex($fD: column, $aI: center, $jC: center, $g: 29px);
@@ -96,21 +143,38 @@ a {
     }
   }
 
-  .burger-menu-animation {
+  .burger-menu-content-open {
+    right: 0;
 
-    animation: change-image 500ms;
+    animation: slide-in 250ms;
 
-    @keyframes change-image {
-      33% {
-        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-2.png");
+    @keyframes slide-in {
+      from {
+        right: -100vw;
+        display: none;
       }
 
-      66% {
-        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-3.png");
+      to {
+        right: 0;
+        display: flex;
+      }
+    }
+  }
+
+  .burger-menu-content-close {
+    right: -100vw;
+
+    animation: slide-out 250ms;
+
+    @keyframes slide-out {
+      from {
+        right: 0;
+        display: flex;
       }
 
-      100% {
-        background-image: url("../../../../assets/graphics/burger-menu/burger-menu-4.png");
+      to {
+        right: -100vw;
+        display: none;
       }
     }
   }

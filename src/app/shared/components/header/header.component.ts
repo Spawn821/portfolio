@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {Component, Input, SimpleChanges} from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -12,11 +12,23 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
 
   @Input() imprint!: boolean;
+  windowSize: MediaQueryList = window.matchMedia('(max-width: 950px)')
+  showBurgerMenu: boolean = false;
 
   lastHighlightedElement: any = {
     firstElement: undefined,
     lastElement: undefined
   };
+
+  openBurgerMenu(action: string): void {
+    if (action === 'open' && !this.showBurgerMenu) {
+      this.showBurgerMenu = true;
+    } else {
+      this.showBurgerMenu = false;
+    }
+
+    console.log('open ', this.showBurgerMenu);
+  }
 
   isClicked(event: any) {
     document.addEventListener('wheel', () => {
