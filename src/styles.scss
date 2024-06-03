@@ -94,6 +94,10 @@ img {
   @media (max-width: 1200px) {
     font-size: 16px;
   }
+
+  @media (max-width: 550px) {
+    padding: 10px 25px;
+  }
 }
 
 .button-green {
@@ -104,6 +108,16 @@ img {
     background-color: $colorPurple;
 
     padding: 20px 40px;
+
+    @media (max-width: 950px) {
+      background-color: $colorGreen;
+
+      padding: 15px 30px;
+    }
+
+    @media (max-width: 550px) {
+      padding: 10px 25px;
+    }
   }
 }
 

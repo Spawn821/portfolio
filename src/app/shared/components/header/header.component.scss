@@ -50,6 +50,10 @@ a {
 
   font-size: 23px;
 
+  @media (max-width: 550px) {
+    font-size: 16px;
+  }
+
   &:hover {
     color: $colorGreen;
   }
@@ -77,9 +81,13 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
-  .burger-menu-animation-open{
+  .burger-menu-animation-open {
     background-image: url("../../../../assets/graphics/burger-menu/burger-menu-4.png");
 
     animation: change-image-open 250ms;
@@ -103,7 +111,7 @@ a {
     }
   }
 
-  .burger-menu-animation-close{
+  .burger-menu-animation-close {
     background-image: url("../../../../assets/graphics/burger-menu/burger-menu-1.png");
 
     animation: change-image-close 250ms;
@@ -129,12 +137,12 @@ a {
 
   .burger-menu-content {
     position: absolute;
-    top: 129px;
+    top: 126px;
 
     @include displayFlex($fD: column, $aI: center, $jC: center, $g: 29px);
 
     width: 100vw;
-    height: calc(100vh - 129px);
+    height: 100vh;
 
     background-color: rgba(65 72 86 / 60%);
 

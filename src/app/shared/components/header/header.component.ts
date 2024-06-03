@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
 
   @Input() imprint!: boolean;
-  windowSize: MediaQueryList = window.matchMedia('(max-width: 950px)')
+  windowSize: MediaQueryList = window.matchMedia('(max-width: 950px)');
   showBurgerMenu: boolean = false;
 
   lastHighlightedElement: any = {
@@ -20,14 +20,18 @@ export class HeaderComponent {
     lastElement: undefined
   };
 
+  constructor() {
+    window.addEventListener('resize', () => {
+      this.windowSize = window.matchMedia('(max-width: 950px)')
+    })
+  }
+
   openBurgerMenu(action: string): void {
     if (action === 'open' && !this.showBurgerMenu) {
       this.showBurgerMenu = true;
     } else {
       this.showBurgerMenu = false;
     }
-
-    console.log('open ', this.showBurgerMenu);
   }
 
   isClicked(event: any) {
