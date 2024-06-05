@@ -1,93 +1,146 @@
 @import './../../../../styles.scss';
 
 section {
-    position: relative;
+  position: relative;
 
-    @include displayFlex($jC: flex-end, $g: 136px);
+  @include displayFlex($jC: flex-end, $g: 136px);
 
-    padding-top: 48px;
-    padding-right: 128px;
+  padding-top: 48px;
+  padding-right: 128px;
 
-    width: 100%;
+  width: 100%;
 
-    &>img:nth-child(1) {
-        width: 450px;
+  @media (max-width: 1300px) {
+    @include displayFlex($fD: column);
 
-        object-fit: contain;
+    padding-right: 0;
 
-        z-index: 1;
+    width: 100vw;
+  }
+
+  & > img:nth-child(1) {
+    width: 450px;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    @media (max-width: 1200px) {
+      width: 400px;
     }
 
-    .description {
-        @include displayFlex($fD: column, $aI: flex-start, $g: 24px);
-
-        max-width: 513px;
-
-        z-index: 1;
-
-        &>div:nth-child(1) {
-            @include displayFlex($fD: column, $aI: flex-start);
-
-            text-align: left;
-
-            &>span {
-                font-size: 32px;
-                font-weight: 700;
-
-                color: $colorPurple;
-            }
-
-            &>p:nth-child(2) {
-                font-size: 23px;
-
-                color: $colorGreen;
-            }
-
-            &>p:nth-child(3) {
-                font-size: 16px;
-
-                color: $colorWhite
-            }
-        }
-
-        .buttons {
-            @include displayFlex($g: 86px);
-        }
+    @media (max-width: 500px) {
+      width: 300px;
     }
+  }
+
+  .description {
+    @include displayFlex($fD: column, $aI: flex-start, $g: 24px);
+
+    max-width: 513px;
+
+    z-index: 1;
+
+    @media (max-width: 1300px) {
+      @include displayFlex($fD: column, $g: 32px);
+    }
+
+    @media (max-width: 500px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    & > div:nth-child(1) {
+      @include displayFlex($fD: column, $aI: flex-start);
+
+      text-align: left;
+
+      @media (max-width: 1300px) {
+        @include displayFlex($fD: column);
+      }
+
+      & > span {
+        font-size: 32px;
+        font-weight: 700;
+
+        color: $colorPurple;
+
+        z-index: 2;
+
+        @media (max-width: 1200px) {
+          color: transparent;
+
+          -webkit-text-stroke: 0.5px $colorWhite;
+        }
+      }
+
+      & > p:nth-child(2) {
+        font-size: 23px;
+
+        color: $colorGreen;
+
+        @media (max-width: 1200px) {
+          font-weight: 700;
+
+          color: transparent;
+
+          -webkit-text-stroke: 0.5px $colorWhite;
+        }
+      }
+
+      & > p:nth-child(3) {
+        font-size: 16px;
+
+        color: $colorWhite;
+
+        @media (max-width: 1300px) {
+          text-align: center;
+        }
+      }
+    }
+
+    .buttons {
+      @include displayFlex($g: 86px);
+
+      @media (max-width: 500px) {
+        @include displayFlex($g: 40px);
+      }
+    }
+  }
 }
 
 .flex-dir-row-reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .align-items-flex-end {
-    align-items: flex-end !important;
+  align-items: flex-end !important;
 }
 
 .text-align-right {
-    text-align: right;
+  text-align: right;
 }
 
 .portfolio-shadow {
-    position: absolute;
+  position: absolute;
 
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .portfolio-shadow-green {
-    right: -420px;
-    top: -420px;
+  right: -420px;
+  top: -420px;
 
-    width: 829px;
-    height: 1351px;
+  width: 829px;
+  height: 1351px;
 
-    transform: rotate(70deg);
+  transform: rotate(70deg);
 }
 
 .portfolio-shadow-purple {
-    left: -125px;
-    top: -48px;
+  left: -125px;
+  top: -48px;
 
-    width: 736px;
-    height: 849px;
+  width: 736px;
+  height: 849px;
 }

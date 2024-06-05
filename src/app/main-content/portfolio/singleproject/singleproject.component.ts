@@ -10,6 +10,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SingleprojectComponent {
 
+  windowSize: MediaQueryList = window.matchMedia('(max-width: 1300px)');
+
   @Input() project = {
       img: './../../../assets/graphics/portfolio/join.png',
       headline: 'Join',
@@ -21,8 +23,12 @@ export class SingleprojectComponent {
 
   @Input() index = 0;
 
-  isSecondElement() {
-    let secondElement: boolean = this.index / 2 ? true : false;
-    return secondElement;
+  isSecondElement(shadow: boolean = false) {
+    if (this.windowSize.matches && !shadow) {
+      return false;
+    } else {
+      let secondElement: boolean = this.index / 2 ? true : false;
+      return secondElement;
+    }
   }
 }

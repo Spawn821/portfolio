@@ -1,375 +1,420 @@
 @import './../../../styles.scss';
 
 @mixin borderStyle($leftRa: false, $rightRa: false) {
-    border: 1px solid $colorPurple;
+  border: 1px solid $colorPurple;
 
-    @if $leftRa {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-right: none;
-    }
+  @if $leftRa {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+  }
 
-    @if $rightRa {
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-left: none;
-    }
+  @if $rightRa {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: none;
+  }
 }
 
 section {
-    @include displayFlex($jC: space-between);
+  @include displayFlex($jC: space-between);
 
-    padding-top: 128px;
-    padding-bottom: 128px;
+  padding-top: 128px;
+  padding-bottom: 128px;
 
-    background-color: $colorBlack;
+  background-color: $colorBlack;
 }
 
 .wrapper {
-    @include displayFlex($jC: space-between, $aI: flex-start);
+  @include displayFlex($jC: space-between, $aI: flex-start);
 
-    width: 100%;
+  width: 100%;
+
+  @media (max-width: 1350px) {
+    @include displayFlex($fD: column, $g: 48px);
+  }
 }
 
 .contact {
-    position: relative;
+  position: relative;
 
-    @include displayFlex($jC: flex-start, $aI: flex-start, $g: 48px);
+  @include displayFlex($jC: flex-start, $aI: flex-start, $g: 48px);
 
-    color: $colorWhite;
+  color: $colorWhite;
 
-    .seperator {
-        width: 50px;
+  @media (max-width: 1350px) {
+    width: 100%;
+  }
 
-        margin-top: 67.5px;
+  @media (max-width: 750px) {
+    @include displayFlex($jC: flex-start, $aI: flex-start, $g: 24px);
 
-        border: 4px solid $colorPurple;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+    margin-right: 32px;
+  }
+
+  .seperator {
+    width: 50px;
+
+    margin-top: 67.5px;
+
+    border: 4px solid $colorPurple;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    @media (max-width: 750px) {
+      width: 32px;
+
+      margin-top: 32px;
+    }
+  }
+
+  .headline {
+    @include displayFlex($fD: column, $aI: flex-start, $g: 56px);
+
+    @media (max-width: 750px) {
+      @include displayFlex($fD: column, $aI: flex-start, $g: 24px);
     }
 
-    .headline {
-        @include displayFlex($fD: column, $aI: flex-start, $g: 56px);
+    & > span {
+      font-size: 90px;
+      font-weight: 700;
 
-        &>span {
-            font-size: 90px;
+      @media (max-width: 750px) {
+        font-size: 45px;
+      }
+    }
+
+    & > div {
+
+      & > span {
+        font-size: 32px;
+
+        @media (max-width: 750px) {
+          font-size: 23px;
         }
+      }
 
-        &>div {
-
-            &>span {
-                font-size: 32px;
-            }
-
-            &>p {
-                font-size: 16px;
-            }
-        }
+      & > p {
+        font-size: 16px;
+      }
     }
+  }
 
-    .contact-shadow {
-        position: absolute;
-        bottom: -1250px;
-        left: -250px;
+  .contact-shadow {
+    position: absolute;
+    bottom: -1250px;
+    left: -250px;
 
-        width: 881px;
-        height: 1327px;
+    width: 881px;
+    height: 1327px;
 
-        transform: scaleX(-1);
-    }
+    transform: scaleX(-1);
+  }
 
-    .send-complete {
-        position: absolute;
-        left: 100px;
-        bottom: -225px;
+  .send-complete {
+    position: absolute;
+    left: 100px;
+    bottom: -225px;
 
-        @include displayFlex();
+    @include displayFlex();
 
-        background-color: transparent;
+    background-color: transparent;
 
-        padding: 24px;
-
-        z-index: 1;
-
-        border: 1px solid $colorGreen;
-        border-radius: 10px;
-
-        font-size: 23px;
-
-        animation: slide-opacity 10s;
-
-        @keyframes slide-opacity {
-            0% {
-                left: -500px;
-                opacity: 0;
-            }
-
-            10% {
-                left: 100px;
-                opacity: 1;
-            }
-
-            50% {
-                left: 100px;
-                opacity: 1;
-            }
-
-            75% {
-                left: 100px;
-                opacity: 1;
-            }
-
-            85% {
-                opacity: 0;
-            }
-
-            100% {
-                display: none;
-                opacity: 0;
-            }
-        }
-    }
-}
-
-form {
-    @include displayFlex($fD: column, $aI: flex-end, $g: 32px);
-
-    width: 617px;
-
-    margin-right: 100px;
-    margin-top: 200px;
+    padding: 24px;
 
     z-index: 1;
 
+    border: 1px solid $colorGreen;
+    border-radius: 10px;
 
-    &>div {
-        @include displayFlex($fD: column, $g: 32px);
+    font-size: 23px;
+
+    animation: slide-opacity 10s;
+
+    @keyframes slide-opacity {
+      0% {
+        left: -500px;
+        opacity: 0;
+      }
+
+      10% {
+        left: 100px;
+        opacity: 1;
+      }
+
+      50% {
+        left: 100px;
+        opacity: 1;
+      }
+
+      75% {
+        left: 100px;
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 0;
+      }
+
+      100% {
+        display: none;
+        opacity: 0;
+      }
     }
+  }
+}
 
-    .go-up-button {
-        background-image: url('./../../../assets/graphics/my-skills/go-up-button.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+form {
+  @include displayFlex($fD: column, $aI: flex-end, $g: 32px);
 
-        width: 39px;
-        height: 39px;
+  width: 617px;
 
-        &:hover {
-            cursor: pointer;
+  margin-right: 100px;
+  margin-top: 200px;
 
-            background-image: url('./../../../assets/graphics/my-skills/go-up-button-hover.png');
-        }
+  z-index: 1;
+
+  @media (max-width: 1350px) {
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  @media (max-width: 750px) {
+    width: 340px;
+  }
+
+  @media (max-width: 400px) {
+    width: calc(100% - 48px);
+  }
+
+  & > div {
+    @include displayFlex($fD: column, $g: 32px);
+  }
+
+  .go-up-button {
+    background-image: url('./../../../assets/graphics/my-skills/go-up-button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    width: 39px;
+    height: 39px;
+
+    &:hover {
+      cursor: pointer;
+
+      background-image: url('./../../../assets/graphics/my-skills/go-up-button-hover.png');
     }
+  }
 }
 
 input,
 textarea {
-    width: 100%;
+  width: 100%;
 
-    padding: 15px 25px;
+  padding: 15px 25px;
 
-    font-size: 16px;
+  font-size: 16px;
 
-    @include borderStyle($leftRa: true);
+  @include borderStyle($leftRa: true);
 
+  color: $colorWhite;
+  background-color: transparent;
+
+  outline: none;
+
+  &:hover {
+    border-color: $colorGreen;
+
+    & + .input-icons {
+      border-color: $colorGreen;
+    }
+
+    & + .textarea-icons {
+      border-color: $colorGreen;
+    }
+  }
+
+  &::placeholder {
     color: $colorWhite;
-    background-color: $colorBlack;
-
-    outline: none;
-
-    &:hover {
-        border-color: $colorGreen;
-
-        &+.input-icons {
-            border-color: $colorGreen;
-        }
-
-        &+.textarea-icons {
-            border-color: $colorGreen;
-        }
-    }
-
-    &::placeholder {
-        color: $colorWhite;
-    }
+  }
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
 input:focus {
-    border-color: red;
+  border-color: red;
 
-    &+.input-icons {
-        border-color: red;
-    }
+  & + .input-icons {
+    border-color: red;
+  }
 }
 
 input:valid {
-    border-color: $colorGreen;
+  border-color: $colorGreen;
 
-    &+.input-icons {
-        border-color: $colorGreen;
-    }
+  & + .input-icons {
+    border-color: $colorGreen;
+  }
 }
 
 textarea:focus {
-    border-color: red;
+  border-color: red;
 
-    &+.textarea-icons {
-        border-color: red;
-    }
+  & + .textarea-icons {
+    border-color: red;
+  }
 }
 
 textarea:valid {
-    border-color: $colorGreen;
+  border-color: $colorGreen;
 
-    &+.textarea-icons {
-        border-color: $colorGreen;
-    }
+  & + .textarea-icons {
+    border-color: $colorGreen;
+  }
 }
 
 .error-message {
-    font-size: 14px;
+  font-size: 14px;
 
-    color: red;
+  color: red;
 
-    display: none;
+  display: none;
 }
 
 .input-wrapper,
 .textarea-wrapper {
-    width: 100%;
+  width: 100%;
 
-    &:focus-within {
-        .error-message {
-            display: block;
-        }
-
-        .error-icon {
-            display: block;
-        }
+  &:focus-within {
+    .error-message {
+      display: block;
     }
+
+    .error-icon {
+      display: block;
+    }
+  }
 }
 
 .input-wrapper,
 .textarea-wrapper {
 
-    .input-area,
-    .text-area {
-        @include displayFlex($jC: none, $aI: none);
+  .input-area,
+  .text-area {
+    @include displayFlex($jC: none, $aI: none);
+  }
+
+  .input-area {
+    height: 50px;
+  }
+
+  .text-area {
+    height: 202px;
+  }
+
+  &:has(input:valid, textarea:valid) {
+    .error-message {
+      display: none;
     }
 
-    .input-area {
-        height: 50px;
+    .done-icon {
+      display: block;
     }
 
-    .text-area {
-        height: 202px;
+    .error-icon {
+      display: none;
     }
-
-    &:has(input:valid, textarea:valid) {
-        .error-message {
-            display: none;
-        }
-
-        .done-icon {
-            display: block;
-        }
-
-        .error-icon {
-            display: none;
-        }
-    }
+  }
 }
 
 .input-icons,
 .textarea-icons {
-    width: 50px;
-    max-height: calc(100% - 1.5px);
+  width: 50px;
+  max-height: calc(100% - 1.5px);
 
-    @include borderStyle($rightRa: true);
+  @include borderStyle($rightRa: true);
 
-    .done-icon,
-    .error-icon {
-        display: none;
-    }
+  .done-icon,
+  .error-icon {
+    display: none;
+  }
 }
 
 .input-icons {
-    @include displayFlex($jC: flex-start);
+  @include displayFlex($jC: flex-start);
 }
 
 .textarea-icons {
-    @include displayFlex($jC: flex-start, $aI: flex-start);
+  @include displayFlex($jC: flex-start, $aI: flex-start);
 
-    &>img {
-        margin-top: 15px;
-    }
+  & > img {
+    margin-top: 15px;
+  }
 }
 
 .checkbox {
-    @include displayFlex($jC: flex-start, $g: 8px);
+  @include displayFlex($jC: flex-start, $aI: flex-start, $g: 8px);
 
-    width: 100%;
+  width: 100%;
 
-    &>label {
+  & > label {
 
-        &>input[type="checkbox"] {
-            display: none;
+    & > input[type="checkbox"] {
+      display: none;
 
-            &+div {
-                content: url('./../../../assets/graphics/contact/checkbox-empty.png');
-                object-fit: contain;
+      & + div {
+        content: url('./../../../assets/graphics/contact/checkbox-empty.png');
+        object-fit: contain;
 
-                &:hover {
-                    content: url('./../../../assets/graphics/contact/checkbox-empty-hover.png');
-                }
-            }
+        &:hover {
+          content: url('./../../../assets/graphics/contact/checkbox-empty-hover.png');
         }
-
-        &>input[type="checkbox"]:checked {
-
-            &+div {
-                content: url('./../../../assets/graphics/contact/checkbox-checked.png');
-
-                &:hover {
-                    content: url('./../../../assets/graphics/contact/checkbox-checked-hover.png');
-                }
-            }
-        }
-
+      }
     }
 
-    &>span {
-        color: $colorWhite;
+    & > input[type="checkbox"]:checked {
 
-        font-size: 14px;
+      & + div {
+        content: url('./../../../assets/graphics/contact/checkbox-checked.png');
 
-        &>a {
-            color: $colorPurple;
-
-            &:hover {
-                cursor: pointer;
-
-                text-decoration: underline;
-            }
+        &:hover {
+          content: url('./../../../assets/graphics/contact/checkbox-checked-hover.png');
         }
+      }
     }
+
+  }
+
+  & > span {
+    color: $colorWhite;
+
+    font-size: 14px;
+
+    & > a {
+      color: $colorPurple;
+
+      &:hover {
+        cursor: pointer;
+
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .button-wrapper {
-    @include displayFlex($aI: flex-start);
+  @include displayFlex($aI: flex-start);
 
-    height: 100px;
+  height: 100px;
 
-    &>button:disabled {
-        background-color: rgb(182, 182, 182);
+  & > button:disabled {
+    background-color: rgb(182, 182, 182);
 
-        &:hover {
-            padding: 15px 30px;
-        }
+    &:hover {
+      padding: 15px 30px;
     }
+  }
 }
