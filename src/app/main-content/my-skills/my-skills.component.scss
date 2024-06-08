@@ -10,6 +10,8 @@ section {
   color: $colorWhite;
   background-color: $colorBlack;
 
+  transition: 75ms all ease-in-out;
+
   @media (max-width: 1440px) {
     @include displayFlex($fD: column-reverse, $g: 80px);
   }
@@ -202,4 +204,23 @@ section {
   height: 1351px;
 
   transform: scaleY(-1);
+
+  @media (max-width: 1440px) {
+    top: 500px;
+  }
+
+  @media (max-width: 950px) {
+    top: 250px;
+
+    width: 729px;
+    height: 1251px;
+  }
+
+  @media (max-width: 400px) {
+    left: -400px;
+    top: 500px;
+
+    width: 629px;
+    height: 1151px;
+  }
 }

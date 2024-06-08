@@ -9,6 +9,8 @@ section {
 
   background-color: $colorBlack;
 
+  transition: 75ms all ease-in-out;
+
   @media (max-width: 950px) {
     @include displayFlex($fD: column, $g: 56px);
   }

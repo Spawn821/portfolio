@@ -7,10 +7,22 @@ section {
 
   background-color: $colorBlack;
 
+  transition: 75ms all ease-in-out;
+
   @media (max-width: 1150px) {
     @include displayFlex();
 
     padding-top: 96px;
+  }
+
+  & > div:nth-child(1) {
+    @media (max-width: 1150px) {
+      position: relative;
+
+      @include displayFlex();
+
+      width: 100%;
+    }
   }
 }
 
@@ -41,6 +53,8 @@ p {
 
     margin: 0;
 
+    z-index: 2;
+
     @media (max-width: 550px) {
       font-size: 45px;
     }
@@ -48,6 +62,8 @@ p {
 
   & > div {
     @include displayFlex($fD: column, $aI: flex-start, $g: 35px);
+
+    z-index: 2;
 
     .light-bulb {
       @include displayFlex($aI: flex-start, $g: 35px);
@@ -102,6 +118,10 @@ p {
 
   @include displayFlex();
 
+  @media (max-width: 1150px) {
+    display: none;
+  }
+
   & > img:nth-child(1) {
     width: 453px;
     height: 453px;
@@ -128,14 +148,10 @@ p {
     @media (max-width: 1400px) {
       width: 100px;
     }
-
-    @media (max-width: 1150px) {
-      display: none;
-    }
   }
 }
 
-.about-me-shadow {
+.about-me-shadow-desktop {
   position: absolute;
   right: -375px;
   top: -300px;
@@ -146,4 +162,38 @@ p {
   object-fit: contain;
 
   z-index: 1;
+}
+
+.about-me-shadow-mobile {
+  display: none;
+
+  @media (max-width: 1150px) {
+    position: absolute;
+    right: -375px;
+    top: -144px;
+
+    display: block;
+
+    width: 672px;
+    height: 708px;
+
+    object-fit: contain;
+
+    z-index: 1;
+  }
+
+  @media (max-width: 950px) {
+    position: absolute;
+    right: -375px;
+    top: -244px;
+
+    display: block;
+
+    width: 572px;
+    height: 608px;
+
+    object-fit: contain;
+
+    z-index: 1;
+  }
 }

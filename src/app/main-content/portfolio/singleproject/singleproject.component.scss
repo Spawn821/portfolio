@@ -10,6 +10,8 @@ section {
 
   width: 100%;
 
+  transition: 75ms all ease-in-out;
+
   @media (max-width: 1300px) {
     @include displayFlex($fD: column);
 
@@ -66,26 +68,12 @@ section {
         color: $colorPurple;
 
         z-index: 2;
-
-        @media (max-width: 1200px) {
-          color: transparent;
-
-          -webkit-text-stroke: 0.5px $colorWhite;
-        }
       }
 
       & > p:nth-child(2) {
         font-size: 23px;
 
         color: $colorGreen;
-
-        @media (max-width: 1200px) {
-          font-weight: 700;
-
-          color: transparent;
-
-          -webkit-text-stroke: 0.5px $colorWhite;
-        }
       }
 
       & > p:nth-child(3) {
@@ -135,6 +123,21 @@ section {
   height: 1351px;
 
   transform: rotate(70deg);
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 590px) {
+  }
+
+  @media (max-width: 800px) {
+    right: -370px;
+    top: -370px;
+
+    width: 629px;
+    height: 1151px;
+  }
+
 }
 
 .portfolio-shadow-purple {
@@ -143,4 +146,16 @@ section {
 
   width: 736px;
   height: 849px;
+
+  @media (max-width: 1200px) {
+    width: 636px;
+    height: 749px;
+  }
+
+  @media (max-width: 800px) {
+    top: -80px;
+
+    width: 486px;
+    height: 599px;
+  }
 }

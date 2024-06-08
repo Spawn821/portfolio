@@ -109,6 +109,14 @@ section {
     height: 1327px;
 
     transform: scaleX(-1);
+
+    @media (max-width: 1350px) {
+      bottom: -1350px;
+      left: -400px;
+
+      width: 681px;
+      height: 1127px;
+    }
   }
 
   .send-complete {
