@@ -1,71 +1,140 @@
 @import './../../styles.scss';
 
 section {
-    position: relative;
+  position: relative;
 
-    @include displayFlex();
+  @include displayFlex();
 
-    background-color: $colorBlack;
+  background-color: $colorBlack;
 
-    overflow: clip;
+  overflow: clip;
 
-    &>div {
-        margin-top: 111.71px;
+  & > div {
+    @include displayFlex($fD: column, $aI: flex-start);
 
-        padding: 64px 100px;
+    margin-top: 111.71px;
 
-        color: $colorWhite;
+    padding: 64px 100px;
 
-        text-align: left;
+    color: $colorWhite;
 
-        z-index: 1;
+    text-align: left;
+
+    z-index: 1;
+
+    @media (max-width: 750px) {
+      width: calc(100vw - 50px);
+
+      padding: 64px 25px;
+
+      & > p {
+        width: calc(100vw - 50px);
+
+        & > a {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      }
     }
+
+    @media (max-width: 450px) {
+      width: calc(100vw - 16px);
+
+      padding: 64px 8px;
+
+      & > p {
+        width: calc(100vw - 16px);
+
+        & > a {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
 }
 
 h1,
 h2 {
-    color: $colorPurple;
+  color: $colorPurple;
+
+  @media (max-width: 450px) {
+    font-size: 1.25rem;
+  }
 }
 
+
 h3 {
-    color: $colorGreen;
+  color: $colorGreen;
 }
 
 .privacy-policy-image {
-    position: absolute;
+  position: absolute;
 
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .vector-banner {
-    top: 242px;
+  top: 242px;
 
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .portfolio-shadow-green {
-    right: -420px;
-    top: 0px;
+  right: -420px;
+  top: 0;
 
-    width: 829px;
-    height: 1351px;
+  width: 829px;
+  height: 1351px;
 
-    transform: rotate(70deg);
+  transform: rotate(70deg);
+
+  @media (max-width: 800px) {
+    right: -370px;
+
+    width: 629px;
+    height: 1151px;
+  }
 }
 
 .portfolio-shadow-purple {
-    left: 0px;
-    top: 1000px;
+  left: 0;
+  top: 1000px;
 
-    width: 736px;
-    height: 849px;
+  width: 736px;
+  height: 849px;
+
+  @media (max-width: 1200px) {
+    width: 636px;
+    height: 749px;
+  }
+
+  @media (max-width: 800px) {
+    left: -125px;
+    top: 3500px;
+
+    width: 486px;
+    height: 599px;
+  }
 }
 
 .privacy-policy-shadow-green {
-    right: 0px;
-    bottom: 200px;
+  right: 0;
+  bottom: 200px;
 
-    width: 822px;
-    height: 678px;
+  width: 822px;
+  height: 678px;
+
+  @media (max-width: 1200px) {
+    width: 622px;
+    height: 578px;
+  }
+
+  @media (max-width: 800px) {
+    right: -125px;
+
+    width: 582px;
+    height: 528px;
+  }
 }

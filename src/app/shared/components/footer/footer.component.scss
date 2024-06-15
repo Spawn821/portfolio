@@ -1,48 +1,64 @@
 @import './../../../../styles.scss';
 
 footer {
-    @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
+  @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
 
-    color: $colorWhite;
-    background-color: $colorBlack;
+  color: $colorWhite;
+  background-color: $colorBlack;
 
-    padding: 80px 100px;
+  padding: 80px 100px;
 
-    border-top: 4px solid $colorGreen;
+  border-top: 4px solid $colorGreen;
 
-    &>div {
-        @include displayFlex($jC: space-between);
+  @media (max-width: 1000px) {
+    @include displayFlex($fD: column, $g: 28px);
+  }
 
-        width: 100%;
+  @media (max-width: 1000px) {
+    padding: 80px 0;
+  }
 
-        &>a {
-            &>img {
-                width: 216px;
-            }
-        }
+  & > div {
+    @include displayFlex($jC: space-between);
 
-        &>span {
-            font-size: 23px;
-        }
+    width: 100%;
 
-        &>nav {
-            @include displayFlex($jC: flex-start);
-
-            width: 179px;
-
-            &>div {
-                @include displayFlex($jC: flex-start, $g: 42px);
-
-                height: 41px;
-
-                &>a {
-                    @include displayFlex();
-                }
-            }
-        }
+    @media (max-width: 1000px) {
+      @include displayFlex($fD: column, $g: 28px);
     }
 
-    &>a {
-        font-size: 16px;
+    & > a {
+      & > img {
+        width: 216px;
+
+        @media (max-width: 1000px) {
+          margin-bottom: 16px;
+        }
+      }
     }
+
+    & > span {
+      font-size: 23px;
+    }
+
+    & > nav {
+      @include displayFlex($jC: flex-start);
+
+      width: 179px;
+
+      & > div {
+        @include displayFlex($jC: flex-start, $g: 42px);
+
+        height: 41px;
+
+        & > a {
+          @include displayFlex();
+        }
+      }
+    }
+  }
+
+  & > a {
+    font-size: 16px;
+  }
 }

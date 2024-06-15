@@ -1,73 +1,102 @@
 @import './../../styles.scss';
 
 section {
-    position: relative;
+  position: relative;
 
-    @include displayFlex();
+  @include displayFlex();
 
-    background-color: $colorBlack;
+  background-color: $colorBlack;
 
-    overflow: clip;
+  overflow: clip;
 
-    &>div {
-        margin-top: 111.71px;
+  & > div {
+    margin-top: 111.71px;
 
-        padding: 64px 100px;
+    padding: 64px 100px;
 
-        color: $colorWhite;
+    color: $colorWhite;
 
-        text-align: left;
+    text-align: left;
 
-        z-index: 1;
-    }
+    z-index: 1;
+  }
 }
 
 h1,
 h2 {
-    color: $colorPurple;
+  color: $colorPurple;
 }
 
 h3 {
-    color: $colorGreen;
+  color: $colorGreen;
 }
 
 .imprint-image {
-    position: absolute;
+  position: absolute;
 
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .vector-banner {
-    top: 242px;
+  top: 242px;
 
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .about-me-shadow {
-    right: -375px;
-    top: 250px;
+  right: -375px;
+  top: 250px;
 
-    width: 672px;
-    height: 708px;
+  width: 672px;
+  height: 708px;
+
+  @media (max-width: 950px) {
+    top: 500px;
+
+    width: 572px;
+    height: 608px;
+  }
 }
 
 .privacy-policy-shadow-green {
-    left: 150px;
-    top: 40px;
+  left: 150px;
+  top: 40px;
 
-    width: 822px;
-    height: 678px;
+  width: 822px;
+  height: 678px;
 
-    transform: rotate(-60deg);
+  transform: rotate(-60deg);
+
+  @media (max-width: 1200px) {
+    left: -100px;
+
+    width: 622px;
+    height: 578px;
+  }
+
+  @media (max-width: 800px) {
+    right: -125px;
+
+    width: 522px;
+    height: 478px;
+  }
 }
 
 .portfolio-shadow-green {
-    right: 50px;
-    bottom: -700px;
+  right: 50px;
+  bottom: -700px;
 
-    width: 829px;
-    height: 1351px;
+  width: 829px;
+  height: 1351px;
 
-    transform: rotate(180deg);
+  transform: rotate(180deg);
+
+  @media (max-width: 800px) {
+    right: -200px;
+    bottom: -600px;
+
+    width: 629px;
+    height: 1151px;
+  }
 }

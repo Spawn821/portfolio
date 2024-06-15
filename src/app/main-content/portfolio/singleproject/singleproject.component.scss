@@ -124,12 +124,6 @@ section {
 
   transform: rotate(70deg);
 
-  @media (max-width: 1200px) {
-  }
-
-  @media (max-width: 590px) {
-  }
-
   @media (max-width: 800px) {
     right: -370px;
     top: -370px;
@@ -137,7 +131,6 @@ section {
     width: 629px;
     height: 1151px;
   }
-
 }
 
 .portfolio-shadow-purple {
