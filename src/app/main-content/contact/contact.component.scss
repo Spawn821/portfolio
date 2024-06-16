@@ -23,6 +23,8 @@ section {
   padding-bottom: 128px;
 
   background-color: $colorBlack;
+
+  transition: 75ms all ease-in-out;
 }
 
 .wrapper {
@@ -139,34 +141,125 @@ section {
 
     animation: slide-opacity 10s;
 
-    @keyframes slide-opacity {
+    @media (min-width: 1350px) {
+
+      @keyframes slide-opacity {
+        0% {
+          left: -500px;
+          opacity: 0;
+        }
+
+        10% {
+          left: 100px;
+          opacity: 1;
+        }
+
+        50% {
+          left: 100px;
+          opacity: 1;
+        }
+
+        75% {
+          left: 100px;
+          opacity: 1;
+        }
+
+        85% {
+          opacity: 0;
+        }
+
+        100% {
+          display: none;
+          opacity: 0;
+        }
+      }
+    }
+
+    @media (max-width: 1350px) {
+
+      @keyframes slide-opacity {
+        0% {
+          left: -500px;
+          opacity: 0;
+        }
+
+        10% {
+          left: 50vw;
+
+          transform: translateX(-45%);
+
+          opacity: 1;
+        }
+
+        50% {
+          left: 50vw;
+
+          transform: translateX(-45%);
+
+          opacity: 1;
+        }
+
+        75% {
+          left: 50vw;
+
+          transform: translateX(-45%);
+
+          opacity: 1;
+        }
+
+        85% {
+          opacity: 0;
+        }
+
+        100% {
+          display: none;
+          opacity: 0;
+        }
+      }
+    }
+
+    @media (max-width: 750px) {
+      padding: 16px;
+
+      font-size: 16px;
+
+      width: calc(200px - 32px);
+    }
+
+    @media (max-width: 600px) {
+      width: calc(200px - 32px);
+    }
+  }
+}
+
+
+@media (max-width: 1350px) {
+  .form-animation {
+    animation: opacity 10s;
+
+    @keyframes opacity {
       0% {
-        left: -500px;
-        opacity: 0;
+        opacity: 1;
       }
 
       10% {
-        left: 100px;
-        opacity: 1;
+        opacity: 0;
       }
 
       50% {
-        left: 100px;
-        opacity: 1;
+        opacity: 0;
       }
 
       75% {
-        left: 100px;
-        opacity: 1;
+        opacity: 0;
       }
 
       85% {
-        opacity: 0;
+        opacity: 1;
       }
 
       100% {
-        display: none;
-        opacity: 0;
+        opacity: 1;
       }
     }
   }

@@ -101,20 +101,20 @@ section {
       color: $colorWhite;
 
       & > span {
-        font-size: 64px;
+        font-size: 48px;
 
         transform: rotate(-90deg);
 
         @media (max-width: 1440px) {
-          font-size: 48px;
+          font-size: 38px;
         }
 
         @media (max-width: 1200px) {
-          font-size: 32px;
+          font-size: 24px;
         }
 
         @media (max-width: 550px) {
-          font-size: 20px;
+          font-size: 16px;
         }
       }
 
@@ -122,10 +122,10 @@ section {
         text-align: center;
 
         & > span {
-          line-height: 80px;
+          line-height: 96px;
 
           @media (max-width: 1440px) {
-            line-height: 64px;
+            line-height: 80px;
           }
 
           @media (max-width: 1200px) {

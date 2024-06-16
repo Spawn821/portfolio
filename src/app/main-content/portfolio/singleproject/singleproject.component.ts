@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-singleproject',
@@ -13,12 +13,13 @@ export class SingleprojectComponent {
   windowSize: MediaQueryList = window.matchMedia('(max-width: 1300px)');
 
   @Input() project = {
-      img: './../../../assets/graphics/portfolio/join.png',
-      headline: 'Join',
-      technologies: 'JavaScript | HTML | CSS',
-      description: 'Task manager inpired by the Kanban System. Create and organize tasks using drag functions, assign users and categories.',
-      liveTest: 'https://join.stephan-schmidt-web-developer.de',
-      github: 'https://github.com/Spawn821/project_join_own_version'
+    img: './../../../assets/graphics/portfolio/join.png',
+    headline: 'Join',
+    technologies: 'JavaScript | HTML | CSS',
+    description: 'Task manager inpired by the Kanban System. Create and organize tasks using drag functions, assign users and categories.',
+    runOn: 'Chrom, Edge und Firefox',
+    liveTest: 'https://join.stephan-schmidt-web-developer.de',
+    github: 'https://github.com/Spawn821/project_join_own_version'
   }
 
   @Input() index = 0;

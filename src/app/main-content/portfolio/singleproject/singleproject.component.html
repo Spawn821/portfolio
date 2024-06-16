@@ -1,28 +1,30 @@
 <section [class.flex-dir-row-reverse]="isSecondElement()">
 
-    <!-- Project img -->
-    <img src="{{project.img}}" alt="">
+  <!-- Project img -->
+  <img src="{{project.img}}" alt="">
 
-    <!-- Description -->
-    <div [class.align-items-flex-end]="isSecondElement()" class="description">
-        <div [class.align-items-flex-end]="isSecondElement()">
-            <span>{{project.headline}}</span>
-            <p>{{project.technologies}}</p>
-            <p [class.text-align-right]="isSecondElement()">{{project.description}}</p>
-        </div>
-
-        <div class="buttons">
-            <a class="button-purple" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.liveTest}}">Live Test</a>
-            <a class="button-black" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.github}}">Github</a>
-        </div>
+  <!-- Description -->
+  <div [class.align-items-flex-end]="isSecondElement()" class="description">
+    <div [class.align-items-flex-end]="isSecondElement()">
+      <span>{{ project.headline }}</span>
+      <p>{{ project.technologies }}</p>
+      <p [class.text-align-right]="isSecondElement()">{{ project.description }}</p>
+      <p [class.text-align-right]="isSecondElement()">{{ project.runOn }}</p>
     </div>
 
-    <!-- Shadow -->
-    @if (isSecondElement(true)) {
-        <img class="portfolio-shadow portfolio-shadow-green" src="./../../../../assets/graphics/shadows/my-skills-shadow-green.svg" alt="">
-    }
-    @else {
-        <img class="portfolio-shadow portfolio-shadow-purple" src="./../../../../assets/graphics/shadows/portfolio-shadow-purple.svg" alt="">
-    }
+    <div class="buttons">
+      <a class="button-purple" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.liveTest}}">Live Test</a>
+      <a class="button-black" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.github}}">Github</a>
+    </div>
+  </div>
+
+  <!-- Shadow -->
+  @if (isSecondElement(true)) {
+    <img class="portfolio-shadow portfolio-shadow-green"
+         src="./../../../../assets/graphics/shadows/my-skills-shadow-green.svg" alt="">
+  } @else {
+    <img class="portfolio-shadow portfolio-shadow-purple"
+         src="./../../../../assets/graphics/shadows/portfolio-shadow-purple.svg" alt="">
+  }
 
 </section>
