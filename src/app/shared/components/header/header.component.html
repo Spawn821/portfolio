@@ -1,38 +1,17 @@
-<header>
+<section>
 
-  <!-- Name Logo -->
-  <a routerLink="/portfolio">
-    <img src="./../../../../assets/graphics/logo.png" alt="">
-  </a>
+  <header>
 
-  @if (!imprint) {
-    <div [ngSwitch]="true">
-      <!-- Nav bar desktop -->
-      <ng-template [ngSwitchCase]="!windowSize.matches">
-        <nav class="font-family-poppins">
-          <div (click)="isClicked($event)">
-            <a id="about-me-nav" href="#about-me">About me</a>
-            <div id="underline" class="underline v-hidden"></div>
-          </div>
+    <!-- Name Logo -->
+    <a routerLink="/portfolio">
+      <img src="./../../../../assets/graphics/logo.png" alt="">
+    </a>
 
-          <div (click)="isClicked($event)">
-            <a id="skills-nav" href="#my-skills">Skills</a>
-            <div id="underline" class="underline v-hidden"></div>
-          </div>
-
-          <div (click)="isClicked($event)">
-            <a id="portfolio-nav" href="#portfolio">Portfolio</a>
-            <div id="underline" class="underline v-hidden"></div>
-          </div>
-        </nav>
-      </ng-template>
-
-      <!-- Burger menu mobile -->
-      <ng-template [ngSwitchCase]="windowSize.matches">
-        <div (click)="openBurgerMenu('open')" [class.burger-menu-animation-open]="showBurgerMenu"
-             [class.burger-menu-animation-close]="!showBurgerMenu" class="burger-menu">
-          <nav [class.burger-menu-content-open]="showBurgerMenu"
-               [class.burger-menu-content-close]="!showBurgerMenu" class="font-family-poppins burger-menu-content">
+    @if (!imprint) {
+      <div [ngSwitch]="true">
+        <!-- Nav bar desktop -->
+        <ng-template [ngSwitchCase]="!windowSize.matches">
+          <nav class="font-family-poppins">
             <div (click)="isClicked($event)">
               <a id="about-me-nav" href="#about-me">About me</a>
               <div id="underline" class="underline v-hidden"></div>
@@ -47,15 +26,40 @@
               <a id="portfolio-nav" href="#portfolio">Portfolio</a>
               <div id="underline" class="underline v-hidden"></div>
             </div>
-
-            <div (click)="isClicked($event)">
-              <a id="portfolio-nav" href="#contact">Contact</a>
-              <div id="underline" class="underline v-hidden"></div>
-            </div>
           </nav>
-        </div>
-      </ng-template>
-    </div>
-  }
+        </ng-template>
 
-</header>
+        <!-- Burger menu mobile -->
+        <ng-template [ngSwitchCase]="windowSize.matches">
+          <div (click)="openBurgerMenu('open')" [class.burger-menu-animation-open]="showBurgerMenu"
+               [class.burger-menu-animation-close]="!showBurgerMenu" class="burger-menu">
+            <nav [class.burger-menu-content-open]="showBurgerMenu"
+                 [class.burger-menu-content-close]="!showBurgerMenu" class="font-family-poppins burger-menu-content">
+              <div (click)="isClicked($event)">
+                <a id="about-me-nav" href="#about-me">About me</a>
+                <div id="underline" class="underline v-hidden"></div>
+              </div>
+
+              <div (click)="isClicked($event)">
+                <a id="skills-nav" href="#my-skills">Skills</a>
+                <div id="underline" class="underline v-hidden"></div>
+              </div>
+
+              <div (click)="isClicked($event)">
+                <a id="portfolio-nav" href="#portfolio">Portfolio</a>
+                <div id="underline" class="underline v-hidden"></div>
+              </div>
+
+              <div (click)="isClicked($event)">
+                <a id="portfolio-nav" href="#contact">Contact</a>
+                <div id="underline" class="underline v-hidden"></div>
+              </div>
+            </nav>
+          </div>
+        </ng-template>
+      </div>
+    }
+
+  </header>
+
+</section>

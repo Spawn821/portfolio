@@ -1,18 +1,27 @@
 @import './../../../../styles.scss';
 
-header {
+section {
   position: fixed;
+  left: 0;
+  top: 0;
 
+  @include displayFlex();
+
+  width: 100vw;
+
+  background-color: $colorBlack;
+
+  z-index: 99;
+}
+
+header {
   @include displayFlex($jC: space-between);
 
   width: calc(1440px - 200px);
 
-  padding: 37px 100px;
-
   color: white;
-  background-color: $colorBlack;
 
-  z-index: 99;
+  padding: 37px 100px;
 
   @media (max-width: 1440px) {
     width: calc(100vw - 200px);

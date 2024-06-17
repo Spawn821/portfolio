@@ -1,7 +1,9 @@
 @import './../../../styles.scss';
 
 section {
-  @include displayFlex($jC: space-between);
+  @include displayFlex();
+
+  width: 100vw;
 
   padding-top: 128px;
 
@@ -14,6 +16,15 @@ section {
 
     padding-top: 96px;
   }
+
+}
+
+.about-me {
+  position: relative;
+
+  @include displayFlex($jC: space-between);
+
+  width: 1440px;
 
   & > div:nth-child(1) {
     @media (max-width: 1150px) {
@@ -30,7 +41,7 @@ p {
   margin: 0;
 }
 
-.about-me {
+.about-me-text {
   position: relative;
 
   @include displayFlex($fD: column, $aI: flex-start, $g: 40px);
@@ -129,7 +140,7 @@ p {
     object-fit: contain;
     object-position: 0 100%;
 
-    border: 4px solid $colorGreen;
+    border: 8px solid $colorGreen;
     border-radius: 50%;
 
     z-index: 2;
@@ -140,7 +151,10 @@ p {
   }
 
   & > div {
-    width: 267px;
+    position: absolute;
+    right: calc((1440px - 100vw) / 2);
+
+    width: calc((100vw - 1440px) / 2);
     border: 4px solid $colorGreen;
 
     z-index: 2;
@@ -153,8 +167,8 @@ p {
 
 .about-me-shadow-desktop {
   position: absolute;
-  right: -375px;
-  top: -300px;
+  right: -700px;
+  top: -125px;
 
   width: 672px;
   height: 708px;

@@ -17,12 +17,20 @@
 }
 
 section {
+  @include displayFlex();
+
+  width: 100vw;
+
+  background-color: $colorBlack;
+}
+
+.contact {
   @include displayFlex($jC: space-between);
+
+  width: 1440px;
 
   padding-top: 128px;
   padding-bottom: 128px;
-
-  background-color: $colorBlack;
 
   transition: 75ms all ease-in-out;
 }
@@ -37,7 +45,7 @@ section {
   }
 }
 
-.contact {
+.contact-text {
   position: relative;
 
   @include displayFlex($jC: flex-start, $aI: flex-start, $g: 48px);
@@ -55,7 +63,10 @@ section {
   }
 
   .seperator {
-    width: 50px;
+    position: absolute;
+    left: calc((1440px - 100vw) / 2);
+
+    width: calc(((100vw - 1440px) / 2) - 25px);
 
     margin-top: 67.5px;
 
@@ -104,8 +115,8 @@ section {
 
   .contact-shadow {
     position: absolute;
+    left: -650px;
     bottom: -1250px;
-    left: -250px;
 
     width: 881px;
     height: 1327px;

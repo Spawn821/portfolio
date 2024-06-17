@@ -1,13 +1,21 @@
 @import './../../../styles.scss';
 
 section {
-  position: relative;
+  @include displayFlex();
 
-  @include displayFlex($fD: column);
+  width: 100vw;
 
   margin-top: 130px;
 
   background-color: $colorBlack;
+}
+
+.above-the-fold {
+  position: relative;
+
+  @include displayFlex($fD: column);
+
+  width: 1440px;
 
   transition: 75ms all ease-in-out;
 
@@ -196,7 +204,10 @@ section {
       align-items: center;
 
       & > div {
-        width: 100px;
+        position: absolute;
+        left: calc((1440px - 100vw) / 2);
+
+        width: calc((100vw - 1440px) / 2);
 
         border: 4px solid $colorPurple;
 
@@ -274,11 +285,10 @@ section {
 
 .vector-banner {
   position: absolute;
-  left: 0;
-  top: 240px;
+  right: 0;
+  top: 210px;
 
-  width: 1440px;
-  height: auto;
+  width: 100vw;
 
   @media (max-width: 1300px) {
     top: 160px;

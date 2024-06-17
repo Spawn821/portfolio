@@ -1,20 +1,24 @@
-<section class="width-1440px font-family-poppins">
+<section class="font-family-poppins">
+
+  <div class="portfolio">
 
     <!-- Headline -->
     <div class="headline">
-        <div>
-            <span>Portfolio</span>
-            <div class="seperator"></div>
-        </div>
+      <div>
+        <span>Portfolio</span>
+        <div class="seperator"></div>
+      </div>
 
-        <p>Explore a seclection of my work here - interact with projects to see my skills in action.</p>
+      <p>Explore a seclection of my work here - interact with projects to see my skills in action.</p>
     </div>
 
     <!-- Project sections -->
     <div class="my-projects">
-        @for (singleProject of projectlistdata.projectlist; track singleProject.img; let index = $index) {
-            <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
-        }
+      @for (singleProject of projectlistdata.projectlist; track singleProject.img; let index = $index) {
+        <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
+      }
     </div>
+
+  </div>
 
 </section>

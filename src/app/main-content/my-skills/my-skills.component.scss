@@ -3,12 +3,23 @@
 section {
   position: relative;
 
+  @include displayFlex();
+
+  background-color: $colorBlack;
+
+  width: 100vw;
+}
+
+.my-skills {
+  position: relative;
+
   @include displayFlex($jC: space-between);
+
+  width: 1440px;
 
   padding-top: 128px;
 
   color: $colorWhite;
-  background-color: $colorBlack;
 
   transition: 75ms all ease-in-out;
 
@@ -118,7 +129,9 @@ section {
   }
 }
 
-.my-skills {
+.my-skills-text {
+  position: relative;
+
   @include displayFlex($fD: column, $g: 32px);
 
   @media (max-width: 1440px) {
@@ -167,7 +180,11 @@ section {
     }
 
     .seperator {
-      width: 58px;
+      position: absolute;
+
+      right: calc((1440px - 100vw) / 2 );
+
+      width: calc(((100vw - 1440px) / 2) - 25px);
 
       margin-top: 67.5px;
 

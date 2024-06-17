@@ -1,14 +1,23 @@
 @import './../../../../styles.scss';
 
+section {
+  @include displayFlex();
+
+  width: 100vw;
+
+  background-color: $colorBlack;
+
+  border-top: 4px solid $colorGreen;
+}
+
 footer {
   @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
 
   color: $colorWhite;
-  background-color: $colorBlack;
+
+  width: calc(1440px - 200px);
 
   padding: 80px 100px;
-
-  border-top: 4px solid $colorGreen;
 
   @media (max-width: 1000px) {
     @include displayFlex($fD: column, $g: 28px);

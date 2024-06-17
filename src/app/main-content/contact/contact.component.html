@@ -1,34 +1,36 @@
-<section class="width-1440px font-family-poppins">
+<section class="font-family-poppins">
 
-  <!-- Wrapper -->
-  <div class="wrapper">
-    <!-- Headline -->
-    <div class="contact">
-      <div class="seperator"></div>
+  <div class="contact">
 
-      <div class="headline">
-        <span><b>Contact</b></span>
+    <!-- Wrapper -->
+    <div class="wrapper">
+      <!-- Headline -->
+      <div class="contact-text">
+        <div class="seperator"></div>
 
-        <div>
-          <span><b>Haben Sie ein Problem zu lösen?</b></span>
-          <p>
-            Kontaktieren Sie mich über dieses Formular.
-            <br>
-            Ich bin interessiert, von Ihnen zu hören,
-            <br>
-            Ihre Ideen zu kennen und mit meiner Arbeit
-            <br>
-            zu Ihrem Projekt beizutragen.
-            <br>
-            <br>
-            Brauchen Sie einen Frontend-Entwickler?&nbsp;<b>Kontaktieren Sie mich!</b>
-          </p>
+        <div class="headline">
+          <span><b>Contact</b></span>
+
+          <div>
+            <span><b>Haben Sie ein Problem zu lösen?</b></span>
+            <p>
+              Kontaktieren Sie mich über dieses Formular.
+              <br>
+              Ich bin interessiert, von Ihnen zu hören,
+              <br>
+              Ihre Ideen zu kennen und mit meiner Arbeit
+              <br>
+              zu Ihrem Projekt beizutragen.
+              <br>
+              <br>
+              Brauchen Sie einen Frontend-Entwickler?&nbsp;<b>Kontaktieren Sie mich!</b>
+            </p>
+          </div>
         </div>
-      </div>
 
-      <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">
+        <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">
 
-      <div [class.d-none]="!sendComplete" class="send-complete">
+        <div [class.d-none]="!sendComplete" class="send-complete">
                 <span>
                     Thanks for your interest {{ contactName }}.
                     <br>
@@ -36,72 +38,74 @@
                     <br>
                     will be in touch soon. :D
                 </span>
+        </div>
       </div>
-    </div>
 
-    <!-- Form -->
-    <form [class.form-animation]="sendComplete" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-      <div>
-        <div class="input-wrapper">
-          <div class="input-area">
-            <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" required type="text"
-                   placeholder="Ihr Name">
-            <div class="input-icons">
-              <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
-              <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
+      <!-- Form -->
+      <form [class.form-animation]="sendComplete" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div>
+          <div class="input-wrapper">
+            <div class="input-area">
+              <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" required type="text"
+                     placeholder="Ihr Name">
+              <div class="input-icons">
+                <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
+                <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
+              </div>
             </div>
+            <p class="error-message">Your name is required</p>
           </div>
-          <p class="error-message">Your name is required</p>
-        </div>
 
-        <!-- pattern=".+@beststartupever\.com" -->
-        <div class="input-wrapper">
-          <div class="input-area">
-            <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
-                   pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" type="email"
-                   placeholder="Ihre E-Mail-Adresse">
-            <div class="input-icons">
-              <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
-              <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
+          <!-- pattern=".+@beststartupever\.com" -->
+          <div class="input-wrapper">
+            <div class="input-area">
+              <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
+                     pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" type="email"
+                     placeholder="Ihre E-Mail-Adresse">
+              <div class="input-icons">
+                <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
+                <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
+              </div>
             </div>
+            <p class="error-message">Your email is required</p>
           </div>
-          <p class="error-message">Your email is required</p>
-        </div>
 
-        <div class="textarea-wrapper">
-          <div class="text-area">
+          <div class="textarea-wrapper">
+            <div class="text-area">
                         <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message"
                                   required placeholder="Ihre Nachricht" rows="9" maxlength="500"></textarea>
-            <div class="textarea-icons">
-              <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
-              <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
+              <div class="textarea-icons">
+                <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
+                <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
+              </div>
             </div>
+            <p class="error-message">Your message is empty</p>
           </div>
-          <p class="error-message">Your message is empty</p>
-        </div>
 
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" [checked]="checkboxState" (change)="isChecked($event)">
-            <div></div>
-          </label>
-          <span>Ich habe die&nbsp;<a routerLink="/privacy-policy">Datenschutzerklärung</a>&nbsp;gelesen
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" [checked]="checkboxState" (change)="isChecked($event)">
+              <div></div>
+            </label>
+            <span>Ich habe die&nbsp;<a routerLink="/privacy-policy">Datenschutzerklärung</a>&nbsp;gelesen
             und stimme der Verabeitung meiner Daten wie beschrieben zu.</span>
+          </div>
+
+          @if (name.valid && email.valid && message.valid && getCheckboxState()) {
+            <div class="button-wrapper">
+              <button class="button-green" [disabled]="false">Send message :)</button>
+            </div>
+          } @else {
+            <div class="button-wrapper">
+              <button class="button-green" [disabled]="true">Send message :)</button>
+            </div>
+          }
         </div>
 
-        @if (name.valid && email.valid && message.valid && getCheckboxState()) {
-          <div class="button-wrapper">
-            <button class="button-green" [disabled]="false">Send message :)</button>
-          </div>
-        } @else {
-          <div class="button-wrapper">
-            <button class="button-green" [disabled]="true">Send message :)</button>
-          </div>
-        }
-      </div>
+        <div class="go-up-button" (click)="goUp()"></div>
+      </form>
+    </div>
 
-      <div class="go-up-button" (click)="goUp()"></div>
-    </form>
   </div>
 
 </section>

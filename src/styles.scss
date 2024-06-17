@@ -30,13 +30,9 @@ $colorGreen: rgb(112, 230, 27);
 }
 
 body {
-  @include displayFlex($fD: column, $aI: center);
-
   margin: 0;
 
   background-color: $colorBlack;
-
-  overflow-x: hidden;
 }
 
 a {
@@ -63,16 +59,6 @@ img {
 /* ------- */
 /* Generic */
 /* ------- */
-
-.width-1440px {
-  width: 1440px;
-}
-
-@media (max-width: 1440px) {
-  .width-1440px {
-    width: 100vw;
-  }
-}
 
 .v-hidden {
   visibility: hidden;

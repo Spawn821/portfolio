@@ -1,9 +1,17 @@
 @import './../../../styles.scss';
 
 section {
-  padding-top: 128px;
+  @include displayFlex();
 
   background-color: $colorBlack;
+
+  width: 100vw;
+}
+
+.portfolio {
+  width: 1440px;
+
+  padding-top: 128px;
 
   transition: 75ms all ease-in-out;
 }
@@ -44,9 +52,9 @@ section {
 
     .seperator {
       position: absolute;
-      right: 0;
+      right: calc((1440px - 100vw) / 2);
 
-      width: 1060px;
+      width: calc(((100vw - 1440px) / 2) + 1060px);
 
       border: 4px solid $colorPurple;
       border-top-left-radius: 4px;
