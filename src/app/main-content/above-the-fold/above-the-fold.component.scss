@@ -262,7 +262,7 @@ section {
 
     @include displayFlex($fD: column, $g: 56px);
 
-    z-index: 1;
+    z-index: 2;
 
     & > span {
       transform: rotate(90deg);
@@ -285,10 +285,14 @@ section {
 
 .vector-banner {
   position: absolute;
-  right: 0;
-  top: 210px;
+  left: 50%;
+  top: 85px;
 
-  width: 100vw;
+  width: 100%;
+
+  z-index: 1;
+
+  transform: translateX(-50%);
 
   @media (max-width: 1300px) {
     top: 160px;

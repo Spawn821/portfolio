@@ -1,6 +1,8 @@
 @import './../../../styles.scss';
 
 section {
+  position: relative;
+
   @include displayFlex();
 
   width: 100vw;
@@ -167,8 +169,8 @@ p {
 
 .about-me-shadow-desktop {
   position: absolute;
-  right: -700px;
-  top: -125px;
+  right: -375px;
+  top: 0;
 
   width: 672px;
   height: 708px;

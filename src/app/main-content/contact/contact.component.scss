@@ -524,6 +524,7 @@ textarea:valid {
 
   & > button:disabled {
     background-color: rgb(182, 182, 182);
+    cursor: not-allowed;
 
     &:hover {
       padding: 15px 30px;
