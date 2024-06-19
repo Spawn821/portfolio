@@ -19,9 +19,7 @@
 section {
   @include displayFlex();
 
-  width: 100vw;
-
-  background-color: $colorBlack;
+  width: 100%;
 }
 
 .contact {

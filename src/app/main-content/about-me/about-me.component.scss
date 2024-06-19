@@ -5,11 +5,9 @@ section {
 
   @include displayFlex();
 
-  width: 100vw;
+  width: 100%;
 
   padding-top: 128px;
-
-  background-color: $colorBlack;
 
   transition: 75ms all ease-in-out;
 

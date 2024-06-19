@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {animationScroll} from "../../../main";
 
 @Component({
   selector: 'app-above-the-fold',
@@ -13,11 +14,18 @@ export class AboveTheFoldComponent {
     window.addEventListener('resize', () => {
       this.positioningVectorBanner();
     })
+
+    window.addEventListener('scroll', () => {
+      animationScroll('hidden-left', 'show-left');
+      animationScroll('hidden-right', 'show-right');
+    })
   }
 
 
   ngOnInit(): void {
     this.positioningVectorBanner();
+    animationScroll('hidden-left', 'show-left');
+    animationScroll('hidden-right', 'show-right');
   }
 
 
@@ -34,5 +42,4 @@ export class AboveTheFoldComponent {
       vectorBanner.style.top = (translateYConstant + translateY) + 'px';
     }
   }
-
 }

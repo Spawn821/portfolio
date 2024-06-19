@@ -5,9 +5,7 @@ section {
 
   @include displayFlex();
 
-  background-color: $colorBlack;
-
-  width: 100vw;
+  width: 100%;
 }
 
 .my-skills {
@@ -221,6 +219,8 @@ section {
   height: 1351px;
 
   transform: scaleY(-1);
+
+  z-index: 1;
 
   @media (max-width: 1440px) {
     top: 500px;

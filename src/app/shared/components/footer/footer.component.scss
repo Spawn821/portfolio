@@ -3,9 +3,7 @@
 section {
   @include displayFlex();
 
-  width: 100vw;
-
-  background-color: $colorBlack;
+  width: 100%;
 
   border-top: 4px solid $colorGreen;
 }

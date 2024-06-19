@@ -3,11 +3,9 @@
 section {
   @include displayFlex();
 
-  width: 100vw;
+  width: 100%;
 
   margin-top: 130px;
-
-  background-color: $colorBlack;
 }
 
 .above-the-fold {
@@ -97,7 +95,7 @@ section {
 
     width: max-content;
 
-    z-index: 1;
+    z-index: 2;
 
     @media (max-width: 950px) {
       position: unset;
@@ -285,14 +283,12 @@ section {
 
 .vector-banner {
   position: absolute;
-  left: 50%;
+  left: 0;
   top: 85px;
 
   width: 100%;
 
   z-index: 1;
-
-  transform: translateX(-50%);
 
   @media (max-width: 1300px) {
     top: 160px;
@@ -302,4 +298,32 @@ section {
     left: -240px;
     top: -104px;
   }
+}
+
+.hidden-left {
+  margin-left: -400px;
+
+  opacity: 0;
+
+  transition: all 2s;
+}
+
+.show-left {
+  margin-left: 0;
+
+  opacity: 1;
+}
+
+.hidden-right {
+  margin-right: -400px;
+
+  opacity: 0;
+
+  transition: all 2s;
+}
+
+.show-right {
+  margin-right: 0;
+
+  opacity: 1;
 }
