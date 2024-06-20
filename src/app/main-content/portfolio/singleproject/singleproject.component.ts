@@ -1,5 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component, Input} from '@angular/core';
+import {animationScroll} from "../../../../main";
 
 @Component({
   selector: 'app-singleproject',
@@ -23,6 +24,17 @@ export class SingleprojectComponent {
   }
 
   @Input() index = 0;
+
+  constructor() {
+    window.addEventListener('scroll', () => {
+      animationScroll('hidden-left', 'show-left');
+    })
+  }
+
+
+  ngOnInit(): void {
+    animationScroll('hidden-left', 'show-left');
+  }
 
   isSecondElement(shadow: boolean = false) {
     if (this.windowSize.matches && !shadow) {

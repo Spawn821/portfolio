@@ -3,12 +3,18 @@
 section {
   position: relative;
 
+  @include displayFlex();
+
+  width: 100vw;
+}
+
+.singleproject {
+
   @include displayFlex($jC: flex-end, $g: 136px);
 
-  padding-top: 48px;
-  padding-right: 128px;
+  width: 1440px;
 
-  width: 100%;
+  padding-top: 96px;
 
   transition: 75ms all ease-in-out;
 
@@ -117,7 +123,7 @@ section {
 }
 
 .portfolio-shadow-green {
-  right: -620px;
+  right: -450px;
   top: -420px;
 
   width: 829px;
@@ -135,7 +141,7 @@ section {
 }
 
 .portfolio-shadow-purple {
-  left: -125px;
+  left: 250px;
   top: -48px;
 
   width: 736px;

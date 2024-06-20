@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {animationScroll} from "../../../main";
 
 @Component({
   selector: 'app-contact',
@@ -33,6 +34,22 @@ export class ContactComponent {
       }
     }
   }
+
+  constructor() {
+    window.addEventListener('scroll', () => {
+      animationScroll('hidden-left', 'show-left');
+      animationScroll('rotate-0deg', 'rotate-360deg');
+      animationScroll('hidden-right', 'show-right');
+    })
+  }
+
+
+  ngOnInit(): void {
+    animationScroll('hidden-left', 'show-left');
+    animationScroll('rotate-0deg', 'rotate-360deg');
+    animationScroll('hidden-right', 'show-right');
+  }
+
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {

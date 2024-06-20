@@ -5,11 +5,13 @@ section {
 
   @include displayFlex();
 
-  width: 100%;
+  width: 100vw;
 
-  padding-top: 128px;
+  padding-top: 240px;
 
   transition: 75ms all ease-in-out;
+
+  z-index: 2;
 
   @media (max-width: 1150px) {
     @include displayFlex();
@@ -143,7 +145,7 @@ p {
     border: 8px solid $colorGreen;
     border-radius: 50%;
 
-    z-index: 2;
+    z-index: 3;
 
     @media (max-width: 1150px) {
       display: none;
@@ -157,7 +159,7 @@ p {
     width: calc((100vw - 1440px) / 2);
     border: 4px solid $colorGreen;
 
-    z-index: 2;
+    z-index: 3;
 
     @media (max-width: 1400px) {
       width: 100px;

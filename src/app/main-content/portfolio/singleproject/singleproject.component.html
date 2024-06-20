@@ -1,21 +1,26 @@
-<section [class.flex-dir-row-reverse]="isSecondElement()">
+<section>
 
-  <!-- Project img -->
-  <img src="{{project.img}}" alt="">
+  <div [class.flex-dir-row-reverse]="isSecondElement()" class="singleproject">
 
-  <!-- Description -->
-  <div [class.align-items-flex-end]="isSecondElement()" class="description">
-    <div [class.align-items-flex-end]="isSecondElement()">
-      <span>{{ project.headline }}</span>
-      <p>{{ project.technologies }}</p>
-      <p [class.text-align-right]="isSecondElement()">{{ project.description }}</p>
-      <p [class.text-align-right]="isSecondElement()">{{ project.runOn }}</p>
+    <!-- Project img -->
+    <img src="{{project.img}}" alt="">
+
+    <!-- Description -->
+    <div [class.align-items-flex-end]="isSecondElement()" [class.hidden-right]="!isSecondElement()" [class.hidden-left]="isSecondElement()" class="description">
+      <div [class.align-items-flex-end]="isSecondElement()">
+        <span>{{ project.headline }}</span>
+        <p>{{ project.technologies }}</p>
+        <p [class.text-align-right]="isSecondElement()">{{ project.description }}</p>
+        <p [class.text-align-right]="isSecondElement()">{{ project.runOn }}</p>
+      </div>
+
+      <div class="buttons">
+        <a class="button-purple" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.liveTest}}">Live
+          Test</a>
+        <a class="button-black" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.github}}">Github</a>
+      </div>
     </div>
 
-    <div class="buttons">
-      <a class="button-purple" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.liveTest}}">Live Test</a>
-      <a class="button-black" [ngStyle]="{'color': 'white'}" target="_blank" href="{{project.github}}">Github</a>
-    </div>
   </div>
 
   <!-- Shadow -->

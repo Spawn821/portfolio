@@ -19,7 +19,7 @@
 section {
   @include displayFlex();
 
-  width: 100%;
+  width: 100vw;
 }
 
 .contact {
@@ -27,7 +27,7 @@ section {
 
   width: 1440px;
 
-  padding-top: 128px;
+  padding-top: 240px;
   padding-bottom: 128px;
 
   transition: 75ms all ease-in-out;

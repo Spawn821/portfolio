@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {animationScroll} from "../../../main";
 
 @Component({
   selector: 'app-my-skills',
@@ -9,4 +10,16 @@ import { Component } from '@angular/core';
 })
 export class MySkillsComponent {
 
+  constructor() {
+    window.addEventListener('scroll', () => {
+      animationScroll('scale-small', 'scale-normal');
+      animationScroll('hidden-right', 'show-right');
+    })
+  }
+
+
+  ngOnInit(): void {
+    animationScroll('scale-small', 'scale-normal');
+    animationScroll('hidden-right', 'show-right');
+  }
 }

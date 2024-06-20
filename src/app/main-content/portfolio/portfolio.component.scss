@@ -3,13 +3,13 @@
 section {
   @include displayFlex();
 
-  width: 100%;
+  width: 100vw;
 }
 
 .portfolio {
   width: 1440px;
 
-  padding-top: 128px;
+  padding-top: 240px;
 
   transition: 75ms all ease-in-out;
 }

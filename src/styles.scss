@@ -128,6 +128,78 @@ img {
   }
 }
 
+.rotate-0deg {
+  transform: rotate(0deg);
+}
+
+.rotate-360deg {
+  z-index: 2;
+
+  animation: 500ms rotate-720deg;
+
+  @keyframes rotate-720deg {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.scale-small {
+  transform: scale(0.25);
+
+  transition: all 1s;
+}
+
+.scale-normal {
+  transform: scale(1);
+
+  z-index: 2;
+}
+
+.mirror-left {
+  transform: scaleX(-1);
+
+  transition: all 1s;
+}
+
+.mirror-right {
+  transform: scaleX(1);
+
+  z-index: 2;
+}
+
+.hidden-left {
+  margin-left: -400px;
+
+  opacity: 0;
+
+  transition: all 1s;
+}
+
+.show-left {
+  margin-left: 0;
+
+  opacity: 1 !important;
+}
+
+.hidden-right {
+  margin-right: -400px;
+
+  opacity: 0;
+
+  transition: all 1s;
+}
+
+.show-right {
+  margin-right: 0;
+
+  opacity: 1 !important;
+}
+
 
 /* ----- */
 /* Icons */

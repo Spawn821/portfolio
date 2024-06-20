@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {animationScroll} from "../../../main";
 
 @Component({
   selector: 'app-about-me',
@@ -9,4 +10,16 @@ import { Component } from '@angular/core';
 })
 export class AboutMeComponent {
 
+  constructor() {
+    window.addEventListener('scroll', () => {
+      animationScroll('mirror-left', 'mirror-right');
+      animationScroll('hidden-right', 'show-right');
+    })
+  }
+
+
+  ngOnInit(): void {
+    animationScroll('mirror-left', 'mirror-right');
+    animationScroll('hidden-left', 'hidden-right');
+  }
 }
