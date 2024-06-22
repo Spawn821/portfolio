@@ -12,14 +12,14 @@ export class AboutMeComponent {
 
   constructor() {
     window.addEventListener('scroll', () => {
-      animationScroll('mirror-left', 'mirror-right');
+      animationScroll('scale-small', 'scale-normal');
       animationScroll('hidden-right', 'show-right');
     })
   }
 
 
   ngOnInit(): void {
-    animationScroll('mirror-left', 'mirror-right');
-    animationScroll('hidden-left', 'hidden-right');
+    animationScroll('scale-small', 'scale-normal');
+    animationScroll('hidden-right', 'show-right');
   }
 }

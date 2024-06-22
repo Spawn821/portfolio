@@ -14,11 +14,6 @@ export class AboveTheFoldComponent {
     window.addEventListener('resize', () => {
       this.positioningVectorBanner();
     })
-
-    window.addEventListener('scroll', () => {
-      animationScroll('hidden-left', 'show-left');
-      animationScroll('hidden-right', 'show-right');
-    })
   }
 
 

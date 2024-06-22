@@ -38,16 +38,14 @@ export class ContactComponent {
   constructor() {
     window.addEventListener('scroll', () => {
       animationScroll('hidden-left', 'show-left');
-      animationScroll('rotate-0deg', 'rotate-360deg');
-      animationScroll('hidden-right', 'show-right');
+      animationScroll('scale-small', 'scale-normal');
     })
   }
 
 
   ngOnInit(): void {
     animationScroll('hidden-left', 'show-left');
-    animationScroll('rotate-0deg', 'rotate-360deg');
-    animationScroll('hidden-right', 'show-right');
+    animationScroll('scale-small', 'scale-normal');
   }
 
 

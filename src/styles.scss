@@ -135,9 +135,9 @@ img {
 .rotate-360deg {
   z-index: 2;
 
-  animation: 500ms rotate-720deg;
+  animation: 500ms rotate-360deg;
 
-  @keyframes rotate-720deg {
+  @keyframes rotate-360deg {
     0% {
       transform: rotate(0deg);
     }
@@ -151,7 +151,7 @@ img {
 .scale-small {
   transform: scale(0.25);
 
-  transition: all 1s;
+  transition: all ease-in-out 500ms;
 }
 
 .scale-normal {
@@ -163,7 +163,7 @@ img {
 .mirror-left {
   transform: scaleX(-1);
 
-  transition: all 1s;
+  transition: all ease-in-out 1s;
 }
 
 .mirror-right {
@@ -173,11 +173,11 @@ img {
 }
 
 .hidden-left {
-  margin-left: -400px;
+  margin-left: -240px;
 
   opacity: 0;
 
-  transition: all 1s;
+  transition: all ease-in-out 500ms;
 }
 
 .show-left {
@@ -187,11 +187,11 @@ img {
 }
 
 .hidden-right {
-  margin-right: -400px;
+  margin-right: -240px;
 
   opacity: 0;
 
-  transition: all 1s;
+  transition: all ease-in-out 500ms;
 }
 
 .show-right {
