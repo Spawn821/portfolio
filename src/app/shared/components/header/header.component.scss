@@ -69,12 +69,55 @@ a {
 }
 
 .highlightingText {
-  color: $colorGreen;
+  color: $colorGreen !important;
 
 }
 
 .underline {
   width: 55px;
+
+  border: 3px solid $colorPurple;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.dropdown-laguage {
+  font-size: 23px;
+}
+
+.laguage-menu {
+
+  @include displayFlex($aI: flext-start, $g: 8px);
+
+  & > div {
+    @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
+
+    & > button {
+      font-size: 23px;
+
+      border: none;
+
+      color: $colorWhite;
+      background-color: transparent;
+
+      padding: 0;
+
+      &:hover {
+        color: $colorGreen;
+      }
+    }
+  }
+
+  & > div:nth-child(2) {
+    height: 24px;
+
+    border: 2px solid $colorWhite;
+    border-radius: 2px;
+  }
+}
+
+.language-underline {
+  width: 16px;
 
   border: 3px solid $colorPurple;
   border-top-right-radius: 3px;

@@ -5,6 +5,8 @@ section {
 
   @include displayFlex();
 
+  width: 100vw;
+
   background-color: $colorBlack;
 
   overflow: clip;
@@ -12,9 +14,11 @@ section {
   & > div {
     @include displayFlex($fD: column, $aI: flex-start);
 
+    width: 1440px;
+
     margin-top: 111.71px;
 
-    padding: 64px 100px;
+    padding: 64px 0;
 
     color: $colorWhite;
 

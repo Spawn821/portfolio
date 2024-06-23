@@ -17,6 +17,8 @@
 }
 
 section {
+  position: relative;
+
   @include displayFlex();
 
   width: 100vw;
@@ -111,24 +113,6 @@ section {
     }
   }
 
-  .contact-shadow {
-    position: absolute;
-    left: -650px;
-    bottom: -1250px;
-
-    width: 881px;
-    height: 1327px;
-
-    transform: scaleX(-1);
-
-    @media (max-width: 1350px) {
-      bottom: -1350px;
-      left: -400px;
-
-      width: 681px;
-      height: 1127px;
-    }
-  }
 
   .send-complete {
     position: absolute;
@@ -527,5 +511,24 @@ textarea:valid {
     &:hover {
       padding: 15px 30px;
     }
+  }
+}
+
+.contact-shadow {
+  position: absolute;
+  left: -450px;
+  bottom: -600px;
+
+  width: 881px;
+  height: 1327px;
+
+  transform: scaleX(-1);
+
+  @media (max-width: 1350px) {
+    bottom: -1350px;
+    left: -400px;
+
+    width: 681px;
+    height: 1127px;
   }
 }

@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {Component, Input, SimpleChanges} from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -36,11 +36,22 @@ export class HeaderComponent {
 
   isClicked(event: any) {
     document.addEventListener('wheel', () => {
-      this.removeHighlighting();
+      if (event.target.innerHTML !== 'DE' && event.target.innerHTML !== 'EN') {
+        this.removeHighlighting();
+      }
     });
 
+    debugger;
     if (this.lastHighlightedElement.firstElement) {
-      this.removeHighlighting();
+      if (this.lastHighlightedElement.firstElement.innerHTML === 'DE' || this.lastHighlightedElement.firstElement.innerHTML === 'EN') {
+        console.log(event.target.innerHTML);
+        if (!event.target.classList.contains('highlightingText')) {
+          this.removeHighlighting();
+        }
+      }
+      if (this.lastHighlightedElement.firstElement.innerHTML !== 'DE' && this.lastHighlightedElement.firstElement.innerHTML !== 'EN') {
+        this.removeHighlighting();
+      }
     }
 
     this.lastHighlightedElement.firstElement = event.target;
@@ -53,5 +64,9 @@ export class HeaderComponent {
   removeHighlighting() {
     this.lastHighlightedElement.firstElement.classList.remove('highlightingText');
     this.lastHighlightedElement.lastElement.classList.add('v-hidden');
+  }
+
+  isClickedLanguage() {
+
   }
 }

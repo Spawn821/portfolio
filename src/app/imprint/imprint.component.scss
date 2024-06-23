@@ -5,14 +5,18 @@ section {
 
   @include displayFlex();
 
+  width: 100vw;
+
   background-color: $colorBlack;
 
   overflow: clip;
 
   & > div {
+    width: 1440px;
+
     margin-top: 111.71px;
 
-    padding: 64px 100px;
+    padding: 64px;
 
     color: $colorWhite;
 
@@ -38,7 +42,7 @@ h3 {
 }
 
 .vector-banner {
-  top: 242px;
+  top: 180px;
 
   width: 100%;
   height: auto;
@@ -60,13 +64,13 @@ h3 {
 }
 
 .privacy-policy-shadow-green {
-  left: 150px;
+  left: -400px;
   top: 40px;
 
   width: 822px;
   height: 678px;
 
-  transform: rotate(-60deg);
+  transform: rotate(-100deg);
 
   @media (max-width: 1200px) {
     left: -100px;

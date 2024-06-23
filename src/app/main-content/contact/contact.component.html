@@ -28,8 +28,6 @@
           </div>
         </div>
 
-        <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">
-
         <div [class.d-none]="!sendComplete" class="send-complete">
                 <span>
                     Thanks for your interest {{ contactName }}.
@@ -42,7 +40,8 @@
       </div>
 
       <!-- Form -->
-      <form class="scale-small" [class.form-animation]="sendComplete" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <form class="scale-small" [class.form-animation]="sendComplete" (ngSubmit)="onSubmit(contactForm)"
+            #contactForm="ngForm">
         <div>
           <div class="input-wrapper">
             <div class="input-area">
@@ -97,7 +96,7 @@
             </div>
           } @else {
             <div class="button-wrapper">
-              <button class="button-green" [disabled]="true">Send message :)</button>
+              <button class="button-green" [disabled]="true">Nachricht senden :)</button>
             </div>
           }
         </div>
@@ -107,5 +106,7 @@
     </div>
 
   </div>
+
+  <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">
 
 </section>

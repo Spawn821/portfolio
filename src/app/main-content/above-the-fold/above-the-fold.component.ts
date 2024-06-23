@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {animationScroll} from "../../../main";
 
 @Component({
@@ -9,6 +9,8 @@ import {animationScroll} from "../../../main";
   styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent {
+
+  @Input() language: any;
 
   constructor() {
     window.addEventListener('resize', () => {
