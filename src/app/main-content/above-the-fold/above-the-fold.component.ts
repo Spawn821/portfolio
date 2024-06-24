@@ -10,7 +10,8 @@ import {animationScroll} from "../../../main";
 })
 export class AboveTheFoldComponent {
 
-  @Input() language: any;
+  @Input() languageList: any;
+  @Input() currentLanguage: string = '';
 
   constructor() {
     window.addEventListener('resize', () => {

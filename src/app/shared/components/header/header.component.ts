@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
 @Component({
@@ -15,6 +15,8 @@ export class HeaderComponent {
   windowSize: MediaQueryList = window.matchMedia('(max-width: 950px)');
   showBurgerMenu: boolean = false;
 
+  @Output() newCurrentLanguage: EventEmitter<string> = new EventEmitter<string>();
+
   lastHighlightedElement: any = {
     firstElement: undefined,
     lastElement: undefined
@@ -24,6 +26,10 @@ export class HeaderComponent {
     window.addEventListener('resize', () => {
       this.windowSize = window.matchMedia('(max-width: 950px)')
     })
+  }
+
+  ngOnInit() {
+    this.newCurrentLanguage.emit('german');
   }
 
   openBurgerMenu(action: string): void {
@@ -41,17 +47,8 @@ export class HeaderComponent {
       }
     });
 
-    debugger;
     if (this.lastHighlightedElement.firstElement) {
-      if (this.lastHighlightedElement.firstElement.innerHTML === 'DE' || this.lastHighlightedElement.firstElement.innerHTML === 'EN') {
-        console.log(event.target.innerHTML);
-        if (!event.target.classList.contains('highlightingText')) {
-          this.removeHighlighting();
-        }
-      }
-      if (this.lastHighlightedElement.firstElement.innerHTML !== 'DE' && this.lastHighlightedElement.firstElement.innerHTML !== 'EN') {
         this.removeHighlighting();
-      }
     }
 
     this.lastHighlightedElement.firstElement = event.target;
@@ -66,7 +63,24 @@ export class HeaderComponent {
     this.lastHighlightedElement.lastElement.classList.add('v-hidden');
   }
 
-  isClickedLanguage() {
+  addLanguage(event: any) {
+    let btnDE = document.getElementById('language-DE');
+    let btnEN = document.getElementById('language-EN');
 
+    if (event.target.innerHTML === "DE") {
+      btnEN ? btnEN.classList.remove('highlightingText') : null;
+      btnEN ? btnEN.classList.remove('language-frame') : null;
+      btnDE ? btnDE.classList.add('highlightingText') : null;
+      btnDE ? btnDE.classList.add('language-frame') : null;
+    } else {
+      btnEN ? btnEN.classList.add('highlightingText') : null;
+      btnEN ? btnEN.classList.add('language-frame') : null;
+      btnDE ? btnDE.classList.remove('highlightingText') : null;
+      btnDE ? btnDE.classList.remove('language-frame') : null;
+    }
+  }
+
+  changeLanguage(language: string) {
+    this.newCurrentLanguage.emit(language);
   }
 }

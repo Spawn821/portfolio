@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {animationScroll} from "../../../main";
 
 @Component({
@@ -9,6 +9,9 @@ import {animationScroll} from "../../../main";
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
+
+  @Input() languageList: any;
+  @Input() currentLanguage: string = '';
 
   constructor() {
     window.addEventListener('scroll', () => {

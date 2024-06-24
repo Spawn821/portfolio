@@ -7,6 +7,11 @@
       <img src="./../../../../assets/graphics/logo.png" alt="">
     </a>
 
+    <div class="laguage-menu">
+        <button (click)="addLanguage($event); changeLanguage('german')" id="language-DE" class="highlightingText language-frame">DE</button>
+        <button (click)="addLanguage($event); changeLanguage('english')" id="language-EN">EN</button>
+    </div>
+
     @if (!imprint) {
       <div [ngSwitch]="true">
         <!-- Nav bar desktop -->
@@ -59,18 +64,6 @@
         </ng-template>
       </div>
     }
-
-    <div class="laguage-menu">
-      <div>
-        <button (click)="isClicked($event)">DE</button>
-        <div id="language-underline" class="language-underline v-hidden"></div>
-      </div>
-      <div></div>
-      <div>
-        <button (click)="isClicked($event)">EN</button>
-        <div id="language-underline" class="language-underline v-hidden"></div>
-      </div>
-    </div>
 
   </header>
 
