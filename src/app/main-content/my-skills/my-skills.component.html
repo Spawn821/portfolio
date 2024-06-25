@@ -73,24 +73,15 @@
     <div class="my-skills-text scale-small">
       <div>
         <div class="headline">
-          <span>My skills</span>
-          <p>
-            Ich habe mit einige Sprachen und Technologien gearbeitet. Angefangen von Statik mit HTML,
-            customizing mit CSS, bishin zur Dynamik mit JavaScript. Desweiteren Arbeitete ich mit der API
-            Schnittstelle und Datenbankanbindung über Firebase. Die Versionsverwaltung über GIT war ein
-            ständiger Begleiter. Scrum gab mir viel Freiraum in der Planung und Struktur, von den ersten
-            Zeilen in jedem Projekt, bishin zum Release. In TypeScript lernte ich mit Datentypen umzugehen
-            und meinen Code konsistenter und sicherer zu machen. Auch einige Schritte machte ich im umgang
-            mit Material Design und seinen Layouts. Zuletzt lernte ich den Umgang mit dem Framwork Angular.
-            In dem ich auch diese Website programmiert habe.
-          </p>
+          <span>{{languageList[currentLanguage][0]}}</span>
+          <p>{{languageList[currentLanguage][1]}}</p>
         </div>
 
         <div class="seperator hidden-right"></div>
       </div>
 
       <div class="button-desktop">
-        <a class="button-green" href="#contact">Kontaktieren</a>
+        <a class="button-green" href="#contact">{{languageList[currentLanguage][2]}}</a>
       </div>
     </div>
 

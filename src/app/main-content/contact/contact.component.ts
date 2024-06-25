@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {animationScroll} from "../../../main";
@@ -12,6 +12,9 @@ import {animationScroll} from "../../../main";
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+
+  @Input() languageList: any;
+  @Input() currentLanguage: string = '';
 
   http = inject(HttpClient);
   checkboxState = false;

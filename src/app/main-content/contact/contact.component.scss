@@ -84,6 +84,8 @@ section {
   .headline {
     @include displayFlex($fD: column, $aI: flex-start, $g: 56px);
 
+    width: 571px;
+
     @media (max-width: 750px) {
       @include displayFlex($fD: column, $aI: flex-start, $g: 24px);
     }
@@ -116,10 +118,12 @@ section {
 
   .send-complete {
     position: absolute;
-    left: 100px;
+    left: 0;
     bottom: -225px;
 
     @include displayFlex();
+
+    width: calc(571px - 48px);
 
     background-color: transparent;
 
@@ -143,17 +147,17 @@ section {
         }
 
         10% {
-          left: 100px;
+          left: 0;
           opacity: 1;
         }
 
         50% {
-          left: 100px;
+          left: 0;
           opacity: 1;
         }
 
         75% {
-          left: 100px;
+          left: 0;
           opacity: 1;
         }
 

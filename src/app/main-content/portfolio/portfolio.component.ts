@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import { SingleprojectComponent } from './singleproject/singleproject.component';
 import { ProjectdataService } from './projectdata.service';
 import {animationScroll} from "../../../main";
@@ -12,6 +12,8 @@ import {animationScroll} from "../../../main";
 })
 export class PortfolioComponent {
 
+  @Input() languageList: any;
+  @Input() currentLanguage: string = '';
   projectlistdata = inject(ProjectdataService);
 
   constructor() {

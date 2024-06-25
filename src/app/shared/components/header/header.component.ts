@@ -16,6 +16,8 @@ export class HeaderComponent {
   showBurgerMenu: boolean = false;
 
   @Output() newCurrentLanguage: EventEmitter<string> = new EventEmitter<string>();
+  @Input() currentLanguage: string = '';
+  @Input() languageList: any;
 
   lastHighlightedElement: any = {
     firstElement: undefined,

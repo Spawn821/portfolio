@@ -24,7 +24,7 @@ import {LanguageService} from "../language.service";
 export class MainContentComponent {
 
   languagelistdata = inject(LanguageService);
-  currentLanguage: string = '';
+  currentLanguage: string = 'german';
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' })

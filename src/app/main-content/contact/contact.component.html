@@ -9,32 +9,24 @@
         <div class="seperator hidden-left"></div>
 
         <div class="headline scale-small">
-          <span><b>Contact</b></span>
+          <span><b>{{ languageList[currentLanguage][0] }}</b></span>
 
           <div>
-            <span><b>Haben Sie ein Problem zu lösen?</b></span>
+            <span><b>{{ languageList[currentLanguage][1] }}</b></span>
             <p>
-              Kontaktieren Sie mich über dieses Formular.
-              <br>
-              Ich bin interessiert, von Ihnen zu hören,
-              <br>
-              Ihre Ideen zu kennen und mit meiner Arbeit
-              <br>
-              zu Ihrem Projekt beizutragen.
+              {{ languageList[currentLanguage][2] }}
               <br>
               <br>
-              Brauchen Sie einen Frontend-Entwickler?&nbsp;<b>Kontaktieren Sie mich!</b>
+              {{ languageList[currentLanguage][3] }}&nbsp;<b>{{ languageList[currentLanguage][4] }}</b>
             </p>
           </div>
         </div>
 
         <div [class.d-none]="!sendComplete" class="send-complete">
                 <span>
-                    Thanks for your interest {{ contactName }}.
-                    <br>
-                    I look forward to talking to you and
-                    <br>
-                    will be in touch soon. :D
+                    {{ languageList[currentLanguage][5] }} {{ contactName }}.
+                  {{ languageList[currentLanguage][6] }}
+                  {{ languageList[currentLanguage][7] }}
                 </span>
         </div>
       </div>
@@ -46,7 +38,7 @@
           <div class="input-wrapper">
             <div class="input-area">
               <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" required type="text"
-                     placeholder="Ihr Name">
+                     placeholder="{{ languageList[currentLanguage][8]}}">
               <div class="input-icons">
                 <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                 <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -60,7 +52,7 @@
             <div class="input-area">
               <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" type="email"
-                     placeholder="Ihre E-Mail-Adresse">
+                     placeholder="{{ languageList[currentLanguage][9]}}">
               <div class="input-icons">
                 <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                 <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -72,7 +64,8 @@
           <div class="textarea-wrapper">
             <div class="text-area">
                         <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message"
-                                  required placeholder="Ihre Nachricht" rows="9" maxlength="500"></textarea>
+                                  required placeholder="{{ languageList[currentLanguage][10]}}" rows="9"
+                                  maxlength="500"></textarea>
               <div class="textarea-icons">
                 <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
                 <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
@@ -86,17 +79,18 @@
               <input type="checkbox" [checked]="checkboxState" (change)="isChecked($event)">
               <div></div>
             </label>
-            <span>Ich habe die&nbsp;<a routerLink="/privacy-policy">Datenschutzerklärung</a>&nbsp;gelesen
-            und stimme der Verabeitung meiner Daten wie beschrieben zu.</span>
+            <span>{{ languageList[currentLanguage][11] }}&nbsp;<a
+              routerLink="/privacy-policy">{{ languageList[currentLanguage][12] }}</a>&nbsp;
+              {{ languageList[currentLanguage][13] }}</span>
           </div>
 
           @if (name.valid && email.valid && message.valid && getCheckboxState()) {
             <div class="button-wrapper">
-              <button class="button-green" [disabled]="false">Send message :)</button>
+              <button class="button-green" [disabled]="false">{{ languageList[currentLanguage][14] }}</button>
             </div>
           } @else {
             <div class="button-wrapper">
-              <button class="button-green" [disabled]="true">Nachricht senden :)</button>
+              <button class="button-green" [disabled]="true">{{ languageList[currentLanguage][14] }}</button>
             </div>
           }
         </div>

@@ -9,13 +9,19 @@
         <div class="seperator"></div>
       </div>
 
-      <p>Explore a seclection of my work here - interact with projects to see my skills in action.</p>
+      <p>{{ languageList[currentLanguage][0] }}</p>
     </div>
 
     <!-- Project sections -->
     <div class="my-projects">
-      @for (singleProject of projectlistdata.projectlist; track singleProject.img; let index = $index) {
-        <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
+      @if (currentLanguage === '' || currentLanguage === 'german') {
+        @for (singleProject of projectlistdata.projectlist['german']; track singleProject.img; let index = $index) {
+          <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
+        }
+      } @else {
+        @for (singleProject of projectlistdata.projectlist['english']; track singleProject.img; let index = $index) {
+          <app-singleproject [index]="index" [project]="singleProject"></app-singleproject>
+        }
       }
     </div>
 
