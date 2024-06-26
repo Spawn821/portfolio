@@ -43,14 +43,8 @@ img {
 nav {
   @include displayFlex($g: 29px);
 
-  & > div {
+  .navigation {
     @include displayFlex($fD: column, $aI: flex-start, $g: 4px);
-  }
-
-  @media (min-width: 950px) {
-    & > div:nth-child(4) {
-      display: none;
-    }
   }
 }
 
@@ -87,7 +81,11 @@ a {
 
 .laguage-menu {
 
-  @include displayFlex($aI: flext-start, $g: 16px);
+  @include displayFlex($g: 16px);
+
+  @media (min-width: 950px) {
+    margin-left: 32px;
+  }
 
   & > button {
     font-size: 23px;

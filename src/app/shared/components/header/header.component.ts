@@ -66,19 +66,27 @@ export class HeaderComponent {
   }
 
   addLanguage(event: any) {
-    let btnDE = document.getElementById('language-DE');
-    let btnEN = document.getElementById('language-EN');
+    let btnDE = document.querySelectorAll('#language-DE');
+    let btnEN = document.querySelectorAll('#language-EN');
 
-    if (event.target.innerHTML === "DE") {
-      btnEN ? btnEN.classList.remove('highlightingText') : null;
-      btnEN ? btnEN.classList.remove('language-frame') : null;
-      btnDE ? btnDE.classList.add('highlightingText') : null;
-      btnDE ? btnDE.classList.add('language-frame') : null;
+    if (event.target.id === "language-DE") {
+      btnEN.forEach(el => {
+        el.classList.remove('highlightingText');
+        el.classList.remove('language-frame');
+      })
+      btnDE.forEach(el => {
+        el.classList.add('highlightingText');
+        el.classList.add('language-frame');
+      })
     } else {
-      btnEN ? btnEN.classList.add('highlightingText') : null;
-      btnEN ? btnEN.classList.add('language-frame') : null;
-      btnDE ? btnDE.classList.remove('highlightingText') : null;
-      btnDE ? btnDE.classList.remove('language-frame') : null;
+      btnEN.forEach(el => {
+        el.classList.add('highlightingText');
+        el.classList.add('language-frame');
+      })
+      btnDE.forEach(el => {
+        el.classList.remove('highlightingText');
+        el.classList.remove('language-frame');
+      })
     }
   }
 

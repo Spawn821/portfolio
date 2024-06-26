@@ -1,8 +1,8 @@
 <section>
   <app-header [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['header']" (newCurrentLanguage)="currentLanguage = $event" [imprint]="false"></app-header>
-  <app-above-the-fold [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['above-the-fold']" id="above-the-fold"></app-above-the-fold>
-  <app-about-me [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['about-me']" id="about-me"></app-about-me>
-  <app-my-skills [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['my-skills']" id="my-skills"></app-my-skills>
-  <app-portfolio [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['portfolio']" id="portfolio"></app-portfolio>
-  <app-contact [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['contact']" id="contact"></app-contact>
+  <app-above-the-fold class="d-none" [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['above-the-fold']" id="above-the-fold"></app-above-the-fold>
+  <app-about-me class="d-none" [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['about-me']" id="about-me"></app-about-me>
+  <app-my-skills class="d-none" [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['my-skills']" id="my-skills"></app-my-skills>
+  <app-portfolio class="d-none" [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['portfolio']" id="portfolio"></app-portfolio>
+  <app-contact class="d-none" [currentLanguage]="currentLanguage" [languageList]="languagelistdata.languageList['contact']" id="contact"></app-contact>
 </section>
