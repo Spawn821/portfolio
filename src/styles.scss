@@ -79,7 +79,7 @@ img {
 
   z-index: 1;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1000px) {
     font-size: 16px;
   }
 
@@ -178,6 +178,10 @@ img {
   opacity: 0;
 
   transition: all ease-in-out 500ms;
+
+  @media (max-width: 550px) {
+    margin-left: -56px;
+  }
 }
 
 .show-left {
@@ -192,6 +196,10 @@ img {
   opacity: 0;
 
   transition: all ease-in-out 500ms;
+
+  @media (max-width: 550px) {
+    margin-right: -56px;
+  }
 }
 
 .show-right {

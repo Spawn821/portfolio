@@ -8,6 +8,10 @@ section {
   margin-top: 130px;
 
   padding-bottom: 120px;
+
+  @media (max-width: 550px) {
+    margin-top: 16px;
+  }
 }
 
 .above-the-fold {
@@ -18,12 +22,22 @@ section {
   width: 1440px;
 
   transition: 75ms all ease-in-out;
+
+  @media (max-width: 1440px) {
+    @include displayFlex($fD: column, $g: 80px);
+
+    width: 100%
+  }
 }
 
 .profil {
   @include displayFlex($jC: flex-start);
 
   width: 100%;
+
+  @media (max-width: 1440px) {
+    @include displayFlex($fD: column);
+  }
 
   .picture {
     @include displayFlex($jC: flex-start, $aI: flex-start);
@@ -36,12 +50,47 @@ section {
     background-position: -16px 72px;
     background-size: contain;
 
+    @media (max-width: 1440px) {
+      @include displayFlex();
+
+      width: 957px;
+
+      background-position: 144px 96px;
+    }
+
+    @media (max-width: 1000px) {
+      width: 807px;
+      height: 671px;
+
+      background-position: 112px 96px;
+    }
+
+    @media (max-width: 550px) {
+      margin-bottom: -80px;
+    }
+
     & > img {
       width: 499px;
       height: 660px;
 
       margin-left: 64px;
       margin-top: 24px;
+
+      @media (max-width: 1440px) {
+        margin-left: 0;
+      }
+
+      @media (max-width: 1000px) {
+        width: 399px;
+        height: 560px;
+      }
+
+      @media (max-width: 550px) {
+        width: 299px;
+        height: 460px;
+
+        margin-top: 0;
+      }
     }
   }
 
@@ -56,6 +105,10 @@ section {
 
     z-index: 2;
 
+    @media (max-width: 1440px) {
+      position: unset;
+    }
+
     .headline {
       @include displayFlex();
 
@@ -65,6 +118,14 @@ section {
         font-size: 48px;
 
         transform: rotate(-90deg);
+
+        @media (max-width: 1000px) {
+          font-size: 26px;
+        }
+
+        @media (max-width: 550px) {
+          font-size: 16px;
+        }
       }
 
       & > div {
@@ -72,16 +133,40 @@ section {
 
         & > span {
           line-height: 96px;
+
+          @media (max-width: 1000px) {
+            line-height: 56px;
+          }
+
+          @media (max-width: 550px) {
+            line-height: 40px;
+          }
         }
 
         & > span:nth-child(1) {
           font-size: 84px;
+
+          @media (max-width: 1000px) {
+            font-size: 45px;
+          }
+
+          @media (max-width: 550px) {
+            font-size: 28px;
+          }
         }
 
         & > span:nth-child(3) {
           font-size: 58px;
 
           color: $colorPurple;
+
+          @media (max-width: 1000px) {
+            font-size: 29px;
+          }
+
+          @media (max-width: 550px) {
+            font-size: 18px;
+          }
         }
       }
     }
@@ -92,6 +177,10 @@ section {
   @include displayFlex($jC: space-between);
 
   width: 100%;
+
+  @media (max-width: 1440px) {
+    @include displayFlex();
+  }
 
   .find-me-on {
     @include displayFlex($g: 32px);
@@ -114,6 +203,16 @@ section {
 
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
+
+        @media (max-width: 1440px) {
+          left: calc((620px - 100vw) / 2);
+          width: calc((100vw - 620px) / 2);
+        }
+
+        @media (max-width: 1000px) {
+          left: calc((179px - 100vw) / 2);
+          width: calc((100vw - 179px) / 2);
+        }
       }
     }
 
@@ -137,6 +236,10 @@ section {
       font-size: 23px;
 
       color: $colorWhite;
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 
@@ -148,6 +251,10 @@ section {
     @include displayFlex($fD: column, $g: 56px);
 
     z-index: 2;
+
+    @media (max-width: 1440px) {
+      display: none;
+    }
 
     & > span {
       transform: rotate(90deg);
@@ -172,4 +279,10 @@ section {
   width: 100%;
 
   z-index: 1;
+
+  @media (max-width: 550px) {
+    height: 500px;
+
+    object-fit: cover;
+  }
 }
