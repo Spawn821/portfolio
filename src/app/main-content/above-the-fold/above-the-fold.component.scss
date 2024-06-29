@@ -5,9 +5,9 @@ section {
 
   width: 100vw;
 
-  margin-top: 130px;
+  margin-top: 160px;
 
-  padding-bottom: 120px;
+  padding-bottom: 60px;
 
   @media (max-width: 550px) {
     margin-top: 16px;
@@ -17,9 +17,10 @@ section {
 .above-the-fold {
   position: relative;
 
-  @include displayFlex($fD: column);
+  @include displayFlex($fD: column, $jC: space-between);
 
   width: 1440px;
+  height: calc(100vh - 160px);
 
   transition: 75ms all ease-in-out;
 
@@ -40,41 +41,33 @@ section {
   }
 
   .picture {
-    @include displayFlex($jC: flex-start, $aI: flex-start);
+    position: relative;
 
-    width: 807px;
-    height: 771px;
+    & > img:nth-child(1) {
+      position: absolute;
+      left: -160px;
 
-    background-image: url('./../../../assets/graphics/shadows/above-the-fold-shadow-purple-green.svg');
-    background-repeat: no-repeat;
-    background-position: -16px 72px;
-    background-size: contain;
+      height: 871px;
 
-    @media (max-width: 1440px) {
-      @include displayFlex();
+      @media (min-height: 1440px) {
+        left: -200px;
 
-      width: 957px;
-
-      background-position: 144px 96px;
+        height: 1221px;
+      }
     }
 
-    @media (max-width: 1000px) {
-      width: 807px;
-      height: 671px;
+    & > img:nth-child(2) {
+      position: relative;
 
-      background-position: 112px 96px;
-    }
+      height: calc(771px * 1);
 
-    @media (max-width: 550px) {
-      margin-bottom: -80px;
-    }
+      transform: scaleX(-1);
 
-    & > img {
-      width: 499px;
-      height: 660px;
+      z-index: 1;
 
-      margin-left: 64px;
-      margin-top: 24px;
+      @media (min-height: 1440px) {
+        height: calc(771px * 1.5);
+      }
 
       @media (max-width: 1440px) {
         margin-left: 0;
@@ -96,7 +89,7 @@ section {
 
   .headline-wrapper {
     position: absolute;
-    right: 56px;
+    right: 0;
     top: 160px;
 
     @include displayFlex($fD: column, $g: 24px);
@@ -144,7 +137,7 @@ section {
         }
 
         & > span:nth-child(1) {
-          font-size: 84px;
+          font-size: 90px;
 
           @media (max-width: 1000px) {
             font-size: 45px;
@@ -174,6 +167,8 @@ section {
 }
 
 .find-scroll-wrapper {
+  position: relative;
+
   @include displayFlex($jC: space-between);
 
   width: 100%;

@@ -13,6 +13,15 @@ section {
   padding-bottom: 120px;
 
   transition: 75ms all ease-in-out;
+
+  @media (max-width: 1440px) {
+    width: 100vw;
+  }
+
+  @media (max-width: 550px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .headline {
@@ -29,6 +38,7 @@ section {
 
     & > span {
       font-size: 90px;
+      font-weight: 700;
 
       color: $colorWhite;
 
@@ -44,6 +54,8 @@ section {
       }
 
       @media (max-width: 550px) {
+        font-size: 28px;
+
         padding-left: 16px;
         padding-right: 16px;
       }
@@ -59,40 +71,21 @@ section {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
 
+      @media (max-width: 1440px) {
+        right: 0;
+        width: calc(100vw - 300px);
+      }
+
       @media (max-width: 1200px) {
-        width: 900px;
+        width: calc(100vw - 200px);
       }
 
-      @media (max-width: 1000px) {
-        width: 700px;
-      }
-
-      @media (max-width: 800px) {
-        width: 600px;
-      }
-
-      @media (max-width: 650px) {
-        width: 500px;
+      @media (max-width: 700px) {
+        width: calc(100vw - 100px);
       }
 
       @media (max-width: 550px) {
-        width: 450px;
-      }
-
-      @media (max-width: 500px) {
-        width: 400px;
-      }
-
-      @media (max-width: 500px) {
-        width: 375px;
-      }
-
-      @media (max-width: 400px) {
-        width: 325px;
-      }
-
-      @media (max-width: 350px) {
-        width: 300px;
+        width: calc(100vw - 50px);
       }
     }
   }

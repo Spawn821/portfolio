@@ -20,6 +20,10 @@ section {
     padding-top: 96px;
   }
 
+  @media (max-width: 550px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .about-me {
@@ -78,8 +82,12 @@ p {
 
     z-index: 2;
 
-    @media (max-width: 550px) {
+    @media (max-width: 1000px) {
       font-size: 45px;
+    }
+
+    @media (max-width: 550px) {
+      font-size: 28px;
     }
   }
 
@@ -180,8 +188,11 @@ p {
   object-fit: contain;
 
   z-index: 1;
-}
 
-.about-me-shadow-mobile {
-  display: none;
+  @media (max-width: 550px) {
+    top: -100px;
+
+    width: 572px;
+    height: 608px;
+  }
 }

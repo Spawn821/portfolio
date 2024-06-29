@@ -1,104 +1,100 @@
 <section class="font-family-poppins">
 
+  <!-- Wrapper -->
   <div class="contact">
+    <!-- Headline -->
+    <div class="contact-text">
+      <div class="seperator hidden-left"></div>
 
-    <!-- Wrapper -->
-    <div class="wrapper">
-      <!-- Headline -->
-      <div class="contact-text">
-        <div class="seperator hidden-left"></div>
+      <div class="headline scale-small">
+        <span><b>{{ languageList[currentLanguage][0] }}</b></span>
 
-        <div class="headline scale-small">
-          <span><b>{{ languageList[currentLanguage][0] }}</b></span>
-
-          <div>
-            <span><b>{{ languageList[currentLanguage][1] }}</b></span>
-            <p>
-              {{ languageList[currentLanguage][2] }}
-              <br>
-              <br>
-              {{ languageList[currentLanguage][3] }}&nbsp;<b>{{ languageList[currentLanguage][4] }}</b>
-            </p>
-          </div>
+        <div>
+          <span><b>{{ languageList[currentLanguage][1] }}</b></span>
+          <p>
+            {{ languageList[currentLanguage][2] }}
+            <br>
+            <br>
+            {{ languageList[currentLanguage][3] }}&nbsp;<b>{{ languageList[currentLanguage][4] }}</b>
+          </p>
         </div>
+      </div>
 
-        <div [class.d-none]="!sendComplete" class="send-complete">
+      <div [class.d-none]="!sendComplete" class="send-complete">
                 <span>
                     {{ languageList[currentLanguage][5] }} {{ contactName }}.
                   {{ languageList[currentLanguage][6] }}
                   {{ languageList[currentLanguage][7] }}
                 </span>
-        </div>
       </div>
+    </div>
 
-      <!-- Form -->
-      <form class="scale-small" [class.form-animation]="sendComplete" (ngSubmit)="onSubmit(contactForm)"
-            #contactForm="ngForm">
-        <div>
-          <div class="input-wrapper">
-            <div class="input-area">
-              <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" required type="text"
-                     placeholder="{{ languageList[currentLanguage][8]}}">
-              <div class="input-icons">
-                <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
-                <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
-              </div>
+    <!-- Form -->
+    <form class="scale-small" [class.form-animation]="sendComplete" (ngSubmit)="onSubmit(contactForm)"
+          #contactForm="ngForm">
+      <div>
+        <div class="input-wrapper">
+          <div class="input-area">
+            <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" required type="text"
+                   placeholder="{{ languageList[currentLanguage][8]}}">
+            <div class="input-icons">
+              <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
+              <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
             </div>
-            <p class="error-message">Your name is required</p>
           </div>
+          <p class="error-message">Your name is required</p>
+        </div>
 
-          <!-- pattern=".+@beststartupever\.com" -->
-          <div class="input-wrapper">
-            <div class="input-area">
-              <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
-                     pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" type="email"
-                     placeholder="{{ languageList[currentLanguage][9]}}">
-              <div class="input-icons">
-                <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
-                <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
-              </div>
+        <!-- pattern=".+@beststartupever\.com" -->
+        <div class="input-wrapper">
+          <div class="input-area">
+            <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" required
+                   pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" type="email"
+                   placeholder="{{ languageList[currentLanguage][9]}}">
+            <div class="input-icons">
+              <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
+              <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
             </div>
-            <p class="error-message">Your email is required</p>
           </div>
+          <p class="error-message">Your email is required</p>
+        </div>
 
-          <div class="textarea-wrapper">
-            <div class="text-area">
+        <div class="textarea-wrapper">
+          <div class="text-area">
                         <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message"
                                   required placeholder="{{ languageList[currentLanguage][10]}}" rows="9"
                                   maxlength="500"></textarea>
-              <div class="textarea-icons">
-                <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
-                <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
-              </div>
+            <div class="textarea-icons">
+              <img class="done-icon" src="./../../../assets/graphics/contact/done.png" alt="">
+              <img class="error-icon" src="./../../../assets/graphics/contact/error.png" alt="">
             </div>
-            <p class="error-message">Your message is empty</p>
           </div>
-
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" [checked]="checkboxState" (change)="isChecked($event)">
-              <div></div>
-            </label>
-            <span>{{ languageList[currentLanguage][11] }}&nbsp;<a
-              routerLink="/privacy-policy">{{ languageList[currentLanguage][12] }}</a>&nbsp;
-              {{ languageList[currentLanguage][13] }}</span>
-          </div>
-
-          @if (name.valid && email.valid && message.valid && getCheckboxState()) {
-            <div class="button-wrapper">
-              <button class="button-green" [disabled]="false">{{ languageList[currentLanguage][14] }}</button>
-            </div>
-          } @else {
-            <div class="button-wrapper">
-              <button class="button-green" [disabled]="true">{{ languageList[currentLanguage][14] }}</button>
-            </div>
-          }
+          <p class="error-message">Your message is empty</p>
         </div>
 
-        <div class="go-up-button" (click)="goUp()"></div>
-      </form>
-    </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [checked]="checkboxState" (change)="isChecked($event)">
+            <div></div>
+          </label>
+          <span>{{ languageList[currentLanguage][11] }}&nbsp;<a
+            routerLink="/privacy-policy">{{ languageList[currentLanguage][12] }}</a>&nbsp;
+            {{ languageList[currentLanguage][13] }}</span>
+        </div>
 
+        @if (name.valid && email.valid && message.valid && getCheckboxState()) {
+          <div class="button-wrapper">
+            <button class="button-green" [disabled]="false">{{ languageList[currentLanguage][14] }}</button>
+          </div>
+        } @else {
+          <div class="button-wrapper">
+            <button class="button-green" [disabled]="true">{{ languageList[currentLanguage][14] }}</button>
+          </div>
+        }
+      </div>
+
+      <div class="go-up-button" (click)="goUp()"></div>
+    </form>
   </div>
 
   <img class="contact-shadow" src="./../../../assets/graphics/shadows/contact-shadow-purple.svg" alt="">

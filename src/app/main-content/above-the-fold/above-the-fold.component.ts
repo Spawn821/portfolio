@@ -30,12 +30,13 @@ export class AboveTheFoldComponent {
   positioningVectorBanner() {
     let vectorBanner  = document.getElementById('vector-banner');
     let windowWidth = window.innerWidth;
-    let windowSize1440px = window.matchMedia('(max-width: 1440px)');
-    let windowSize1000px = window.matchMedia('(max-width: 1000px)');
-    let windowSize550px = window.matchMedia('(max-width: 550px)');
+    let windowWidth1440px = window.matchMedia('(max-width: 1440px)');
+    let windowWidth1000px = window.matchMedia('(max-width: 1000px)');
+    let windowWidth550px = window.matchMedia('(max-width: 550px)');
+    let windowHeight1440px = window.matchMedia('(min-height: 1440px)');
 
     let windowWidthConstant = 2500;
-    let translateYConstant = windowSize550px.matches ? -150 : windowSize1000px.matches ? 100 : windowSize1440px.matches ? 200 : 85;
+    let translateYConstant = windowHeight1440px.matches ? 550 : 200;
 
     let translateY = (windowWidthConstant - windowWidth) * 0.25;
 

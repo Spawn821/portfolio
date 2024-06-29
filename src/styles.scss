@@ -149,7 +149,7 @@ img {
 }
 
 .scale-small {
-  transform: scale(0.25);
+  transform: scale(0.75);
 
   transition: all ease-in-out 500ms;
 }
@@ -173,14 +173,14 @@ img {
 }
 
 .hidden-left {
-  margin-left: -240px;
+  margin-left: -100px;
 
   opacity: 0;
 
   transition: all ease-in-out 500ms;
 
-  @media (max-width: 550px) {
-    margin-left: -56px;
+  @media (max-width: 850px) {
+    margin-left: -32px;
   }
 }
 
@@ -191,14 +191,14 @@ img {
 }
 
 .hidden-right {
-  margin-right: -240px;
+  margin-right: -100px;
 
   opacity: 0;
 
   transition: all ease-in-out 500ms;
 
-  @media (max-width: 550px) {
-    margin-right: -56px;
+  @media (max-width: 850px) {
+    margin-right: -32px;
   }
 }
 

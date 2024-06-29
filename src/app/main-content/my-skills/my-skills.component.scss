@@ -24,16 +24,20 @@ section {
 
   @media (max-width: 1440px) {
     @include displayFlex($fD: column-reverse, $g: 80px);
+
+    width: 100vw;
+  }
+
+  @media (max-width: 550px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .button-mobile {
     display: none;
 
     @media (max-width: 1440px) {
-      @include displayFlex($aI: flex-start);
-
-      height: 100px;
-
+      display: block;
     }
   }
 }
@@ -48,21 +52,14 @@ section {
 
   margin-left: 100px;
 
-  z-index: 1;
+  z-index: 2;
 
   @media (max-width: 1440px) {
     margin-left: 0;
   }
 
-  @media (max-width: 800px) {
-    width: 521px;
-  }
-
-  @media (max-width: 600px) {
-    column-gap: 54px;
-    row-gap: 54px;
-
-    width: calc(100vw - 48px);
+  @media (max-width: 850px) {
+    width: calc(100vw - 50px);
   }
 
   & > div {
@@ -75,11 +72,6 @@ section {
       height: 60px;
 
       object-fit: contain;
-
-      @media (max-width: 600px) {
-        width: 45px;
-        height: 45px;
-      }
     }
 
     & > span {
@@ -87,10 +79,6 @@ section {
 
       font-size: 16px;
       font-weight: 700;
-
-      @media (max-width: 600px) {
-        font-size: 14px;
-      }
     }
 
     &:hover {
@@ -137,28 +125,24 @@ section {
     @include displayFlex($fD: column, $aI: flex-end, $g: 32px);
 
     width: 100%;
+
+    padding-right: 300px;
   }
 
-  @media (max-width: 800px) {
-    width: 100vw;
-
-    margin-left: 20px;
+  @media (max-width: 850px) {
+    padding-right: 100px;
   }
 
   & > div {
     @include displayFlex($jC: flex-end, $aI: flex-start, $g: 40px);
-
-    @media (max-width: 800px) {
-      @include displayFlex($jC: flex-end, $aI: flex-start, $g: 24px);
-    }
 
     .headline {
       @include displayFlex($fD: column, $aI: flex-end);
 
       width: 471px;
 
-      @media (max-width: 800px) {
-        width: 100%;
+      @media (max-width: 550px) {
+        width: calc(100% - 75px);
       }
 
       & > span {
@@ -167,8 +151,12 @@ section {
 
         text-align: right;
 
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
           font-size: 45px;
+        }
+
+        @media (max-width: 550px) {
+          font-size: 28px;
         }
       }
 
@@ -183,7 +171,7 @@ section {
     .seperator {
       position: absolute;
 
-      right: calc((1440px - 100vw) / 2 );
+      right: calc((1440px - 100vw) / 2);
 
       width: calc(((100vw - 1440px) / 2) - 25px);
 
@@ -193,20 +181,28 @@ section {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
 
-      @media (max-width: 800px) {
-        width: 32px;
+      @media (max-width: 1440px) {
+        right: 150px;
+        width: 120px;
+      }
 
-        margin-top: 32px;
+      @media (max-width: 1000px) {
+        margin-top: 30px;
+      }
+
+      @media (max-width: 850px) {
+        right: 50px;
+        width: 30px;
+      }
+
+      @media (max-width: 550px) {
+        margin-top: 18px;
       }
     }
 
   }
 
   .button-desktop {
-    @include displayFlex($aI: flex-start);
-
-    height: 100px;
-
     @media (max-width: 1440px) {
       display: none;
     }
@@ -225,20 +221,9 @@ section {
 
   z-index: 1;
 
-  @media (max-width: 1440px) {
-    top: 500px;
-  }
-
-  @media (max-width: 950px) {
-    top: 250px;
-
-    width: 729px;
-    height: 1251px;
-  }
-
-  @media (max-width: 400px) {
+  @media (max-width: 550px) {
     left: -400px;
-    top: 500px;
+    top: 125px;
 
     width: 629px;
     height: 1151px;
