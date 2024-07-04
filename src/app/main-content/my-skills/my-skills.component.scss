@@ -15,8 +15,7 @@ section {
 
   width: 1440px;
 
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 240px;
 
   color: $colorWhite;
 
@@ -26,11 +25,6 @@ section {
     @include displayFlex($fD: column-reverse, $g: 80px);
 
     width: 100vw;
-  }
-
-  @media (max-width: 550px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
   }
 
   .button-mobile {
@@ -50,13 +44,7 @@ section {
 
   width: 721px;
 
-  margin-left: 100px;
-
   z-index: 2;
-
-  @media (max-width: 1440px) {
-    margin-left: 0;
-  }
 
   @media (max-width: 850px) {
     width: calc(100vw - 50px);

@@ -1,6 +1,7 @@
-import {CommonModule} from '@angular/common';
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { changeGlobalLanguage, globalLanguage } from '../../../../main';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +16,6 @@ export class HeaderComponent {
   windowSize: MediaQueryList = window.matchMedia('(max-width: 950px)');
   showBurgerMenu: boolean = false;
 
-  @Output() newCurrentLanguage: EventEmitter<string> = new EventEmitter<string>();
-  @Input() currentLanguage: string = '';
   @Input() languageList: any;
 
   lastHighlightedElement: any = {
@@ -30,9 +29,6 @@ export class HeaderComponent {
     })
   }
 
-  ngOnInit() {
-    this.newCurrentLanguage.emit('german');
-  }
 
   openBurgerMenu(action: string): void {
     if (action === 'open' && !this.showBurgerMenu) {
@@ -42,6 +38,7 @@ export class HeaderComponent {
     }
   }
 
+
   isClicked(event: any) {
     document.addEventListener('wheel', () => {
       if (event.target.innerHTML !== 'DE' && event.target.innerHTML !== 'EN') {
@@ -50,7 +47,7 @@ export class HeaderComponent {
     });
 
     if (this.lastHighlightedElement.firstElement) {
-        this.removeHighlighting();
+      this.removeHighlighting();
     }
 
     this.lastHighlightedElement.firstElement = event.target;
@@ -60,10 +57,12 @@ export class HeaderComponent {
     event.target.nextElementSibling.classList.remove('v-hidden');
   }
 
+
   removeHighlighting() {
     this.lastHighlightedElement.firstElement.classList.remove('highlightingText');
     this.lastHighlightedElement.lastElement.classList.add('v-hidden');
   }
+
 
   addLanguage(event: any) {
     let btnDE = document.querySelectorAll('#language-DE');
@@ -90,7 +89,13 @@ export class HeaderComponent {
     }
   }
 
+
   changeLanguage(language: string) {
-    this.newCurrentLanguage.emit(language);
+    changeGlobalLanguage(language);
+  }
+
+
+  getLanguage() {
+    return globalLanguage;
   }
 }

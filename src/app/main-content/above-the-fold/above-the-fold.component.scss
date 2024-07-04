@@ -7,8 +7,6 @@ section {
 
   margin-top: 130px;
 
-  padding-bottom: 120px;
-
   overflow-x: visible;
 }
 
@@ -23,12 +21,6 @@ section {
   transition: 75ms all ease-in-out;
 
   overflow-x: visible;
-
-  @media (max-width: 1440px) {
-    @include displayFlex($fD: column, $g: 80px);
-
-    width: 100%
-  }
 }
 
 .profil {
@@ -38,8 +30,16 @@ section {
 
   width: 100%;
 
-  @media (max-width: 1440px) {
-    @include displayFlex($fD: column);
+  @media (max-width: 1200px) {
+    @include displayFlex($fD: column, $g: 16px);
+  }
+
+  .picture-wrapper {
+    position: relative;
+
+    @include displayFlex();
+
+    width: 100%;
   }
 
   .picture {
@@ -57,17 +57,49 @@ section {
 
     overflow-x: visible;
 
-    & > img {
+    @media (max-width: 1440px) {
+      margin-left: 100px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 55vh;
+      height: calc(100vh * 0.6);
+
+      margin-left: 0;
+    }
+
+    @media (max-width: 1000px) and (min-height: 1440px) {
+      margin-left: 240px;
+    }
+
+    @media (max-width: 750px) and (min-height: 1440px) {
+      width: 35vh;
+      height: calc(100vh * 0.4);
+    }
+
+    @media (max-width: 550px) {
+      width: 100%;
+      height: calc(100vh * 0.40);
+
+      background-position: -8px 32px;
+
+      margin-left: 100px;
+    }
+
+    @media (max-width: 550px) and (min-height: 1440px) {
+      width: 25vh;
+      height: calc(100vh * 0.25);
+    }
+
+    .portrait {
       transform: scaleX(-1);
 
-      @media (max-width: 1000px) {
-        width: 399px;
-        height: 560px;
+      @media (max-width: 550px) {
+        margin-left: 50px;
       }
 
-      @media (max-width: 550px) {
-        width: 299px;
-        height: 460px;
+      @media (max-width: 550px) and (min-height: 1440px) {
+        margin-left: 100px;
       }
     }
   }
@@ -84,6 +116,10 @@ section {
     z-index: 2;
 
     @media (max-width: 1440px) {
+      right: 100px;
+    }
+
+    @media (max-width: 1200px) {
       position: unset;
     }
 
@@ -92,12 +128,12 @@ section {
 
       color: $colorWhite;
 
-      & > span {
+      &>span {
         font-size: 48px;
 
         transform: rotate(-90deg);
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1440px) {
           font-size: 26px;
         }
 
@@ -106,13 +142,13 @@ section {
         }
       }
 
-      & > div {
+      &>div {
         text-align: center;
 
-        & > span {
+        &>span {
           line-height: 96px;
 
-          @media (max-width: 1000px) {
+          @media (max-width: 1440px) {
             line-height: 56px;
           }
 
@@ -121,10 +157,10 @@ section {
           }
         }
 
-        & > span:nth-child(1) {
+        &>span:nth-child(1) {
           font-size: 90px;
 
-          @media (max-width: 1000px) {
+          @media (max-width: 1440px) {
             font-size: 45px;
           }
 
@@ -133,12 +169,12 @@ section {
           }
         }
 
-        & > span:nth-child(3) {
+        &>span:nth-child(3) {
           font-size: 58px;
 
           color: $colorPurple;
 
-          @media (max-width: 1000px) {
+          @media (max-width: 1440px) {
             font-size: 29px;
           }
 
@@ -167,13 +203,13 @@ section {
 
     z-index: 2;
 
-    & > div {
+    &>div {
       position: relative;
 
       display: flex;
       align-items: center;
 
-      & > div {
+      &>div {
         position: absolute;
         left: calc((1440px - 100vw) / 2);
 
@@ -196,23 +232,23 @@ section {
       }
     }
 
-    & > nav {
+    &>nav {
       @include displayFlex($jC: flex-start);
 
       width: 179px;
 
-      & > div {
+      &>div {
         @include displayFlex($jC: flex-start, $g: 42px);
 
         height: 41px;
 
-        & > a {
+        &>a {
           @include displayFlex();
         }
       }
     }
 
-    & > a {
+    &>a {
       font-size: 23px;
 
       color: $colorWhite;
@@ -236,7 +272,7 @@ section {
       display: none;
     }
 
-    & > span {
+    &>span {
       transform: rotate(90deg);
 
       font-size: 23px;
@@ -244,7 +280,7 @@ section {
       color: $colorWhite;
     }
 
-    & > img {
+    &>img {
       width: 24px;
       height: 24px;
     }

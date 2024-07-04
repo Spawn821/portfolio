@@ -14,7 +14,12 @@ export function animationScroll(hidden: string, show: string) {
     });
   });
 
-
   const hiddenElements = document.querySelectorAll(`.${hidden}`);
   hiddenElements.forEach((el) => observer.observe(el));
+}
+
+export let globalLanguage: string = 'german';
+
+export function changeGlobalLanguage(language: string) {
+  globalLanguage = language;
 }

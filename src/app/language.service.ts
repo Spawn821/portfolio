@@ -15,7 +15,9 @@ export class LanguageService {
 
         'Fähigkeiten',
 
-        'Portfolio'
+        'Portfolio',
+
+        'Kontakt'
       ],
 
       'english': [
@@ -23,7 +25,9 @@ export class LanguageService {
 
         'My skills',
 
-        'Portfolio'
+        'Portfolio',
+
+        'Contact'
       ]
     },
 

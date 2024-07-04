@@ -5,7 +5,7 @@ section {
 
   @include displayFlex();
 
-  width: 100vw;
+  width: 100%;
 
   background-color: $colorBlack;
 
@@ -43,6 +43,7 @@ h3 {
 
 .vector-banner {
   top: 180px;
+  left: 0;
 
   width: 100%;
   height: auto;

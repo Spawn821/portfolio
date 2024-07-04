@@ -36,6 +36,7 @@ export class SingleprojectComponent {
     animationScroll('hidden-left', 'show-left');
   }
 
+
   isSecondElement(shadow: boolean = false) {
     if (this.windowSize.matches && !shadow) {
       return false;

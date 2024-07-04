@@ -7,23 +7,11 @@ section {
 
   width: 100vw;
 
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 240px;
 
   transition: 75ms all ease-in-out;
 
   z-index: 2;
-
-  @media (max-width: 1150px) {
-    @include displayFlex();
-
-    padding-top: 96px;
-  }
-
-  @media (max-width: 550px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 }
 
 .about-me {
@@ -63,13 +51,7 @@ p {
 
   color: $colorWhite;
 
-  margin-left: 100px;
-
   z-index: 2;
-
-  @media (max-width: 1440px) {
-    margin-left: 0;
-  }
 
   @media (max-width: 550px) {
     width: calc(100vw - 50px);

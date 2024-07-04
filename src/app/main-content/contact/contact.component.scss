@@ -29,7 +29,7 @@ section {
 
   width: 1440px;
 
-  padding-top: 120px;
+  padding-top: 240px;
   padding-bottom: 128px;
 
   transition: 75ms all ease-in-out;
@@ -38,11 +38,6 @@ section {
     @include displayFlex($fD: column, $g: 48px);
 
     width: 100vw;
-  }
-
-  @media (max-width: 1440px) {
-    padding-top: 60px;
-    padding-bottom: 68px;
   }
 }
 
@@ -275,13 +270,11 @@ form {
 
   width: 617px;
 
-  margin-right: 100px;
   margin-top: 200px;
 
   z-index: 1;
 
   @media (max-width: 1440px) {
-    margin-right: 0;
     margin-top: 0;
   }
 

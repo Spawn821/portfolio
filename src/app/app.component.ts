@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
+import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import {AboveTheFoldComponent} from "./main-content/above-the-fold/above-the-fold.component";
+import { LanguageService } from './language.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,14 @@ import {AboveTheFoldComponent} from "./main-content/above-the-fold/above-the-fol
     imports: [
         CommonModule,
         RouterOutlet,
-        FooterComponent,
-        AboveTheFoldComponent
+        HeaderComponent,
+        FooterComponent
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'portfolio';
+
+  languagelistdata = inject(LanguageService);
 }

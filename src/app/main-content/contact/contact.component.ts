@@ -63,6 +63,7 @@ export class ContactComponent {
     }
   }
 
+
   sendPost(ngForm: NgForm) {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
@@ -78,6 +79,7 @@ export class ContactComponent {
       });
   }
 
+
   isChecked(event: any) {
     if (event.target.checked) {
       this.checkboxState = true;
@@ -86,9 +88,11 @@ export class ContactComponent {
     }
   }
 
+
   getCheckboxState() {
     return this.checkboxState;
   }
+
 
   goUp() {
     window.scrollTo({top: 0, behavior: 'smooth'});

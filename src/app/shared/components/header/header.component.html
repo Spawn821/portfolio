@@ -8,71 +8,71 @@
     </a>
 
     @if (!imprint) {
-      <div [ngSwitch]="true">
+    <div [ngSwitch]="true">
 
-        <!-- Nav bar desktop -->
-        <ng-template [ngSwitchCase]="!windowSize.matches">
-          <nav class="font-family-poppins">
+      <!-- Nav bar desktop -->
+      <ng-template [ngSwitchCase]="!windowSize.matches">
+        <nav class="font-family-poppins">
+          <div class="navigation" (click)="isClicked($event)">
+            <a id="about-me-nav" href="#about-me">{{ languageList[getLanguage()][0] }}</a>
+            <div id="underline" class="underline v-hidden"></div>
+          </div>
+
+          <div class="navigation" (click)="isClicked($event)">
+            <a id="skills-nav" href="#my-skills">{{ languageList[getLanguage()][1] }}</a>
+            <div id="underline" class="underline v-hidden"></div>
+          </div>
+
+          <div class="navigation" (click)="isClicked($event)">
+            <a id="portfolio-nav" href="#portfolio">{{ languageList[getLanguage()][2] }}</a>
+            <div id="underline" class="underline v-hidden"></div>
+          </div>
+
+          <div class="laguage-menu">
+            <button (click)="addLanguage($event); changeLanguage('german')" id="language-DE"
+              class="highlightingText language-frame">DE</button>
+            <button (click)="addLanguage($event); changeLanguage('english')" id="language-EN">EN</button>
+          </div>
+        </nav>
+      </ng-template>
+
+      <!-- Burger menu mobile -->
+      <ng-template [ngSwitchCase]="windowSize.matches">
+        <div (click)="openBurgerMenu('open')" [class.burger-menu-animation-open]="showBurgerMenu"
+          [class.burger-menu-animation-close]="!showBurgerMenu" class="burger-menu">
+          <nav [class.burger-menu-content-open]="showBurgerMenu" [class.burger-menu-content-close]="!showBurgerMenu"
+            class="font-family-poppins burger-menu-content">
             <div class="navigation" (click)="isClicked($event)">
-              <a id="about-me-nav" href="#about-me">{{ languageList[currentLanguage][0] }}</a>
+              <a id="about-me-nav" href="#about-me">{{ languageList[getLanguage()][0] }}</a>
               <div id="underline" class="underline v-hidden"></div>
             </div>
 
             <div class="navigation" (click)="isClicked($event)">
-              <a id="skills-nav" href="#my-skills">{{ languageList[currentLanguage][1] }}</a>
+              <a id="skills-nav" href="#my-skills">{{ languageList[getLanguage()][1] }}</a>
               <div id="underline" class="underline v-hidden"></div>
             </div>
 
             <div class="navigation" (click)="isClicked($event)">
-              <a id="portfolio-nav" href="#portfolio">{{ languageList[currentLanguage][2] }}</a>
+              <a id="portfolio-nav" href="#portfolio">{{ languageList[getLanguage()][2] }}</a>
+              <div id="underline" class="underline v-hidden"></div>
+            </div>
+
+            <div class="navigation" (click)="isClicked($event)">
+              <a id="portfolio-nav" href="#contact">{{ languageList[getLanguage()][3] }}</a>
               <div id="underline" class="underline v-hidden"></div>
             </div>
 
             <div class="laguage-menu">
               <button (click)="addLanguage($event); changeLanguage('german')" id="language-DE"
-                      class="highlightingText language-frame">DE</button>
+                class="highlightingText language-frame">DE
+              </button>
               <button (click)="addLanguage($event); changeLanguage('english')" id="language-EN">EN</button>
             </div>
           </nav>
-        </ng-template>
+        </div>
+      </ng-template>
 
-        <!-- Burger menu mobile -->
-        <ng-template [ngSwitchCase]="windowSize.matches">
-          <div (click)="openBurgerMenu('open')" [class.burger-menu-animation-open]="showBurgerMenu"
-               [class.burger-menu-animation-close]="!showBurgerMenu" class="burger-menu">
-            <nav [class.burger-menu-content-open]="showBurgerMenu"
-                 [class.burger-menu-content-close]="!showBurgerMenu" class="font-family-poppins burger-menu-content">
-              <div class="navigation" (click)="isClicked($event)">
-                <a id="about-me-nav" href="#about-me">{{ languageList[currentLanguage][0] }}</a>
-                <div id="underline" class="underline v-hidden"></div>
-              </div>
-
-              <div class="navigation" (click)="isClicked($event)">
-                <a id="skills-nav" href="#my-skills">{{ languageList[currentLanguage][1] }}</a>
-                <div id="underline" class="underline v-hidden"></div>
-              </div>
-
-              <div class="navigation" (click)="isClicked($event)">
-                <a id="portfolio-nav" href="#portfolio">{{ languageList[currentLanguage][2] }}</a>
-                <div id="underline" class="underline v-hidden"></div>
-              </div>
-
-              <div class="navigation" (click)="isClicked($event)">
-                <a id="portfolio-nav" href="#contact">Contact</a>
-                <div id="underline" class="underline v-hidden"></div>
-              </div>
-
-              <div class="laguage-menu">
-                <button (click)="addLanguage($event); changeLanguage('german')" id="language-DE"
-                        class="highlightingText language-frame">DE
-                </button>
-                <button (click)="addLanguage($event); changeLanguage('english')" id="language-EN">EN</button>
-              </div>
-            </nav>
-          </div>
-        </ng-template>
-
-      </div>
+    </div>
     }
 
   </header>

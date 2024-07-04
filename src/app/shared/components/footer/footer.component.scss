@@ -1,11 +1,17 @@
 @import './../../../../styles.scss';
 
 section {
+  position: relative;
+
   @include displayFlex();
 
   width: 100%;
 
   border-top: 4px solid $colorGreen;
+
+  background-color: $colorBlack;
+
+  z-index: 2;
 }
 
 footer {
@@ -13,16 +19,16 @@ footer {
 
   color: $colorWhite;
 
-  width: calc(1440px - 200px);
+  width: 1440px;
 
-  padding: 80px 100px;
+  padding: 80px 0;
 
-  @media (max-width: 1000px) {
-    @include displayFlex($fD: column, $g: 28px);
+  @media (max-width: 1440px) {
+    width: calc(100vw - 200px);
   }
 
   @media (max-width: 1000px) {
-    padding: 80px 0;
+    @include displayFlex($fD: column, $g: 28px);
   }
 
   & > div {
