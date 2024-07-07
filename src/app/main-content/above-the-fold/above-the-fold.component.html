@@ -5,10 +5,11 @@
     <!-- Profil -->
     <div class="profil">
       <!-- Picture -->
-      <div class="picture-wrapper">
-        <div id="profile-picture" class="picture hidden-left">
-          <img class="portrait" src="../../../assets/graphics/profil/profil_1.png" alt="">
-        </div>
+      <div id="profile-picture" class="picture hidden-left">
+        <img class="shadow" src="../../../assets/graphics/shadows/above-the-fold-shadow-purple-green.svg">
+        <img class="portrait" src="../../../assets/graphics/profil/profil_1.png" alt="">
+        <!-- Vector banner -->
+        <img id="vector-banner" class="vector-banner" src="./../../../assets/graphics/vector/Vector.png" alt="">
       </div>
 
       <!-- I am -->
@@ -64,7 +65,7 @@
   </div>
 
   <!-- Vector banner -->
-  <img (window:resize)="positioningVectorBanner()" id="vector-banner" class="vector-banner"
+  <img (window:resize)="positioningVectorBanner()" id="vector-banner" class="d-none vector-banner"
     src="./../../../assets/graphics/vector/Vector.png" alt="">
 
 </section>

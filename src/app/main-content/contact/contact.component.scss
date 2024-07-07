@@ -98,7 +98,7 @@ section {
       width: calc(100% - 75px);
     }
 
-    & > span {
+    &>span {
       font-size: 90px;
       font-weight: 700;
 
@@ -115,9 +115,9 @@ section {
       }
     }
 
-    & > div {
+    &>div {
 
-      & > span {
+      &>span {
         font-size: 32px;
 
         @media (max-width: 1000px) {
@@ -129,7 +129,7 @@ section {
         }
       }
 
-      & > p {
+      &>p {
         font-size: 16px;
       }
     }
@@ -286,7 +286,7 @@ form {
     width: calc(100% - 48px);
   }
 
-  & > div {
+  &>div {
     @include displayFlex($fD: column, $g: 32px);
   }
 
@@ -325,11 +325,11 @@ textarea {
   &:hover {
     border-color: $colorGreen;
 
-    & + .input-icons {
+    &+.input-icons {
       border-color: $colorGreen;
     }
 
-    & + .textarea-icons {
+    &+.textarea-icons {
       border-color: $colorGreen;
     }
   }
@@ -346,7 +346,7 @@ textarea {
 input:focus {
   border-color: red;
 
-  & + .input-icons {
+  &+.input-icons {
     border-color: red;
   }
 }
@@ -354,7 +354,7 @@ input:focus {
 input:valid {
   border-color: $colorGreen;
 
-  & + .input-icons {
+  &+.input-icons {
     border-color: $colorGreen;
   }
 }
@@ -362,7 +362,7 @@ input:valid {
 textarea:focus {
   border-color: red;
 
-  & + .textarea-icons {
+  &+.textarea-icons {
     border-color: red;
   }
 }
@@ -370,7 +370,7 @@ textarea:focus {
 textarea:valid {
   border-color: $colorGreen;
 
-  & + .textarea-icons {
+  &+.textarea-icons {
     border-color: $colorGreen;
   }
 }
@@ -449,7 +449,7 @@ textarea:valid {
 .textarea-icons {
   @include displayFlex($jC: flex-start, $aI: flex-start);
 
-  & > img {
+  &>img {
     margin-top: 15px;
   }
 }
@@ -459,12 +459,12 @@ textarea:valid {
 
   width: 100%;
 
-  & > label {
+  &>label {
 
-    & > input[type="checkbox"] {
+    &>input[type="checkbox"] {
       display: none;
 
-      & + div {
+      &+div {
         content: url('./../../../assets/graphics/contact/checkbox-empty.png');
         object-fit: contain;
 
@@ -474,9 +474,9 @@ textarea:valid {
       }
     }
 
-    & > input[type="checkbox"]:checked {
+    &>input[type="checkbox"]:checked {
 
-      & + div {
+      &+div {
         content: url('./../../../assets/graphics/contact/checkbox-checked.png');
 
         &:hover {
@@ -487,12 +487,12 @@ textarea:valid {
 
   }
 
-  & > span {
+  &>span {
     color: $colorWhite;
 
     font-size: 14px;
 
-    & > a {
+    &>a {
       color: $colorPurple;
 
       &:hover {
@@ -509,7 +509,7 @@ textarea:valid {
 
   height: 100px;
 
-  & > button:disabled {
+  &>button:disabled {
     background-color: rgb(182, 182, 182);
     cursor: not-allowed;
 

@@ -29,6 +29,8 @@ footer {
 
   @media (max-width: 1000px) {
     @include displayFlex($fD: column, $g: 28px);
+
+    width: calc(100vw - 50px);
   }
 
   & > div {

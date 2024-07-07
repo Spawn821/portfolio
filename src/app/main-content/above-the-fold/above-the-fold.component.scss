@@ -34,72 +34,67 @@ section {
     @include displayFlex($fD: column, $g: 16px);
   }
 
-  .picture-wrapper {
-    position: relative;
-
-    @include displayFlex();
-
-    width: 100%;
-  }
-
   .picture {
     position: relative;
 
     display: flex;
 
     width: 100%;
-    height: calc(100vh * 0.75);
-
-    background-image: url('./../../../assets/graphics/shadows/above-the-fold-shadow-purple-green.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: -24px 32px;
-
-    overflow-x: visible;
-
-    @media (max-width: 1440px) {
-      margin-left: 100px;
-    }
 
     @media (max-width: 1200px) {
-      width: 55vh;
-      height: calc(100vh * 0.6);
-
-      margin-left: 0;
+      justify-content: center;
     }
 
-    @media (max-width: 1000px) and (min-height: 1440px) {
-      margin-left: 240px;
-    }
+    .shadow {
+      position: absolute;
+      left: -100px;
 
-    @media (max-width: 750px) and (min-height: 1440px) {
-      width: 35vh;
-      height: calc(100vh * 0.4);
-    }
+      height: calc(100vh * 0.75);
 
-    @media (max-width: 550px) {
-      width: 100%;
-      height: calc(100vh * 0.40);
+      @media (max-width: 1200px) {
+        left: calc(100vw / 2);
+        transform: translateX(-50%);
 
-      background-position: -8px 32px;
+        height: calc(100vh * 0.6);
+      }
 
-      margin-left: 100px;
-    }
+      @media (max-width: 750px) {
+        height: calc(100vh * 0.475);
+      }
 
-    @media (max-width: 550px) and (min-height: 1440px) {
-      width: 25vh;
-      height: calc(100vh * 0.25);
+      @media (max-width: 550px) and (min-height: 1300px) {
+        height: calc(100vh * 0.275);
+      }
     }
 
     .portrait {
+      height: calc(100vh * 0.75);
+
       transform: scaleX(-1);
 
-      @media (max-width: 550px) {
-        margin-left: 50px;
+      @media (max-width: 1200px) {
+        height: calc(100vh * 0.6);
       }
 
-      @media (max-width: 550px) and (min-height: 1440px) {
-        margin-left: 100px;
+      @media (max-width: 750px) {
+        height: calc(100vh * 0.475);
+      }
+
+      @media (max-width: 550px) and (min-height: 1300px) {
+        height: calc(100vh * 0.275);
+      }
+    }
+
+    .vector-banner {
+      position: absolute;
+      left: calc((1440px - 100vw) / 2);
+
+      width: 100vw;
+
+      z-index: 1;
+
+      @media (max-width: 1440px) {
+        left: 0;
       }
     }
   }
@@ -107,7 +102,7 @@ section {
   .headline-wrapper {
     position: absolute;
     right: 0;
-    top: 240px;
+    top: 200px;
 
     @include displayFlex($fD: column, $g: 24px);
 
@@ -284,20 +279,5 @@ section {
       width: 24px;
       height: 24px;
     }
-  }
-}
-
-.vector-banner {
-  position: absolute;
-  left: 0;
-
-  width: 100%;
-
-  z-index: 1;
-
-  @media (max-width: 550px) {
-    height: 500px;
-
-    object-fit: cover;
   }
 }
