@@ -84,10 +84,19 @@ export class AboveTheFoldComponent {
     let window1200x750px = window.matchMedia('(max-width: 1200px) and (max-height: 750px)')
     let window1550x750px = window.matchMedia('(max-width: 1550px) and (max-height: 750px)')
     let window750x750px = window.matchMedia('(max-width: 750px) and (max-height: 750px)')
-    let window550x1350px = window.matchMedia('(max-width: 550px) and (max-height: 1350px)')
-    let window750x1350px = window.matchMedia('(max-width: 750px) and (max-height: 1350px)')
-    let window1200x1350px = window.matchMedia('(max-width: 1200px) and (max-height: 1350px)')
-    let window2600x1350px = window.matchMedia('(max-width: 2600px) and (max-height: 1350px)')
+    let window1800x1000px = window.matchMedia('(max-width: 1800px) and (max-height: 1000px)')
+    let window2000x1000px = window.matchMedia('(max-width: 2000px) and (max-height: 1000px)')
+    let window2100x1000px = window.matchMedia('(max-width: 2100px) and (max-height: 1000px)')
+    let window2400x1200px = window.matchMedia('(max-width: 2400px) and (max-height: 1200px)')
+    let window550x1300px = window.matchMedia('(max-width: 550px) and (min-height: 1300px)')
+    let window750x1300px = window.matchMedia('(max-width: 750px) and (min-height: 1300px)')
+    let window1200x1300px = window.matchMedia('(max-width: 1200px) and (min-height: 1300px)')
+    let window2600x1300px = window.matchMedia('(max-width: 2600px) and (min-height: 1300px)')
+    let window2900x1300px = window.matchMedia('(max-width: 2900px) and (min-height: 1300px)')
+    let window3200x1300px = window.matchMedia('(max-width: 3200px) and (min-height: 1300px)')
+    let window3500x1300px = window.matchMedia('(max-width: 3500px) and (min-height: 1300px)')
+    let window3900x1300px = window.matchMedia('(max-width: 3900px) and (min-height: 1300px)')
+    let window5200x1300px = window.matchMedia('(max-width: 5200px) and (min-height: 1300px)')
 
     if (window750x750px.matches) {
       return -40;
@@ -98,17 +107,44 @@ export class AboveTheFoldComponent {
     else if (window1550x750px.matches) {
       return 80;
     }
-    else if (window550x1350px.matches) {
+    else if (window1800x1000px.matches) {
+      return 112;
+    }
+    else if (window2000x1000px.matches) {
+      return 180;
+    }
+    else if (window2100x1000px.matches) {
+      return 210;
+    }
+    else if (window2400x1200px.matches) {
+      return 300;
+    }
+    else if (window550x1300px.matches) {
       return -32;
     }
-    else if (window750x1350px.matches) {
+    else if (window750x1300px.matches) {
       return 200;
     }
-    else if (window1200x1350px.matches) {
+    else if (window1200x1300px.matches) {
       return 360;
     }
-    else if (window2600x1350px.matches) {
+    else if (window2600x1300px.matches) {
       return 480;
+    }
+    else if (window2900x1300px.matches) {
+      return 560;
+    }
+    else if (window3200x1300px.matches) {
+      return 680;
+    }
+    else if (window3500x1300px.matches) {
+      return 760;
+    }
+    else if (window3900x1300px.matches) {
+      return 920;
+    }
+    else if (window5200x1300px.matches) {
+      return 1450;
     }
 
     return 0;

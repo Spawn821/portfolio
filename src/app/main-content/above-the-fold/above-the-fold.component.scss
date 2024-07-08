@@ -83,6 +83,7 @@ section {
       @media (max-width: 550px) and (min-height: 1300px) {
         height: calc(100vh * 0.275);
       }
+
     }
 
     .vector-banner {
@@ -109,6 +110,10 @@ section {
     width: max-content;
 
     z-index: 2;
+
+    @media (min-width: 3500px) {
+      top: 600px;
+    }
 
     @media (max-width: 1440px) {
       right: 100px;
